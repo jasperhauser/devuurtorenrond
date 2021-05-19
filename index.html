@@ -13,10 +13,11 @@
 	<meta name="keywords" content="jasper hauser, loek buter, workum, vuurtoren, Toarntsje, fotografie">
 
 	<!-- Favicons -->
-	<link rel="shortcut icon" sizes="16x16" href="">
-	<link rel="shortcut icon" sizes="32x32" href="">
-	<link rel="apple-touch-icon" sizes="60x60" type="image/png" href="">
-	<link rel="icon" sizes="64x64" type="image/png" href="">
+	<link rel="shortcut icon" sizes="16x16" href="images/torentje16.png">
+	<link rel="shortcut icon" sizes="32x32" href="images/torentje32.png">
+	<!-- Apple Pinned Tab Favicon -->
+	<link rel="icon" sizes="any" mask href="images/torentje.svg">
+	<meta name="theme-color" content="black">
 
 	<!-- Facebook -->
 	<meta property="og:url" content="https://www.devuurtorenrond.nl">
@@ -49,12 +50,12 @@
 
 	<style type="text/css">
 		body {font-family: 'Inter', sans-serif; padding:0; margin:0;}
-		section {padding:20px 40px;}
+		section, footer {padding:20px 40px;}
 		h1, h2, h3, h4 {font-family: 'Newsreader', serif;}
 		h1 {font-size:3em;}
 		h2	{font-size:2em;}
 		a {color:#000;}
-		#over {background-color:black; color: white;}
+		#over, footer {background-color:black; color: white;}
 		#over a {color:#fff;}
 	</style>
 </head>
@@ -126,5 +127,9 @@
 		</div>
 	</section>
 
+	<footer>
+		<span>© <span id="fyear">2021</span> Loek Buter &amp; Jasper Hauser. All rights reserved.</span>
+		<script type="text/javascript">document.getElementById('fyear').textContent = new Date().getFullYear();</script>
+	</footer>
 </body>
 </html>
