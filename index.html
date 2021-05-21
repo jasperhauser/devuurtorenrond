@@ -66,8 +66,22 @@
 		.caption {font-size:0.75em; color:#fff; opacity:0.7;}
 			.caption:hover {opacity:1;}
 
-		/* form style override */
+		/* mailchimp email form style override */
 		div#mc_embed_signup {background-color:transparent;}
+
+		/* dark mode!! */
+		@media (prefers-color-scheme: dark) {}
+
+		/* mobile device breakpoints */
+		@media screen and (min-width: 769px) and (max-width:1024px){
+			h1 {font-size: 3em;}
+		}  /* hello desktop */
+		@media screen and (max-width: 768px) { /* most tablets */ }
+		@media screen and (max-width: 640px){}
+		@media screen and (max-width: 640px) and (orientation:landscape) {}  /* Mobile Landscape < iPhone 6 */
+		@media screen and (max-width: 480px) { /* phablet */ }
+		@media screen and (max-width: 320px) {} /* small phones (original iphone) */ 
+		@media screen and (device-aspect-ratio: 2/3) {}  /* iPhone < 5: */
 	</style>
 </head>
 <body>
