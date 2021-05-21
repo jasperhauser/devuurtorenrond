@@ -46,16 +46,16 @@
 	</script>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Newsreader:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght,00&family= enn dierNewsreader:wght@500&display=swap" rel="stylesheet">
 
 	<style type="text/css">
 		body {font-family: 'Inter', sans-serif; font-size:15px; padding:0; margin:0; background-color: rgb(255 241 234);}
-		p {line-height:2em; }
+		p, ul {line-height:2em;}
 		section, footer {padding:0 20px;}
 		h1, h2, h3, h4 {font-family: 'Newsreader', serif;}
 		h1 {font-size:5em; margin:0.3em 0; padding:0;}
-		h2	{font-size:2em;}
-		a {color:#000; text-decoration: none; border-bottom:1px solid rgba(0, 0, 0, 0.2);}
+		h2	{font-size:2.5em;}
+		a {color:#000; text-decoration: none; border-bottom:1px solid rgba(0, 0, 0, 0.2); transition: all .2s ease-in-out;}
 		a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
 		
 		.inset {max-width:1200px; margin:auto;}
@@ -63,8 +63,8 @@
 		.w-40 {width:40%; box-sizing: border-box;}
 		.w-60 {width:60%; box-sizing: border-box;}
 		.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
-		.caption {font-size:0.75em; color:#fff; opacity:0.7;}
-			.caption:hover {opacity:1;}
+		.caption {font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
+			div:hover .caption {opacity:1;}
 
 		/* mailchimp email form style override */
 		div#mc_embed_signup {background-color:transparent;}
