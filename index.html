@@ -66,7 +66,7 @@
 		hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
 		
 		.intro {font-size:25px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
-		.inset {max-width:1200px; margin:auto; padding:0 30px;}
+		.inset {max-width:1200px; margin:auto; padding:0 30px; box-sizing: border-box;}
 		.inset-narrow {max-width:700px; margin:auto; padding:0 30px;}
 		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
 
@@ -87,12 +87,16 @@
 		#masthead-intro {position: relative; margin-top:50px; max-width:950px;}
 		#masthead-intro p {line-height:1.8em;}
 
+		/* newsletter */
+		#newsletter {}
+
 		/* footer */
 		footer.inset {text-align:center; margin-top: 50px; margin-bottom: 50px; opacity:0.7;}
 		footer:hover {opacity:1;}
 
 		/* mailchimp email form style override */
 		div#mc_embed_signup {background-color:transparent;}
+		div#mc_embed_signup form {padding-left:unset;}
 
 		/* dark mode!! */
 		@media (prefers-color-scheme: dark) {}
@@ -105,6 +109,9 @@
 		} 
 		@media screen and (max-width: 768px) {
 			/* most tablets */ 
+			.flex {flex-direction: column;}
+			.w-40, .w-60 {width:100%;}
+
 			#masthead-title {width:250px; right:50px; top: 15%; transform: translateY(-15%);}
 			#masthead h1 {font-size:3em;}
 		}
@@ -127,20 +134,9 @@
 </head>
 <body>
 
-	<!-- todo:
-		x link .com domein naar .nl
-		x create social share preview image
-		x voeg "over" text toe
-		x optimize the header image
-		x mobile responsive
-		x cleanup code
-	-->
 	<section id="masthead">
 		<div id="masthead-photo">
 			<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 100w, photos/zomer-vuurtoren-breed-1800.jpg 1800w," alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer">
-			<div style="" class="caption">
-				Cornelie en &#8224; Reid
-			</div>
 		</div>
 
 		<div id="masthead-title">
@@ -169,7 +165,7 @@
 		<p><b><a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht.</p>
 	</section>
 
-	<section class="inset flex" style="margin-top:75px; display:none;">
+	<section class="inset flex" style="margin-top:75px;" id="newsletter">
 		<div class="w-60" style="position: relative;">
 			<img src="photos/portret-rc-small.jpg" alt="" style="width:100%;">
 			<div style="position:absolute; left:20px; bottom:20px;" class="caption">
@@ -180,12 +176,6 @@
 			<div style="padding-left:50px;">
 				<h2 style="color: #61738c;">Blijf op de hoogte</h2>
 				<p>Schrijf je in op onze nieuwsbrief om als eerste het laatste nieuws over toekostige ontwikkelingen van het project te ontvangen.</p>
-				<ul>
-					<li>Wanneer meer beeld beschikbaar komt.</li>
-					<li>Wanneer er een nieuwe publicatie is.</li>
-					<li>wanneer en waar exposities zijn.</li>
-					<li>Hopelijk wanneer er een boek uitkomt.</li>
-				</ul>
 		
 				<!-- Begin Mailchimp Signup Form -->
 				<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
@@ -219,29 +209,6 @@
 		<!-- 
 		- floortje blijft hier: https://www.bnnvara.nl/floortjeblijfthier/videos/554003
 		--> 
-	</section>
-
-	<section id="over" class="inset" style="display:none;">
-		<h2>Over het project</h2>
-		<p >Loek en Jasper hebben elkaar in 2010 leren kennen op de <a href="https://www.fotoacademie.nl">Foto Academie in Amsterdam</a> waar ze allebei gestudeerd hebben. In die periode had Jasper het wel eens gehad over zijn grootouders in Workum, en hun idyllische plek en manier van leven. Door omstandigheden is daar toen niks van gekomen. Een aantal jaar geleden hebben ze het project toch weer weten op te pakken.</p>
-
-		<div>
-			<h3>Loek Buter</h3>
-			<p>
-				<a href="mailto:info@loekbuter.com">info@loekbuter.com</a><br>
-				<a href="http://www.loekbuter.com">www.loekbuter.com</a><br>
-				Professioneel en geupliceerd fotograaf voor o.a. NRC, Het Parool, en Trouw. En heeft zich met namen gespecialiseerd in het vast leggen van het Nederlands lanschap.
-			</p>
-		</div>
-
-		<div>
-			<h3>Jasper Hauser</h3>
-			<p>
-				<a href="mailto:info@jasperhauser.nl">info@jasperhauser.nl</a><br>
-				<a href="http://www.jasperhauser.nl" target="_blank">www.jasperhauser.nl</a><br>
-				Techologie ondernemer, mede oprichter van twee software bedrijven en is gespecialiseerd in digitaal product design en stragie. Heeft een achtergrond in fotografie, en grafische vormgeving. 
-			</p>
-		</div>
 	</section>
 
 	<footer class="inset">
