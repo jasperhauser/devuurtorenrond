@@ -66,8 +66,10 @@
 		hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
 		
 		.intro {font-size:23px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
-		.inset {max-width:950px; margin:auto; padding:0 30px; box-sizing: border-box;}
-		.inset-narrow {max-width:700px; margin:auto; padding:0 30px;}
+		.inset, .inset-wide, .inset-narrow {margin:auto; padding:0 30px; box-sizing: border-box;}
+		.inset {max-width:950px;}
+		.inset-wide {max-width:1200px;}
+		.inset-narrow {max-width:700px;}
 		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
 
 		.flex {display: flex; flex-direction: row; width:100%;}
@@ -88,7 +90,7 @@
 		#masthead-intro p {line-height:1.8em;}
 
 		/* newsletter */
-		#newsletter {}
+		#newsletter {margin-top:75px;}
 		#form {padding-left:50px;}
 
 		/* footer */
@@ -166,7 +168,7 @@
 		<p><b><a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht.</p>
 	</section>
 
-	<section class="inset flex" style="margin-top:75px;" id="newsletter">
+	<section class="inset-wide flex" id="newsletter">
 		<div class="w-60" style="position: relative;">
 			<img src="photos/portret-rc-500.jpg" srcset="photos/portret-rc-500.jpg 500w, photos/portret-rc-1000.jpg 1000w " alt="Portret van Cornelie (links) en Reid (rechts) samen" style="width:100%;">
 			<div style="position:absolute; left:20px; bottom:20px;" class="caption">
