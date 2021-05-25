@@ -54,7 +54,7 @@
 		/* base styles */
 		body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:#fceee1;}
 		p, ul {line-height:2em;}
-		section, footer {padding:0 20px;}
+		footer {padding:0 20px;}
 		h1, h2, h3, h4 {font-family: 'Georgia', serif; font-style: italic;}
 		h1 {font-size:5em; margin:0.3em 0; padding:0;}
 		h2	{font-size:2.5em;}
@@ -66,19 +66,18 @@
 		hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
 		
 		.intro {font-size:23px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
-		.inset, .inset-wide, .inset-narrow {margin:auto; padding:0 30px; box-sizing: border-box;}
+		.inset, .inset-wide, .inset-narrow {margin:auto; padding:0 20px; box-sizing: border-box;}
 		.inset {max-width:950px;}
 		.inset-wide {max-width:1200px;}
 		.inset-narrow {max-width:700px;}
 		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
 
 		.flex {display: flex; flex-direction: row; width:100%;}
+		.w-33 {width:33.33%; box-sizing: border-box;}
 		.w-40 {width:40%; box-sizing: border-box;}
+		.w-50 {width:50%; box-sizing: border-box; position:relative;}
 		.w-60 {width:60%; box-sizing: border-box;}
 		.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
-		
-		.caption {position:absolute; left:20px; bottom:20px; font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
-			div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
 
 		/* header */
 		#masthead {padding:0; position:relative; }
@@ -88,6 +87,15 @@
 			#masthead-photo img {width:100%;}
 		#masthead-intro {position: relative; margin-top:50px;}
 		#masthead-intro p {line-height:1.8em;}
+
+		/* photos */
+		#photos {}
+		.row {margin-top:20px; position: relative;}
+		.row .w-50:first-child {margin-right:10px;}
+		.row .w-50:last-child {margin-left:10px;}
+
+		.caption {position:absolute; left:20px; bottom:20px; font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
+			div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
 
 		/* newsletter */
 		#newsletter {margin-top:75px;}
@@ -113,7 +121,10 @@
 		@media screen and (max-width: 768px) {
 			/* most tablets */ 
 			.flex {flex-direction: column;}
-			.w-40, .w-60 {width:100%;}
+			.w-50, .w-40, .w-60 {width:100%;}
+			.row .w-50:first-child, .row .w-50:last-child {margin-left:0; margin-right:0;}
+			.row .w-50:first-child {margin-bottom:30px;}
+
 			#masthead-title {width:250px; right:50px; top: 15%; transform: translateY(-15%);}
 			#masthead h1 {font-size:3em;}
 			#form {padding-left:unset;}
@@ -121,11 +132,12 @@
 		@media screen and (max-width: 640px){
 			/* header wraps */
 			#masthead h1 {font-size:4em;}
-			#masthead-title {position: relative; transform: none; width:100%; right: unset; top: unset; text-align: left; padding:0 30px;}
+			#masthead-title {position: relative; transform: none; width:100%; right: unset; top: unset; text-align: left; padding:0 20px;}
 			#masthead-title p, #masthead-title a {color:unset; border-color: rgba(0, 0, 0, 0.2);}
 			#masthead-title a:hover {border-color: rgba(0, 0, 0, 0.9);}
 			#masthead-photo img {  object-fit: cover; width: 100%; height: 350px;}
 			.intro {text-align: left;}
+			
 		}
 		@media screen and (max-width: 480px) {
 			/* phablet */
@@ -139,7 +151,7 @@
 
 	<section id="masthead">
 		<div id="masthead-photo">
-			<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 1000w, photos/zomer-vuurtoren-breed-1800.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer">
+			<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 1000w, photos/zomer-vuurtoren-breed-1800.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" loading="lazy">
 		</div>
 
 		<div id="masthead-title">
@@ -153,24 +165,164 @@
 		</div>
 	</section>
 
+	<section style="margin-top:50px;" id="photos">
 
-	<section class="inset-narrow" style="margin-top:50px;">
-		<p><span class="drop-cap">I</span>s het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/zomer-klaprozen-500.jpg" srcset="photos/zomer-klaprozen-500.jpg 500w, photos/zomer-klaprozen-1000.jpg 1000w" style="width:100%;" alt="Klaprozen in hey veld" loading="lazy">
+				<span class="caption">klaprozen, riet</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/zomer-hylperdyk-500.jpg" srcset="photos/zomer-hylperdyk-500.jpg 500w, photos/zomer-hylperdyk-1000.jpg 1000w" style="width:100%;" alt="De Hylperdyk, met de vuurtore, het IJsselmeer, de stijger en de schapen" loading="lazy">
+				<span class="caption">hylperdyk</span>
+			</div>
+		</div>
 
-		<p>Met een zeis maakte Reid en Cornalie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legde een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekt ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. En houden ze de bedstee warm met op de houtkachel verwarmde stenen in sokken. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
+		<div class="inset-narrow" style="margin-top:50px;">
+			<p><span class="drop-cap">I</span>s het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
 
-		<hr>
+			<p>Met een zeis maakte Reid en Cornalie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legde een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekt ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. En houden ze de bedstee warm met op de houtkachel verwarmde stenen in sokken. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
+		</div>
+
+
+		<!-- eten -->
 		
-		<p>Met De Vuurtoren Rond documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/lente-tuin-500.jpg" srcset="photos/lente-tuin-500.jpg 500w, photos/lente-tuin-1000.jpg 1000w" style="width:100%;" alt="De netgezaaide moestuin" loading="lazy">
+				<span class="caption">de moestuin</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/zomer-kas-500.jpg" srcset="photos/zomer-kas-500.jpg 500w, photos/zomer-kas-1000.jpg 1000w" style="width:100%;" alt="De kas in de zomer, tomaten en cougette" loading="lazy">
+				<span class="caption">de kas</span>
+			</div>
+		</div>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/binnen-eettafel-500.jpg" srcset="photos/binnen-eettafel-500.jpg 500w, photos/binnen-eettafel-1000.jpg 1000w" style="width:100%;" alt="Op tafel, zelfgebakken brood, kaas van de buren" loading="lazy">
+				<span class="caption">de lunch</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/binnen-fruit-mandje-500.jpg" srcset="photos/binnen-fruit-mandje-500.jpg 500w, photos/binnen-fruit-mandje-1000.jpg 1000w" style="width:100%;" alt="Mandje met kweeperen naast een raam" loading="lazy">
+				<span class="caption">kweeperen, quince</span>
+			</div>
+		</div>
+		<div class="inset row">
+			<div style="position: relative;">
+				<img src="photos/binnen-keuken-700.jpg" srcset="photos/binnen-keuken-700.jpg 700w, photos/binnen-keuken-1400.jpg 1400w" style="width:100%;" alt="De gele keuken in de vuurtoren, met handpopm voor het eigen grond water" loading="lazy">
+				<span class="caption">vuurtoren keuken, met grondwater handpomp</span>
+			</div>
+		</div>
 
-		<p><b><a href="http://www.loekbuter.com">Loek Buter</a></b> is documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
+		<!-- oogst zomer -->
 		
-		<p><b><a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht.</p>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/buiten-bijen-500.jpg" srcset="photos/buiten-bijen-500.jpg 500w, photos/buiten-bijen-1000.jpg 1000w" style="width:100%;" alt="Honing wordt geoogst" loading="lazy">
+				<span class="caption">een honingraad</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/binnen-bonen-500.jpg" srcset="photos/binnen-bonen-500.jpg 500w, photos/binnen-bonen-1000.jpg 1000w" style="width:100%;" alt="Keweeperen in een madnje" loading="lazy">
+				<span class="caption">de bonen voorraad</span>
+			</div>
+		</div>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+
+				<img src="photos/zomer-duiven-500.jpg" srcset="photos/zomer-duiven-500.jpg 500w, photos/zomer-duiven-1000.jpg 1000w" style="width:100%;" alt="De duiventil, bovenin het kippenhok" loading="lazy">
+				<span class="caption">de duiventil</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/buiten-groente-mandje-500.jpg" srcset="photos/buiten-groente-mandje-500.jpg 500w, photos/buiten-groente-mandje-1000.jpg 1000w" style="width:100%;" alt="Elke dag wordt er vanuit de moestuin geplukt en gegeten" loading="lazy">
+				<span class="caption">de dag oogst</span>
+			</div>
+		</div>
+
+		<!-- herfst -->
+
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/portret-reid-zeis-500.jpg" srcset="photos/portret-reid-zeis-500.jpg 500w, photos/portret-reid-zeis-1000.jpg 1000w" style="width:100%;" alt="Reid met de zeis, klaar om het gras te maaien" loading="lazy">
+				<span class="caption">Reid, de zeis</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/herfst-boomgaard-500.jpg" srcset="photos/herfst-boomgaard-500.jpg 500w, photos/herfst-boomgaard-1000.jpg 1000w" style="width:100%;" alt="Met een trapje de appels plukken" loading="lazy">
+				<span class="caption">de boomgaard</span>
+			</div>
+		</div>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/herfst-meertje-500.jpg" srcset="photos/herfst-meertje-500.jpg 500w, photos/herfst-meertje-1000.jpg 1000w" style="width:100%;" alt="Zonsondergang over het meertje achter de vuurtoren" loading="lazy">
+				<span class="caption">het meertje</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/herfst-reid-bed-500.jpg" srcset="photos/herfst-reid-bed-500.jpg 500w, photos/herfst-reid-bed-1000.jpg 1000w" style="width:100%;" alt="Reid knapt een uiltje op het bed in de vuurtoren samen met de poes" loading="lazy">
+				<span class="caption">een uiltje knappen</span>
+			</div>
+		</div>
+		
+		<!-- winter -->
+
+		<div class="inset row">
+			<div style="position: relative;">
+				<img src="photos/winter-meertje-700.jpg" srcset="photos/winter-meertje-700.jpg 700w, photos/winter-meertje-1400.jpg 1400w" style="width:100%;" alt="Cornelie met slee lopend over het bevroren meertje" loading="lazy">
+				<span class="caption">ijs pret</span>
+			</div>
+		</div>
+
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/winter-ijsselmeer-bootje-500.jpg" srcset="photos/winter-ijsselmeer-bootje-500.jpg 500w, photos/winter-ijsselmeer-bootje-1000.jpg 1000w" style="width:100%;" alt="Het sloep de WK44, op de besneeuwde Hylperyk" loading="lazy">
+				<span class="caption">wk 44</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/winter-geiten-500.jpg" srcset="photos/winter-geiten-500.jpg 500w, photos/winter-geiten-1000.jpg 1000w" style="width:100%;" alt="De geiten krijgen takken te eten in een besneeuwd veld" loading="lazy">
+				<span class="caption">de geiten</span>
+			</div>
+		</div>
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/binnen-theelamp-500.jpg" srcset="photos/binnen-theelamp-500.jpg 500w, photos/binnen-theelamp-1000.jpg 1000w" style="width:100%;" alt="Een spiritus thee lampje" loading="lazy">
+				<span class="caption">thee lampje</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/winter-huisje-landschap-500.jpg" srcset="photos/winter-huisje-landschap-500.jpg 500w, photos/winter-huisje-landschap-1000.jpg 1000w" style="width:100%;" alt="Het geiten hooi huisje in een besneeuwd veld" loading="lazy">
+				<span class="caption">de geiten hooi schuur</span>
+			</div>
+		</div>
+		
+	</section>
+	
+
+	<section >
+
+		<div class="inset-narrow" style="margin-top:50px; margin-bottom:50px;">
+			<p>Met De Vuurtoren Rond documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
+		</div>
+
+		<!-- encore -->
+
+		<div class="inset-wide flex row">
+			<div class="w-50">
+				<img src="photos/zomer-sloot-500.jpg" srcset="photos/zomer-sloot-500.jpg 500w, photos/zomer-sloot-1000.jpg 1000w" style="width:100%;" alt="Een spoelhoek langs de sloot" loading="lazy">
+				<span class="caption">spoel hoek</span>
+			</div>
+			<div class="w-50">
+				<img src="photos/zomer-tuin-zonnebloem-500.jpg" srcset="photos/zomer-tuin-zonnebloem-500.jpg 500w, photos/zomer-tuin-zonnebloem-1000.jpg 1000w" style="width:100%;" alt="Zonnebloemen in de tuin" loading="lazy">
+				<span class="caption">zonnebloemen</span>
+			</div>
+		</div>
+		 
+		<div class="inset-narrow" style="margin-top:50px;">
+			<p><b><a href="http://www.loekbuter.com">Loek Buter</a></b> is documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
+			
+			<p><b><a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht. — Jasper is de kleinzoon van &#8224; Reid de Jong.</p>
+		</div>
 	</section>
 
 	<section class="inset-wide flex" id="newsletter">
 		<div class="w-60" style="position: relative;">
-			<img src="photos/portret-rc-500.jpg" srcset="photos/portret-rc-500.jpg 500w, photos/portret-rc-1000.jpg 1000w " alt="Portret van Cornelie (links) en Reid (rechts) samen" style="width:100%;">
+			<img src="photos/portret-rc-500.jpg" srcset="photos/portret-rc-500.jpg 500w, photos/portret-rc-1000.jpg 1000w " alt="Portret van Cornelie (links) en Reid (rechts) samen" style="width:100%;" loading="lazy">
 			<div style="position:absolute; left:20px; bottom:20px;" class="caption">
 				Cornelie en &#8224; Reid
 			</div>
@@ -201,17 +353,6 @@
 				<!--End mc_embed_signup-->
 			</div>
 		</div>
-	</section>
-
-	<section class="inset" style="display:none;">
-		<h2>In de media</h2>
-		<a href="https://www.nationalgeographic.nl" target="_blank">
-			<img src="ng-logo.svg" alt="National Geographic" width="200">
-		</a>
-
-		<!-- 
-		- floortje blijft hier: https://www.bnnvara.nl/floortjeblijfthier/videos/554003
-		--> 
 	</section>
 
 	<footer class="inset">
