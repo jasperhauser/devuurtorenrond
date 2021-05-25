@@ -49,22 +49,50 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght,00&family= enn dierNewsreader:wght@500&display=swap" rel="stylesheet">
 
 	<style type="text/css">
-		body {font-family: 'Inter', sans-serif; font-size:15px; padding:0; margin:0; background-color: rgb(255 241 234);}
+		
+		:root {
+  			--padding-side: 30px;
+		}	
+
+		/* base styles */
+		body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:#fceee1;}
 		p, ul {line-height:2em;}
 		section, footer {padding:0 20px;}
-		h1, h2, h3, h4 {font-family: 'Newsreader', serif;}
+		h1, h2, h3, h4 {font-family: 'Newsreader', serif, 'Georgia';}
 		h1 {font-size:5em; margin:0.3em 0; padding:0;}
 		h2	{font-size:2.5em;}
+		h3	{font-size:2em;}
 		a {color:#000; text-decoration: none; border-bottom:1px solid rgba(0, 0, 0, 0.2); transition: all .2s ease-in-out;}
+			a.white {color:rgba(255, 255, 255, 0.8); border-bottom:1px solid rgba(255, 255, 255, 0.3);}
 		a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
+			a.white:hover {border-bottom:1px solid rgba(255, 255, 255, 0.9);}
+		hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
 		
-		.inset {max-width:1200px; margin:auto;}
+		.intro {font-size:25px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
+		.inset {max-width:1200px; margin:auto; padding:0 30px;}
+		.inset-narrow {max-width:700px; margin:auto; padding:0 30px;}
+		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
+
 		.flex {display: flex; flex-direction: row; width:100%;}
 		.w-40 {width:40%; box-sizing: border-box;}
 		.w-60 {width:60%; box-sizing: border-box;}
 		.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
-		.caption {font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
+		
+		.caption {position:absolute; left:20px; bottom:20px; font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
 			div:hover .caption {opacity:1;}
+
+		/* header */
+		#masthead {padding:0; position:relative; }
+		#masthead-title {position:absolute; width:400px; right:10%; top:30%; transform: translateY(-30%); box-sizing: border-box; z-index: 1;}
+		#masthead-title p {color:#fff;}
+		#masthead-photo {position: relative;}
+			#masthead-photo img {width:100%;}
+		#masthead-intro {position: relative; margin-top:50px; max-width:950px;}
+		#masthead-intro p {line-height:1.7em;}
+
+		/* footer */
+		footer.inset {text-align:center; margin-top: 50px; margin-bottom: 50px; opacity:0.7;}
+		footer:hover {opacity:1;}
 
 		/* mailchimp email form style override */
 		div#mc_embed_signup {background-color:transparent;}
@@ -73,34 +101,78 @@
 		@media (prefers-color-scheme: dark) {}
 
 		/* mobile device breakpoints */
-		@media screen and (min-width: 769px) and (max-width:1024px){
-			h1 {font-size: 3em;}
-		}  /* hello desktop */
-		@media screen and (max-width: 768px) { /* most tablets */ }
-		@media screen and (max-width: 640px){}
-		@media screen and (max-width: 640px) and (orientation:landscape) {}  /* Mobile Landscape < iPhone 6 */
-		@media screen and (max-width: 480px) { /* phablet */ }
-		@media screen and (max-width: 320px) {} /* small phones (original iphone) */ 
-		@media screen and (device-aspect-ratio: 2/3) {}  /* iPhone < 5: */
+		@media screen and (max-width:1024px){
+			/* hello desktop */
+			#masthead-title {width:300px; right:5%; top: 25%; transform: translateY(-25%);}
+			#masthead h1 {font-size:3.5em;}
+		} 
+		@media screen and (max-width: 768px) {
+			/* most tablets */ 
+			#masthead-title {width:250px; right:50px; top: 15%; transform: translateY(-15%);}
+			#masthead h1 {font-size:3em;}
+		}
+		@media screen and (max-width: 640px){
+			/* header wraps */
+			#masthead-title {position: relative; transform: none; width:100%; right: unset; top: unset; text-align: center;}
+			#masthead-title p, #masthead-title a {color:unset; border-color: rgba(0, 0, 0, 0.2);}
+			#masthead-title a:hover {border-color: rgba(0, 0, 0, 0.9);}
+
+			#masthead-photo img {  object-fit: cover; width: 100%; height: 350px;}
+		}
+		@media screen and (max-width: 480px) {
+			/* phablet */
+		}
+		@media screen and (max-width: 375px) {
+			/* phones */
+		}
 	</style>
 </head>
 <body>
 
-	<section id="masthead" class="inset flex" style="margin-top:20px;">
-		<div id="mh-text" class="w-40 tvc">
-			<div style="padding-right:50px; ">
-				<h1 style="color:#e85d66;">De Vuurtoren Rond</h1>
-				<p><i style="opacity:0.7; ">Fotografie <a href="https://www.loekbuter.com" target="_blank">Loek Buter</a> • Initatief <a href="https://jasperhauser.nl" target="_blank">Jasper Hauser</a></a></i></p>
-				<p>Ter nagedachtenis aan &#8224; Reid de Jong</p>
-				<p>Op het <a href="https://www.stichtingmonumentenswf.nl/monumenten/vuurtoren/Vuurtoren%20Workum" target="_blank">Tointsje Leech</a> in Friesland leeft men nog zelfvoorszienend. Zoals wij dat allemaal in de 19de eeuw  deden. Deze foto serie heeft deze bijzondere plek en de relatie tussen natuur, mens, en dier in vier seizoenen rond de zon gedocumenteerd.</p>
+	<!-- todo:
+		- create social share preview image
+		x voeg "over" text toe
+		x optimize the header image
+		x mobile responsive
+		x cleanup code
+	-->
+	<section id="masthead">
+		<div id="masthead-photo">
+			<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 100w, photos/zomer-vuurtoren-breed-1800.jpg 1800w," alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer">
+			<div style="" class="caption">
+				Cornelie en &#8224; Reid
 			</div>
 		</div>
-		<div id="mh-photo" class="w-60">
-			<img src="photos/zomer-vuurtoren-small.jpg" alt="" style="width:100%;">
+
+		<div id="masthead-title">
+			<h1 style="color:#24567b;">De Vuurtoren Rond</h1>
+			<p>Door <a href="https://jasperhauser.nl" target="_blank" class="white">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" class="white">Loek Buter</a>
+		</div>
+
+		<div id="masthead-intro" class="inset-narrow intro">
+			<p><a href="https://www.stichtingmonumentenswf.nl/monumenten/vuurtoren/Vuurtoren%20Workum" target="_blank">‘It Toarntsje‘</a>, de Vuurtoren van het Friese Workum, staat boven op de Hylperdyk uitkijkend over het IJsselmeer. Rond de vuurtoren bouwden Reid en Cornelie hun eigen zelfvoorzienende biotoop, een wereld waarin alles draait om de relatie tussen mens, dier en de natuur.</p>
+			<p style="font-size:19px; opacity:0.7;">Ter nagedachtenis aan <a href="https://www.trouw.nl/leven/vuurtorenwachter-reid-jelles-de-jong-1934-2020-wist-wat-hij-wilde-en-volgde-onverzettelijk-zijn-eigen-pad~b3e8297b/" target="_blank">Reid de Jong</a> (&#8224; 2020)</p>
 		</div>
 	</section>
 
-	<section class="inset flex" style="margin-top:75px;">
+
+	<section class="inset-narrow" style="margin-top:50px;">
+
+		<h3>Over 'De Vuurtoren Rond'</h3>
+		<p><span class="drop-cap">I</span>s het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
+
+		<p>Met een zeis maakte Reid en Cornalie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legde een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekt ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
+		
+		<p>Met De Vuurtoren Rond documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het leven rondom ‘It Toarntsje’. Doel is om dit platform uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
+
+		<hr>
+		
+		<p><b><a href="http://www.loekbuter.com">Loek Buter</a></b> is documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
+		
+		<p><b><a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank">Darkroom</a>, en gespecialiseerd in digitaal product design en strategie. Hij studeerd fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht.</p>
+	</section>
+
+	<section class="inset flex" style="margin-top:75px; display:none;">
 		<div class="w-60" style="position: relative;">
 			<img src="photos/portret-rc-small.jpg" alt="" style="width:100%;">
 			<div style="position:absolute; left:20px; bottom:20px;" class="caption">
@@ -141,7 +213,7 @@
 		</div>
 	</section>
 
-	<section class="inset">
+	<section class="inset" style="display:none;">
 		<h2>In de media</h2>
 		<a href="https://www.nationalgeographic.nl" target="_blank">
 			<img src="ng-logo.svg" alt="National Geographic" width="200">
@@ -152,7 +224,7 @@
 		--> 
 	</section>
 
-	<section id="over" class="inset">
+	<section id="over" class="inset" style="display:none;">
 		<h2>Over het project</h2>
 		<p >Loek en Jasper hebben elkaar in 2010 leren kennen op de <a href="https://www.fotoacademie.nl">Foto Academie in Amsterdam</a> waar ze allebei gestudeerd hebben. In die periode had Jasper het wel eens gehad over zijn grootouders in Workum, en hun idyllische plek en manier van leven. Door omstandigheden is daar toen niks van gekomen. Een aantal jaar geleden hebben ze het project toch weer weten op te pakken.</p>
 
@@ -169,14 +241,14 @@
 			<h3>Jasper Hauser</h3>
 			<p>
 				<a href="mailto:info@jasperhauser.nl">info@jasperhauser.nl</a><br>
-				<a href="http://www.loekbuter.com">www.jasperhauser.nl</a><br>
+				<a href="http://www.jasperhauser.nl" target="_blank">www.jasperhauser.nl</a><br>
 				Techologie ondernemer, mede oprichter van twee software bedrijven en is gespecialiseerd in digitaal product design en stragie. Heeft een achtergrond in fotografie, en grafische vormgeving. 
 			</p>
 		</div>
 	</section>
 
 	<footer class="inset">
-		<span>© <span id="fyear">2021</span> Loek Buter &amp; Jasper Hauser. All rights reserved.</span>
+		<span>©  2019 - <span id="fyear">2021</span> <a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a> en <a href="http://www.loekbuter.com">Loek Buter</a></span>
 		<script type="text/javascript">document.getElementById('fyear').textContent = new Date().getFullYear();</script>
 	</footer>
 </body>
