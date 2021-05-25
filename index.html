@@ -43,7 +43,7 @@
 	</script>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght,00&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
 	<style type="text/css">
 		
@@ -73,10 +73,10 @@
 		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
 
 		.flex {display: flex; flex-direction: row; width:100%;}
-		.w-33 {width:33.33%; box-sizing: border-box;}
-		.w-40 {width:40%; box-sizing: border-box;}
+		.w-33 {width:33.33%; box-sizing: border-box; position:relative;}
+		.w-40 {width:40%; box-sizing: border-box; position:relative;}
 		.w-50 {width:50%; box-sizing: border-box; position:relative;}
-		.w-60 {width:60%; box-sizing: border-box;}
+		.w-60 {width:60%; box-sizing: border-box; position:relative;}
 		.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
 
 		/* header */
@@ -91,10 +91,10 @@
 		/* photos */
 		#photos {}
 		.row {margin-top:20px; position: relative;}
-		.row .w-50:first-child {margin-right:10px;}
-		.row .w-50:last-child {margin-left:10px;}
+		.row div:first-child {margin-right:10px;}
+		.row div:last-child {margin-left:10px;}
 
-		.caption {position:absolute; left:20px; bottom:20px; font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
+		.caption {position:absolute; left:20px; top:20px; font-size:0.75em; color:#fff; opacity:0.7; transition: all .2s ease-in-out;}
 			div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
 
 		/* newsletter */
@@ -122,8 +122,8 @@
 			/* most tablets */ 
 			.flex {flex-direction: column;}
 			.w-50, .w-40, .w-60 {width:100%;}
-			.row .w-50:first-child, .row .w-50:last-child {margin-left:0; margin-right:0;}
-			.row .w-50:first-child {margin-bottom:30px;}
+			.row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
+			.row div:first-child {margin-bottom:30px;}
 
 			#masthead-title {width:250px; right:50px; top: 15%; transform: translateY(-15%);}
 			#masthead h1 {font-size:3em;}
@@ -168,11 +168,11 @@
 	<section style="margin-top:50px;" id="photos">
 
 		<div class="inset-wide flex row">
-			<div class="w-50">
+			<div class="w-40">
 				<img src="photos/zomer-klaprozen-500.jpg" srcset="photos/zomer-klaprozen-500.jpg 500w, photos/zomer-klaprozen-1000.jpg 1000w" style="width:100%;" alt="Klaprozen in hey veld" loading="lazy">
 				<span class="caption">klaprozen, riet</span>
 			</div>
-			<div class="w-50">
+			<div class="w-60">
 				<img src="photos/zomer-hylperdyk-500.jpg" srcset="photos/zomer-hylperdyk-500.jpg 500w, photos/zomer-hylperdyk-1000.jpg 1000w" style="width:100%;" alt="De Hylperdyk, met de vuurtore, het IJsselmeer, de stijger en de schapen" loading="lazy">
 				<span class="caption">hylperdyk</span>
 			</div>
@@ -198,11 +198,11 @@
 			</div>
 		</div>
 		<div class="inset-wide flex row">
-			<div class="w-50">
+			<div class="w-60">
 				<img src="photos/binnen-eettafel-500.jpg" srcset="photos/binnen-eettafel-500.jpg 500w, photos/binnen-eettafel-1000.jpg 1000w" style="width:100%;" alt="Op tafel, zelfgebakken brood, kaas van de buren" loading="lazy">
 				<span class="caption">de lunch</span>
 			</div>
-			<div class="w-50">
+			<div class="w-40">
 				<img src="photos/binnen-fruit-mandje-500.jpg" srcset="photos/binnen-fruit-mandje-500.jpg 500w, photos/binnen-fruit-mandje-1000.jpg 1000w" style="width:100%;" alt="Mandje met kweeperen naast een raam" loading="lazy">
 				<span class="caption">kweeperen, quince</span>
 			</div>
@@ -241,11 +241,11 @@
 		<!-- herfst -->
 
 		<div class="inset-wide flex row">
-			<div class="w-50">
+			<div class="w-60">
 				<img src="photos/portret-reid-zeis-500.jpg" srcset="photos/portret-reid-zeis-500.jpg 500w, photos/portret-reid-zeis-1000.jpg 1000w" style="width:100%;" alt="Reid met de zeis, klaar om het gras te maaien" loading="lazy">
 				<span class="caption">Reid, de zeis</span>
 			</div>
-			<div class="w-50">
+			<div class="w-40">
 				<img src="photos/herfst-boomgaard-500.jpg" srcset="photos/herfst-boomgaard-500.jpg 500w, photos/herfst-boomgaard-1000.jpg 1000w" style="width:100%;" alt="Met een trapje de appels plukken" loading="lazy">
 				<span class="caption">de boomgaard</span>
 			</div>
@@ -281,11 +281,11 @@
 			</div>
 		</div>
 		<div class="inset-wide flex row">
-			<div class="w-50">
+			<div class="w-40">
 				<img src="photos/binnen-theelamp-500.jpg" srcset="photos/binnen-theelamp-500.jpg 500w, photos/binnen-theelamp-1000.jpg 1000w" style="width:100%;" alt="Een spiritus thee lampje" loading="lazy">
 				<span class="caption">thee lampje</span>
 			</div>
-			<div class="w-50">
+			<div class="w-60">
 				<img src="photos/winter-huisje-landschap-500.jpg" srcset="photos/winter-huisje-landschap-500.jpg 500w, photos/winter-huisje-landschap-1000.jpg 1000w" style="width:100%;" alt="Het geiten hooi huisje in een besneeuwd veld" loading="lazy">
 				<span class="caption">de geiten hooi schuur</span>
 			</div>
