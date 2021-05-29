@@ -46,16 +46,28 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
 	<style type="text/css">
-		
+		/* color variables */
 		:root {
-  			--padding-side: 30px;
+  			/* used for the title */
+  			--darkBlue: #24567b;
+  			/* background colors */
+  			--paper: #fceee1;
+  			--green: #ebf2d5;
+  			--orange: #fbe4c9;
+  			--blue: #e2effb;
 		}	
 
 		/* base styles */
-		body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:#fceee1;}
+		body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out;}
+
+		body.yellow {background-color:var(--paper);}
+		body.green {background-color:green;}
+		body.orange {background-color:orange;}
+		body.blue {background-color:blue;}
+
 		p, ul {line-height:2em;}
 		footer {padding:0 20px;}
-		h1, h2, h3, h4 {font-family: 'Georgia', serif; font-style: italic;}
+		h1, h2, h3, h4, nav span {font-family: 'Georgia', serif; font-style: italic;}
 		h1 {font-size:5em; margin:0.3em 0; padding:0;}
 		h2	{font-size:2.5em;}
 		h3	{font-size:2em;}
@@ -64,20 +76,32 @@
 		a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
 			a.white:hover {border-bottom:1px solid rgba(255, 255, 255, 0.9);}
 		hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
-		
+
+		/* detailed styles */
 		.intro {font-size:23px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
+		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
+		.caption {position:absolute; left:20px; top:20px; font-size:0.75em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
+			div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
+		
+		/* layout */
 		.inset, .inset-wide, .inset-narrow {margin:auto; padding:0 20px; box-sizing: border-box;}
 		.inset {max-width:950px;}
 		.inset-wide {max-width:1200px;}
 		.inset-narrow {max-width:700px;}
-		.drop-cap {color: #903; float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
-
 		.flex {display: flex; flex-direction: row; width:100%;}
 		.w-33 {width:33.33%; box-sizing: border-box; position:relative;}
 		.w-40 {width:40%; box-sizing: border-box; position:relative;}
 		.w-50 {width:50%; box-sizing: border-box; position:relative;}
 		.w-60 {width:60%; box-sizing: border-box; position:relative;}
 		.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
+
+		/* nav */
+		nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all .5s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 2px 6px rgba(0, 0, 0, 0.15);  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);}
+		nav.sticky {position:fixed; top:0;}
+		#nav-content {height:48px; position: relative;}
+		nav a {}
+		nav img {position: absolute; width:30px; top:9px; left:20px; }
+		nav span {position: absolute; font-size:20px; top:14px; left:60px; font-weight:bold;}
 
 		/* header */
 		#masthead {padding:0; position:relative; }
@@ -94,9 +118,6 @@
 		.row div:first-child {margin-right:10px;}
 		.row div:last-child {margin-left:10px;}
 
-		.caption {position:absolute; left:20px; top:20px; font-size:0.75em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
-			div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
-
 		/* newsletter */
 		#newsletter {margin-top:75px;}
 		#form {padding-left:50px;}
@@ -110,7 +131,7 @@
 		div#mc_embed_signup form {padding-left:unset;}
 
 		/* dark mode!! */
-		@media (prefers-color-scheme: dark) {}
+		@media (prefers-color-scheme: dark) {} /* not yet */
 
 		/* mobile device breakpoints */
 		@media screen and (max-width:1024px){
@@ -149,19 +170,29 @@
 </head>
 <body>
 
+	<div id="yellow"></div>
+	<nav id="nav-global">
+		<div id="nav-content" class="inset-wide">
+			<a href="/">
+				<img src="images/torentje.svg" alt="Beeldmerk De vuurtoren Rond">
+				<span>De Vuurtoren Rond</span>
+			</a>
+		</div>
+	</nav>
+
 	<section id="masthead">
 		<div id="masthead-photo">
 			<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 1000w, photos/zomer-vuurtoren-breed-1800.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" loading="lazy">
 		</div>
 
 		<div id="masthead-title">
-			<h1 style="color:#24567b;">De Vuurtoren Rond</h1>
-			<p>Door <a href="https://jasperhauser.nl" target="_blank" class="white">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" class="white">Loek Buter</a>
+			<h1 style="color:var(--darkBlue);">De Vuurtoren Rond</h1>
+			<p>Door <a href="https://jasperhauser.nl" target="_blank" rel="noopener" class="white">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" rel="noopener" class="white">Loek Buter</a>
 		</div>
 
 		<div id="masthead-intro" class="inset intro">
-			<p><a href="https://www.stichtingmonumentenswf.nl/monumenten/vuurtoren/Vuurtoren%20Workum" target="_blank">‘It Toarntsje‘</a>, de Vuurtoren van het Friese Workum, staat boven op de Hylperdyk uitkijkend over het IJsselmeer. Rond de vuurtoren bouwden Reid en Cornelie hun eigen zelfvoorzienende biotoop, een wereld waarin alles draait om de relatie tussen mens, dier en de natuur.</p>
-			<p style="font-size:19px; opacity:0.7;">Ter nagedachtenis aan <a href="https://www.trouw.nl/leven/vuurtorenwachter-reid-jelles-de-jong-1934-2020-wist-wat-hij-wilde-en-volgde-onverzettelijk-zijn-eigen-pad~b3e8297b/" target="_blank">Reid de Jong</a> (&#8224; 2020)</p>
+			<p><a href="https://www.stichtingmonumentenswf.nl/monumenten/vuurtoren/Vuurtoren%20Workum" target="_blank" rel="noopener">‘It Toarntsje‘</a>, de Vuurtoren van het Friese Workum, staat boven op de Hylperdyk uitkijkend over het IJsselmeer. Rond de vuurtoren bouwden Reid en Cornelie hun eigen zelfvoorzienende biotoop, een wereld waarin alles draait om de relatie tussen mens, dier en de natuur.</p>
+			<p style="font-size:19px; opacity:0.7;">Ter nagedachtenis aan <a href="https://www.trouw.nl/leven/vuurtorenwachter-reid-jelles-de-jong-1934-2020-wist-wat-hij-wilde-en-volgde-onverzettelijk-zijn-eigen-pad~b3e8297b/" target="_blank" rel="noopener">Reid de Jong</a> (&#8224; 2020)</p>
 		</div>
 	</section>
 
@@ -186,6 +217,7 @@
 
 
 		<!-- eten -->
+		<div id="green"></div>
 		
 		<div class="inset-wide flex row">
 			<div class="w-50">
@@ -215,6 +247,7 @@
 		</div>
 
 		<!-- oogst zomer -->
+		<div id="orange"></div>
 		
 		<div class="inset-wide flex row">
 			<div class="w-50">
@@ -239,7 +272,6 @@
 		</div>
 
 		<!-- herfst -->
-
 		<div class="inset-wide flex row">
 			<div class="w-60">
 				<img src="photos/portret-reid-zeis-500.jpg" srcset="photos/portret-reid-zeis-500.jpg 500w, photos/portret-reid-zeis-1000.jpg 1000w" style="width:100%;" alt="Reid met de zeis, klaar om het gras te maaien" loading="lazy">
@@ -262,6 +294,7 @@
 		</div>
 		
 		<!-- winter -->
+		<div id="blue"></div>
 
 		<div class="inset row">
 			<div style="position: relative;">
@@ -294,13 +327,12 @@
 	</section>
 	
 
-	<section >
+	<section id="encore">
 
+		<!-- encore -->
 		<div class="inset-narrow" style="margin-top:50px; margin-bottom:50px;">
 			<p>Met De Vuurtoren Rond documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
 		</div>
-
-		<!-- encore -->
 
 		<div class="inset-wide flex row">
 			<div class="w-50">
@@ -316,7 +348,7 @@
 		<div class="inset-narrow" style="margin-top:50px;">
 			<p><b><a href="http://www.loekbuter.com">Loek Buter</a></b> is documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
 			
-			<p><b><a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht. — Jasper is de kleinzoon van &#8224; Reid de Jong.</p>
+			<p><b><a href="http://www.jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank" rel="noopener">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht. — Jasper is de kleinzoon van &#8224; Reid de Jong.</p>
 		</div>
 	</section>
 
@@ -356,8 +388,67 @@
 	</section>
 
 	<footer class="inset">
-		<span>©  2019 - <span id="fyear">2021</span> <a href="http://www.jasperhauser.nl" target="_blank">Jasper Hauser</a> en <a href="http://www.loekbuter.com">Loek Buter</a></span>
+		<span>©  2019 - <span id="fyear">2021</span> <a href="http://www.jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a> en <a href="http://www.loekbuter.com">Loek Buter</a></span>
 		<script type="text/javascript">document.getElementById('fyear').textContent = new Date().getFullYear();</script>
 	</footer>
+
+	<script type="text/javascript">
+
+		// scroll &	resize event listener
+		window.addEventListener('resize', throttle(onScroll, 200));
+		window.addEventListener('scroll', throttle(onScroll, 200));
+
+		// let's make the events not eat all the resources
+		function throttle(fn, wait) {
+		  var time = Date.now();
+		  return function() {
+		    if ((time + wait - Date.now()) < 0) {
+		      fn();
+		      time = Date.now();
+		    }
+		  }
+		}
+		
+		function onScroll(){
+			// scroll position
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			console.log(scrollTop+0); 
+
+			// var docHeight = document.body.clientHeight;
+
+			// animate background color
+			var yellow = document.getElementById("yellow");
+			var green = document.getElementById("green");
+			var orange = document.getElementById("orange");
+			var blue = document.getElementById("blue");
+			var encore = document.getElementById("encore");
+			if (window.pageYOffset >= yellow.offsetTop & window.pageYOffset < green.offsetTop){
+				document.body.style.backgroundColor = "var(--paper)";
+				document.getElementById("nav-global").style.backgroundColor = "var(--paper)";
+			} else if (window.pageYOffset >= green.offsetTop & window.pageYOffset < orange.offsetTop){
+				document.body.style.backgroundColor = "var(--green)";
+				document.getElementById("nav-global").style.backgroundColor = "var(--green)";
+			} else if (window.pageYOffset >= orange.offsetTop & window.pageYOffset < blue.offsetTop){
+				document.body.style.backgroundColor = "var(--orange)";
+				document.getElementById("nav-global").style.backgroundColor = "var(--orange)";
+			} else if (window.pageYOffset >= blue.offsetTop & window.pageYOffset < encore.offsetTop){
+				document.body.style.backgroundColor = "var(--blue)";
+				document.getElementById("nav-global").style.backgroundColor = "var(--blue)";
+			} else if (window.pageYOffset >= encore.offsetTop){
+				document.body.style.backgroundColor = "var(--paper)";
+				document.getElementById("nav-global").style.backgroundColor = "var(--paper)";
+			}
+
+			// nav title bar show and hide
+			var mastHeight = document.getElementById("masthead-photo").offsetHeight;
+			// add/remove sticky to show the nav
+			if (window.pageYOffset >= mastHeight){
+				document.getElementById("nav-global").classList.add("sticky");
+			} else if (window.pageYOffset < mastHeight) {
+				document.getElementById("nav-global").classList.remove("sticky");
+			}
+		}
+
+	</script>
 </body>
 </html>
