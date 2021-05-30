@@ -113,6 +113,16 @@
 		.row div:first-child {margin-right:10px;}
 		.row div:last-child {margin-left:10px;}
 
+		/* card */
+		#links {display: flex; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
+		.card {display: block; max-width:400px; border-bottom:none; box-sizing: border-box; margin:0 10px;}
+		.card:hover {border-bottom:none;}
+		.card-image {display: block; width:100%;}
+		.card-image img {width:100%;}
+		.card-text {display:block; margin-top:10px;}
+		.card-title {font-weight:bold; display:block;}
+		.card-source {opacity:0.9; font-size:0.7em; display:block; margin:5px 0;}
+
 		/* newsletter */
 		#newsletter {margin-top:75px;}
 		#form {padding-left:50px;}
@@ -190,7 +200,6 @@
 </head>
 <body>
 
-	<div id="yellow"></div>
 	<nav id="nav-global">
 		<div id="nav-content" class="inset-wide">
 			<a href="/">
@@ -200,6 +209,7 @@
 		</div>
 	</nav>
 
+	<div id="yellow"></div>
 	<section id="masthead">
 		<div id="masthead-photo">
 			<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 1000w, photos/zomer-vuurtoren-breed-1800.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" loading="lazy">
@@ -350,8 +360,31 @@
 	<section id="encore">
 
 		<!-- encore -->
-		<div class="inset-narrow" style="margin-top:50px; margin-bottom:50px;">
-			<p>Met De Vuurtoren Rond documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
+		<div class="inset-narrow" style="margin-top:70px; margin-bottom:50px;">
+			<h3>Over De Vuutoren Rond</h3>
+			<p>Met dit project documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
+		</div>
+
+		<div id="links" class="inset-narrow">
+			<a class="card" href="https://www.natgeoshop.nl/magazine" target="_blank" rel="noopener">
+				<span class="card-image">
+					<img src="images/ng.jpg" srcset="images/ng.jpg 400w, images/ng@2x.jpg 800w">
+				</span>
+				<span class="card-text">
+					<span class="card-source">National Geographic Magazine - natgeoshop.nl</span>
+					<span class="card-title">Zelfvoorzienend leven rond de vuurtoren van Workum</span>
+				</span>
+			</a>
+
+			<a class="card" href="https://www.bnnvara.nl/floortjeblijfthier/videos/554003" target="_blank" rel="noopener">
+				<span class="card-image">
+					<img src="images/floortje.jpg" srcset="images/floortje.jpg 400w, images/floortje@2x.jpg 800w">
+				</span>
+				<span class="card-text">
+					<span class="card-source">Floortje blijft hier - bnnvara.nl</span>
+					<span class="card-title">Op bezoek bij Reid &amp; Cornelie</span>
+				</span>
+			</a>
 		</div>
 
 		<div class="inset-wide flex row">
@@ -366,7 +399,8 @@
 		</div>
 		 
 		<div class="inset-narrow" style="margin-top:50px;">
-			<p><b><a href="http://www.loekbuter.com">Loek Buter</a></b> is documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
+			<h3>De Makers</h3>
+			<p><b><a href="http://www.loekbuter.com" target="_blank" rel="noopener">Loek Buter</a></b> is documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
 			
 			<p><b><a href="http://www.jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank" rel="noopener">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht. — Jasper is de kleinzoon van &#8224; Reid de Jong.</p>
 		</div>
