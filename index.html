@@ -116,9 +116,10 @@
 		/* card */
 		#links {display: flex; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
 		.card {display: block; max-width:400px; border-bottom:none; box-sizing: border-box; margin:0 10px;}
-		.card:hover {border-bottom:none;}
+		.card:hover {border-bottom:none; transform: scale(1.02); transition: all .2s ease-in-out; }
+		.card:hover {color:var(--red);}
 		.card-image {display: block; width:100%;}
-		.card-image img {width:100%;}
+		.card-image img {width:100%; border-radius:4px; overflow: hidden;}
 		.card-text {display:block; margin-top:10px;}
 		.card-title {font-weight:bold; display:block;}
 		.card-source {opacity:0.9; font-size:0.7em; display:block; margin:5px 0;}
