@@ -45,7 +45,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
-	<style type="text/css">
+	<style>
 		/* color variables */
 		:root {
   			/* used for the type */
@@ -95,7 +95,6 @@
 		nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all 1.0s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 2px 6px rgba(0, 0, 0, 0.15);}
 		nav.sticky {position:fixed; top:0;}
 		#nav-content {height:48px; position: relative;}
-		nav a {}
 		nav img {position: absolute; width:30px; top:9px; left:20px; }
 		nav span {position: absolute; font-size:20px; top:14px; left:60px; font-weight:bold;}
 
@@ -203,7 +202,7 @@
 
 	<nav id="nav-global">
 		<div id="nav-content" class="inset-wide">
-			<a href="/">
+			<a href="#" id="logo">
 				<img src="images/torentje.svg" alt="Beeldmerk De vuurtoren Rond">
 				<span>De Vuurtoren Rond</span>
 			</a>
@@ -414,6 +413,7 @@
 				Cornelie en &#8224; Reid
 			</div>
 		</div>
+
 		<div class="w-40 tvc">
 			<div id="form">
 				<h3 style="color: #61738c;">Blijf op de hoogte</h3>
@@ -444,10 +444,10 @@
 
 	<footer class="inset">
 		<span>©  2019 - <span id="fyear">2021</span> <a href="http://www.jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a> en <a href="http://www.loekbuter.com">Loek Buter</a></span>
-		<script type="text/javascript">document.getElementById('fyear').textContent = new Date().getFullYear();</script>
+		<script>document.getElementById('fyear').textContent = new Date().getFullYear();</script>
 	</footer>
 
-	<script type="text/javascript">
+	<script>
 
 		// scroll &	resize event listener
 		window.addEventListener('resize', throttle(onScroll, 200));
@@ -467,7 +467,7 @@
 		function onScroll(){
 			// scroll position
 			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			console.log(scrollTop+0); 
+			// console.log(scrollTop+0); 
 
 			// var docHeight = document.body.clientHeight;
 
