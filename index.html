@@ -45,79 +45,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
+	<link href="/styles.css" rel="stylesheet">
 	<style>
-		/* color variables */
-		:root {
-  			/* used for the type */
-  			--darkBlue: #24567b;
-  			--red: #eb5b6a;
-  			/* background colors */
-  			--paper: #fceee1;
-  			--green: #ebf2d5;
-  			--orange: #fbe4c9;
-  			--blue: #e2effb;
-		}
-
-		/* base styles */
-		body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out;}
-
-		p, ul {line-height:2em;}
-		footer {padding:0 20px;}
-		h1, h2, h3, h4, nav span {font-family: 'Georgia', serif; font-style: italic;}
-		h1 {font-size:5em; margin:0.3em 0; padding:0;}
-		h2	{font-size:2.5em;}
-		h3	{font-size:2em;}
-		a {color:#000; text-decoration: none; border-bottom:1px solid rgba(0, 0, 0, 0.2); transition: all .2s ease-in-out;}
-			a.white {color:rgba(255, 255, 255, 0.8); border-bottom-color:rgba(255, 255, 255, 0.3);}
-		a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
-			a.white:hover {border-bottom-color:rgba(255, 255, 255, 0.9);}
-		hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
-		
-		input, button {display: block; font-size: 15px; border-radius: 6px;}
-		input {padding:8px 8px; box-sizing: border-box; margin-top:10px; margin-bottom:10px; border: none;}
-			input:focus {outline: 1px solid var(--darkBlue);}
-		button {background-color: var(--darkBlue); color: #fff; padding:10px 15px; border: none;}
-
-		/* detailed styles */
-		.intro {font-size:23px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
-		.drop-cap {color: var(--red); float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
-		.caption {position:absolute; left:20px; top:20px; font-size:0.75em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
-			div div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
-		
-		/* layout */
-		.inset, .inset-wide, .inset-narrow {margin:auto; padding:0 20px; box-sizing: border-box;}
-		.inset {max-width:950px;}
-		.inset-wide {max-width:1200px;}
-		.inset-narrow {max-width:700px;}
-		.flex {display: flex; flex-direction: row; width:100%;}
-		.w-33 {width:33.33%; box-sizing: border-box; position:relative;}
-		.w-40 {width:40%; box-sizing: border-box; position:relative;}
-		.w-50 {width:50%; box-sizing: border-box; position:relative;}
-		.w-60 {width:60%; box-sizing: border-box; position:relative;}
-		.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
-
-		/* nav */
-		nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all 1.0s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 2px 6px rgba(0, 0, 0, 0.15);}
-		nav.sticky {position:fixed; top:0;}
-		#nav-content {height:48px; position: relative;}
-		nav img {position: absolute; width:30px; top:9px; left:20px; }
-		nav span {position: absolute; font-size:20px; top:12px; left:60px; font-weight:bold;}
-		#nav-menu {position: absolute; right:20px; top:9px; margin:0;}
-		#nav-menu li {display: inline; list-style: none; margin-left:8px;}
-
 		/* header */
 		#masthead {padding:0; position:relative; }
 		#masthead-title {color:#fff; position:absolute; width:400px; right:10%; top:30%; transform: translateY(-30%); box-sizing: border-box; z-index: 1;}
 		#masthead-photo {position: relative; background-color: #7095b9; line-height: 0;}
 			#masthead-photo img {width:100%; object-fit: cover;}
+		
 		#masthead-intro {position: relative; margin-top:50px;}
 		#masthead-intro p {line-height:1.8em;}
-
-		/* photos */
-		#photos {}
-		.row {margin-top:20px; position: relative;}
-		.row div:first-child {margin-right:10px;}
-		.row div:last-child {margin-left:10px;}
 
 		/* media cards */
 		#links {display: flex; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
@@ -130,36 +67,9 @@
 		.card-title {font-weight:bold; display:block;}
 		.card-source {opacity:0.9; font-size:0.7em; display:block; margin:5px 0;}
 
-		/* newsletter */
-		#newsletter {margin-top:75px;}
-		#form {padding-left:50px;}
-
-		/* footer */
-		footer.inset {text-align:center; margin-top: 50px; margin-bottom: 50px; opacity:0.7;}
-		footer:hover {opacity:1;}
-
-		/* mailchimp email form style override */
-		div#mc_embed_signup {background-color:transparent;}
-		div#mc_embed_signup form {padding-left:unset;}
-
 		/* dark mode!! */
 		@media (prefers-color-scheme: dark) {
-			/* base styles */
-			body {color: #fff;}
-			a, #masthead-title a.white {color:rgba(255, 255, 255, 0.8); border-bottom:1px solid rgba(255, 255, 255, 0.3);}
-			a:hover, #masthead-title a.white:hover {border-bottom:1px solid rgba(255, 255, 255, 0.9);}
-			
-			/* dark mode base colors */
-			:root {
-				/* used for the type */
-  				--darkBlue: #396c92;
-  				--red: #eb5b6a;
-				/* background colors */
-	  			--paper: #2d2823;
-	  			--green: #192111;
-	  			--orange: #2b150c;
-	  			--blue: #1a2633;
-	  		}
+
 		}
 
 		/* mobile device breakpoints */
@@ -171,12 +81,6 @@
 		} 
 		@media screen and (max-width: 768px) {
 			/* most tablets */ 
-			.flex {flex-direction: column;}
-			.w-50, .w-40, .w-60 {width:100%;}
-			.row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
-			.row div:first-child {margin-bottom:20px;}
-			#nav-menu {display: none;}
-
 			#masthead-title {width:250px; right:50px; top: 15%; transform: translateY(-15%);}
 			#masthead-photo img {height: 680px;}
 			#masthead h1 {font-size:3em;}
@@ -195,7 +99,6 @@
 
 			#links {flex-direction:column;}
 			.card {max-width: 100%; margin-bottom: 40px;}
-			
 		}
 		@media screen and (max-width: 640px) and (prefers-color-scheme: dark){
 			#masthead-title p {color: #fff;}
@@ -205,8 +108,6 @@
 
 		@media screen and (max-width: 480px) {
 			/* phablet */
-			input, button {width:100%;}
-
 		}
 		@media screen and (max-width: 375px) {
 			/* phones */
@@ -231,308 +132,316 @@
 		</div>
 	</nav>
 
-	<div id="yellow"></div>
-	<section id="masthead">
-		<div id="masthead-photo">
-			<picture>
-				<source type="image/webp" srcset="photos/zomer-vuurtoren-breed-720.webp 720w, photos/zomer-vuurtoren-breed-1000.webp 1000w, photos/zomer-vuurtoren-breed-1800.webp 1800w">
-				<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 1000w, photos/zomer-vuurtoren-breed-1800.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" height="960">
-			</picture>
-		</div>
+	<article>
+		<section id="masthead">
+			<div id="yellow"></div>
+			<div id="masthead-photo">
+				<picture>
+					<source type="image/webp" srcset="photos/zomer-vuurtoren-breed-720.webp 720w, photos/zomer-vuurtoren-breed-1000.webp 1000w, photos/zomer-vuurtoren-breed-1800.webp 1800w">
+					<img src="photos/zomer-vuurtoren-breed-720.jpg" srcset="photos/zomer-vuurtoren-breed-720.jpg 720w, photos/zomer-vuurtoren-breed-1000.jpg 1000w, photos/zomer-vuurtoren-breed-1800.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" height="960">
+				</picture>
+			</div>
 
-		<div id="masthead-title">
-			<h1 style="color:var(--darkBlue);">De Vuurtoren Rond</h1>
-			<p>Door <a href="https://jasperhauser.nl" target="_blank" rel="noopener" class="white">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" rel="noopener" class="white">Loek Buter</a>
-		</div>
+			<div id="masthead-title">
+				<h1 style="color:var(--darkBlue); font-size: 5em;">De Vuurtoren Rond</h1>
+				<p>Door <a href="https://jasperhauser.nl" target="_blank" rel="noopener" class="white">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" rel="noopener" class="white">Loek Buter</a>
+			</div>
 
-		<div id="masthead-intro" class="inset intro">
-			<p><a href="https://www.stichtingmonumentenswf.nl/monumenten/vuurtoren/Vuurtoren%20Workum" target="_blank" rel="noopener">‘It Toarntsje‘</a>, de Vuurtoren van het Friese Workum, staat boven op de Hylperdyk uitkijkend over het IJsselmeer. Rond de vuurtoren bouwden Reid en Cornelie hun eigen zelfvoorzienende biotoop, een wereld waarin alles draait om de relatie tussen mens, dier en de natuur.</p>
-			<p style="font-size:19px; opacity:0.7;">Ter nagedachtenis aan <a href="https://www.trouw.nl/leven/vuurtorenwachter-reid-jelles-de-jong-1934-2020-wist-wat-hij-wilde-en-volgde-onverzettelijk-zijn-eigen-pad~b3e8297b/" target="_blank" rel="noopener">Reid de Jong</a> (&#8224; 2020)</p>
-		</div>
-	</section>
+			<div id="masthead-intro" class="inset intro">
+				<p><a href="https://www.stichtingmonumentenswf.nl/monumenten/vuurtoren/Vuurtoren%20Workum" target="_blank" rel="noopener">‘It Toarntsje‘</a>, de Vuurtoren van het Friese Workum, staat boven op de Hylperdyk uitkijkend over het IJsselmeer. Rond de vuurtoren bouwden Reid en Cornelie hun eigen zelfvoorzienende biotoop, een wereld waarin alles draait om de relatie tussen mens, dier en de natuur.</p>
+				<p style="font-size:19px; opacity:0.7;">Ter nagedachtenis aan <a href="https://www.trouw.nl/leven/vuurtorenwachter-reid-jelles-de-jong-1934-2020-wist-wat-hij-wilde-en-volgde-onverzettelijk-zijn-eigen-pad~b3e8297b/" target="_blank" rel="noopener">Reid de Jong</a> (&#8224; 2020)</p>
+			</div>
+		</section>
 
-	<section style="margin-top:50px;" id="photos">
+		<section style="margin-top:50px;" id="photos">
+			<!-- intro -->
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-veld-500.webp 500w, photos/zomer-veld-1000.webp 1000w">
+						<img src="photos/zomer-veld-500.jpg" srcset="photos/zomer-veld-500.jpg 500w, photos/zomer-veld-1000.jpg 1000w" style="width:100%;" alt="Klaprozen in hey veld" loading="lazy">
+					</picture>
+					<span class="caption">Zeldzame orgidee in het veld, de schuur op de achtergrond</span>
+				</div>
+				<div class="w-60">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-hylperdyk-500.webp 500w, photos/zomer-hylperdyk-1000.webp 1000w">
+						<img src="photos/zomer-hylperdyk-500.jpg" srcset="photos/zomer-hylperdyk-500.jpg 500w, photos/zomer-hylperdyk-1000.jpg 1000w" style="width:100%;" alt="De Hylperdyk, met de vuurtore, het IJsselmeer, de stijger en de schapen" loading="lazy">
+					</picture>
+					<span class="caption">De Hylperdyk</span>
+				</div>
+			</div>
 
-		<div class="inset-wide flex row">
-			<div class="w-40">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-veld-500.webp 500w, photos/zomer-veld-1000.webp 1000w">
-					<img src="photos/zomer-veld-500.jpg" srcset="photos/zomer-veld-500.jpg 500w, photos/zomer-veld-1000.jpg 1000w" style="width:100%;" alt="Klaprozen in hey veld" loading="lazy">
-				</picture>
-				<span class="caption">Zeldzame orgidee in het veld, de schuur op de achtergrond</span>
-			</div>
-			<div class="w-60">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-hylperdyk-500.webp 500w, photos/zomer-hylperdyk-1000.webp 1000w">
-					<img src="photos/zomer-hylperdyk-500.jpg" srcset="photos/zomer-hylperdyk-500.jpg 500w, photos/zomer-hylperdyk-1000.jpg 1000w" style="width:100%;" alt="De Hylperdyk, met de vuurtore, het IJsselmeer, de stijger en de schapen" loading="lazy">
-				</picture>
-				<span class="caption">De Hylperdyk</span>
-			</div>
-		</div>
+			<div id="intro"></div>
+			<div class="inset-narrow" style="margin-top:50px; margin-bottom:50px;">
+				<p>Is het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
 
-		<div id="intro"></div>
-		<div class="inset-narrow" style="margin-top:50px; margin-bottom:50px;">
-			<p><span class="drop-cap">I</span>s het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
+				<p>Met een zeis maakten Reid en Cornelie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legden een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekken ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. En houden ze de bedstee warm met op de houtkachel verwarmde stenen in sokken. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
+			</div>
+		</section>
 
-			<p>Met een zeis maakten Reid en Cornelie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legden een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekken ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. En houden ze de bedstee warm met op de houtkachel verwarmde stenen in sokken. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
-		</div>
+		<section>
+			<!-- eten -->
+			<div id="green"></div>
 
-		<!-- eten -->
-		<div id="green"></div>
-		
-		<div class="inset-wide flex row">
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/lente-tuin-c-500.webp 500w, photos/lente-tuin-c-1000.webp 1000w">
-					<img src="photos/lente-tuin-c-500.jpg" srcset="photos/lente-tuin-c-500.jpg 500w, photos/lente-tuin-c-1000.jpg 1000w" style="width:100%;" alt="Cornelie in de moestuin" loading="lazy">
-				</picture>
-				<span class="caption">Cornelie in de moestuin</span>
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/lente-tuin-c-500.webp 500w, photos/lente-tuin-c-1000.webp 1000w">
+						<img src="photos/lente-tuin-c-500.jpg" srcset="photos/lente-tuin-c-500.jpg 500w, photos/lente-tuin-c-1000.jpg 1000w" style="width:100%;" alt="Cornelie in de moestuin" loading="lazy">
+					</picture>
+					<span class="caption">Cornelie in de moestuin</span>
+				</div>
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-kas-500.webp 500w, photos/zomer-kas-1000.webp 1000w">
+						<img src="photos/zomer-kas-500.jpg" srcset="photos/zomer-kas-500.jpg 500w, photos/zomer-kas-1000.jpg 1000w" style="width:100%;" alt="De kas in de zomer, tomaten en courgetten" loading="lazy">
+					</picture>
+					<span class="caption">De kas</span>
+				</div>
 			</div>
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-kas-500.webp 500w, photos/zomer-kas-1000.webp 1000w">
-					<img src="photos/zomer-kas-500.jpg" srcset="photos/zomer-kas-500.jpg 500w, photos/zomer-kas-1000.jpg 1000w" style="width:100%;" alt="De kas in de zomer, tomaten en courgetten" loading="lazy">
-				</picture>
-				<span class="caption">De kas</span>
+			<div class="inset-wide flex row">
+				<div class="w-60">
+					<picture>
+						<source type="image/webp" srcset="photos/binnen-noten-500.webp 500w, photos/binnen-noten-1000.webp 1000w">
+						<img src="photos/binnen-noten-500.jpg" srcset="photos/binnen-noten-500.jpg 500w, photos/binnen-noten-1000.jpg 1000w" style="width:100%;" alt="Reid zit walnoten te pellen" loading="lazy">
+					</picture>
+					<span class="caption">Walnoten pellen</span>
+				</div>
+				<div class="w-40">
+					<picture>
+						<source type="image/webp" srcset="photos/binnen-fruit-mandje-500.webp 500w, photos/binnen-fruit-mandje-1000.webp 1000w">
+						<img src="photos/binnen-fruit-mandje-500.jpg" srcset="photos/binnen-fruit-mandje-500.jpg 500w, photos/binnen-fruit-mandje-1000.jpg 1000w" style="width:100%;" alt="Mandje met kweeperen naast een raam" loading="lazy">
+					</picture>
+					<span class="caption">Kweeperen</span>
+				</div>
 			</div>
-		</div>
-		<div class="inset-wide flex row">
-			<div class="w-60">
-				<picture>
-					<source type="image/webp" srcset="photos/binnen-noten-500.webp 500w, photos/binnen-noten-1000.webp 1000w">
-					<img src="photos/binnen-noten-500.jpg" srcset="photos/binnen-noten-500.jpg 500w, photos/binnen-noten-1000.jpg 1000w" style="width:100%;" alt="Reid zit walnoten te pellen" loading="lazy">
-				</picture>
-				<span class="caption">Walnoten pellen</span>
-			</div>
-			<div class="w-40">
-				<picture>
-					<source type="image/webp" srcset="photos/binnen-fruit-mandje-500.webp 500w, photos/binnen-fruit-mandje-1000.webp 1000w">
-					<img src="photos/binnen-fruit-mandje-500.jpg" srcset="photos/binnen-fruit-mandje-500.jpg 500w, photos/binnen-fruit-mandje-1000.jpg 1000w" style="width:100%;" alt="Mandje met kweeperen naast een raam" loading="lazy">
-				</picture>
-				<span class="caption">Kweeperen</span>
-			</div>
-		</div>
 
-		<!-- oogst zomer -->
-		<div id="orange"></div>
+			<!-- oogst zomer -->
+			<div id="orange"></div>
 
-		<div class="inset row">
-			<div style="position: relative;">
-				<picture>
-					<source type="image/webp" srcset="photos/binnen-keuken-700.webp 700w, photos/binnen-keuken-1400.webp 1400w">
-					<img src="photos/binnen-keuken-700.jpg" srcset="photos/binnen-keuken-700.jpg 700w, photos/binnen-keuken-1400.jpg 1400w" style="width:100%;" alt="De gele keuken in de vuurtoren, met handpopm voor het eigen grond water" loading="lazy">
-				</picture>
-				<span class="caption">De vuurtoren keuken, met grondwater handpomp</span>
+			<div class="inset row">
+				<div style="position: relative;">
+					<picture>
+						<source type="image/webp" srcset="photos/binnen-keuken-700.webp 700w, photos/binnen-keuken-1400.webp 1400w">
+						<img src="photos/binnen-keuken-700.jpg" srcset="photos/binnen-keuken-700.jpg 700w, photos/binnen-keuken-1400.jpg 1400w" style="width:100%;" alt="De gele keuken in de vuurtoren, met handpopm voor het eigen grond water" loading="lazy">
+					</picture>
+					<span class="caption">De vuurtoren keuken, met grondwater handpomp</span>
+				</div>
 			</div>
-		</div>
-		
-		<div class="inset-wide flex row">
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/buiten-bijen-500.webp 500w, photos/buiten-bijen-1000.webp 1000w">
-					<img src="photos/buiten-bijen-500.jpg" srcset="photos/buiten-bijen-500.jpg 500w, photos/buiten-bijen-1000.jpg 1000w" style="width:100%;" alt="Honing wordt geoogst" loading="lazy">
-				</picture>
-				<span class="caption">Een honingraad</span>
-			</div>
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/binnen-bonen-500.webp 500w, photos/binnen-bonen-1000.webp 1000w">
-					<img src="photos/binnen-bonen-500.jpg" srcset="photos/binnen-bonen-500.jpg 500w, photos/binnen-bonen-1000.jpg 1000w" style="width:100%;" alt="Keweeperen in een madnje" loading="lazy">
-				</picture>
-				<span class="caption">De bonen voorraad</span>
-			</div>
-		</div>
-		<div class="inset-wide flex row">
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-duiven-500.webp 500w, photos/zomer-duiven-1000.webp 1000w">
-					<img src="photos/zomer-duiven-500.jpg" srcset="photos/zomer-duiven-500.jpg 500w, photos/zomer-duiven-1000.jpg 1000w" style="width:100%;" alt="De duiventil, bovenin het kippenhok" loading="lazy">
-				</picture>
-				<span class="caption">De duiventil</span>
-			</div>
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/buiten-groente-mandje-500.webp 500w, photos/buiten-groente-mandje-1000.webp 1000w">
-					<img src="photos/buiten-groente-mandje-500.jpg" srcset="photos/buiten-groente-mandje-500.jpg 500w, photos/buiten-groente-mandje-1000.jpg 1000w" style="width:100%;" alt="Elke dag wordt er vanuit de moestuin geplukt en gegeten" loading="lazy">
-				</picture>
-				<span class="caption">De dag oogst</span>
-			</div>
-		</div>
-
-		<!-- herfst -->
-		<div class="inset-wide flex row">
-			<div class="w-60">
-				<picture>
-					<source type="image/webp" srcset="photos/portret-reid-zeis-500.webp 500w, photos/portret-reid-zeis-1000.webp 1000w">
-					<img src="photos/portret-reid-zeis-500.jpg" srcset="photos/portret-reid-zeis-500.jpg 500w, photos/portret-reid-zeis-1000.jpg 1000w" style="width:100%;" alt="Reid met de zeis, klaar om het gras te maaien" loading="lazy">
-				</picture>
-				<span class="caption">Reid met zijn zeis</span>
-			</div>
-			<div class="w-40">
-				<picture>
-					<source type="image/webp" srcset="photos/herfst-boomgaard-500.webp 500w, photos/herfst-boomgaard-1000.webp 1000w">
-					<img src="photos/herfst-boomgaard-500.jpg" srcset="photos/herfst-boomgaard-500.jpg 500w, photos/herfst-boomgaard-1000.jpg 1000w" style="width:100%;" alt="Met een trapje de appels plukken" loading="lazy">
-				</picture>
-				<span class="caption">De boomgaard</span>
-			</div>
-		</div>
-
-		<!-- winter -->
-		<div id="blue"></div>
-
-		<div class="inset-wide flex row">
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/herfst-meertje-500.webp 500w, photos/herfst-meertje-1000.webp 1000w">
-					<img src="photos/herfst-meertje-500.jpg" srcset="photos/herfst-meertje-500.jpg 500w, photos/herfst-meertje-1000.jpg 1000w" style="width:100%;" alt="Zonsondergang over het meertje achter de vuurtoren" loading="lazy">
-				</picture>
-				<span class="caption">Het meertje</span>
-			</div>
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/herfst-reid-bed-500.webp 500w, photos/herfst-reid-bed-1000.webp 1000w">
-					<img src="photos/herfst-reid-bed-500.jpg" srcset="photos/herfst-reid-bed-500.jpg 500w, photos/herfst-reid-bed-1000.jpg 1000w" style="width:100%;" alt="Reid knapt een uiltje op het bed in de vuurtoren samen met de poes" loading="lazy">
-				</picture>
-				<span class="caption">Een uiltje knappen</span>
-			</div>
-		</div>
-
-		<div class="inset-wide flex row">
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/winter-wak-500.webp 500w, photos/winter-wak-1000.webp 1000w">
-					<img src="photos/winter-wak-500.jpg" srcset="photos/winter-wak-500.jpg 500w, photos/winter-wak-1000.jpg 1000w" style="width:100%;" alt="Het sloep de WK44, op de besneeuwde Hylperyk" loading="lazy">
-				</picture>
-				<span class="caption">Een wak</span>
-			</div>
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/winter-geiten-500.webp 500w, photos/winter-geiten-1000.webp 1000w">
-					<img src="photos/winter-geiten-500.jpg" srcset="photos/winter-geiten-500.jpg 500w, photos/winter-geiten-1000.jpg 1000w" style="width:100%;" alt="De geiten krijgen takken te eten in een besneeuwd veld" loading="lazy">
-				</picture>
-				<span class="caption">De geiten</span>
-			</div>
-		</div>
-
-		<div class="inset row">
-			<div style="position: relative;">
-				<picture>
-					<source type="image/webp" srcset="photos/winter-meertje-700.webp 700w, photos/winter-meertje-1400.webp 1400w">
-					<img src="photos/winter-meertje-700.jpg" srcset="photos/winter-meertje-700.jpg 700w, photos/winter-meertje-1400.jpg 1400w" style="width:100%;" alt="Cornelie met slee lopend over het bevroren meertje" loading="lazy">
-				</picture>
-				<span class="caption">IJs pret</span>
-			</div>
-		</div>
-
-		<div class="inset-wide flex row">
-			<div class="w-40">
-				<picture>
-					<source type="image/webp" srcset="photos/winter-toren-500.webp 500w, photos/winter-toren-1000.webp 1000w">
-					<img src="photos/winter-toren-500.jpg" srcset="photos/winter-toren-500.jpg 500w, photos/winter-toren-1000.jpg 1000w" style="width:100%;" alt="Een spiritus thee lampje" loading="lazy">
-				</picture>
-				<span class="caption">De vuurtoren bij nacht</span>
-			</div>
-			<div class="w-60">
-				<picture>
-					<source type="image/webp" srcset="photos/winter-binnen-500.webp 500w, photos/winter-binnen-1000.webp 1000w">
-					<img src="photos/winter-binnen-500.jpg" srcset="photos/winter-binnen-500.jpg 500w, photos/winter-binnen-1000.jpg 1000w" style="width:100%;" alt="Het geiten hooi huisje in een besneeuwd veld" loading="lazy">
-				</picture>
-				<span class="caption">Cornelie thuis</span>
-			</div>
-		</div>
-		
-	</section>
-	
-	<div id="over"></div>
-	<section id="encore">
-		<!-- encore -->
-		<div class="inset-narrow" style="margin-top:70px; margin-bottom:50px;">
-			<h2>Over De Vuurtoren Rond</h2>
-			<p>Met dit project documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
-		</div>
-
-		<!-- in de media kaartjes -->
-		<div id="links" class="inset">
-			<a class="card" href="https://www.volkskrant.nl/kijkverder/v/2021/rond-de-vuurtoren~v457945/" target="_blank" rel="noopener">
-				<span class="card-image">
-					<img src="images/vk.jpg" srcset="images/vk.jpg 400w, images/vk@2x.jpg 800w" alt="Volkskrant foto reportage November 2021" loading="lazy">
-				</span>
-				<span class="card-text">
-					<span class="card-source">de Volkskrant - volkskrant.nl</span>
-					<span class="card-title">Rond de Vuurtoren - 11/2021</span>
-				</span>
-			</a>
-
-			<a class="card" href="https://www.natgeoshop.nl/magazine" target="_blank" rel="noopener">
-				<span class="card-image">
-					<img src="images/ng.jpg" srcset="images/ng.jpg 400w, images/ng@2x.jpg 800w" alt="Juni editie van de Nederlandse National Geographic met foto van de vuurtoren" loading="lazy">
-				</span>
-				<span class="card-text">
-					<span class="card-source">National Geographic Magazine - natgeoshop.nl</span>
-					<span class="card-title">Autarkie als ambacht - 06/2021</span>
-				</span>
-			</a>
-
-			<a class="card" href="https://www.bnnvara.nl/floortjeblijfthier/videos/554003" target="_blank" rel="noopener">
-				<span class="card-image">
-					<img src="images/floortje.jpg" srcset="images/floortje.jpg 400w, images/floortje@2x.jpg 800w" alt="Floortje Dessing van het tv programme 'floortje blijft hier' op bezoek bij Reid" loading="lazy">
-				</span>
-				<span class="card-text">
-					<span class="card-source">Floortje blijft hier - bnnvara.nl</span>
-					<span class="card-title">Op bezoek bij Reid &amp; Cornelie 11/2020</span>
-				</span>
-			</a>
-		</div>
-
-		<div class="inset-wide flex row">
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/portret-cornelie-500.webp 500w, photos/portret-cornelie-1000.webp 1000w">
-					<img src="photos/portret-cornelie-500.jpg" srcset="photos/portret-cornelie-500.jpg 500w, photos/portret-cornelie-1000.jpg 1000w" style="width:100%;" alt="Een spoelhoek langs de sloot" loading="lazy">
-				</picture>
-				<span class="caption">Cornelie</span>
-			</div>
-			<div class="w-50">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-tuin-zonnebloem-500.webp 500w, photos/zomer-tuin-zonnebloem-1000.webp 1000w">
-					<img src="photos/zomer-tuin-zonnebloem-500.jpg" srcset="photos/zomer-tuin-zonnebloem-500.jpg 500w, photos/zomer-tuin-zonnebloem-1000.jpg 1000w" style="width:100%;" alt="Zonnebloemen in de tuin" loading="lazy">
-				</picture>
-				<span class="caption">Zonnebloemen</span>
-			</div>
-		</div>
-
-		<div class="inset-wide flex row">
-			<div class="w-60">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-brandstapel-500.webp 500w, photos/zomer-brandstapel-1000.webp 1000w">
-					<img src="photos/zomer-brandstapel-500.jpg" srcset="photos/zomer-brandstapel-500.jpg 500w, photos/zomer-brandstapel-1000.jpg 1000w" style="width:100%;" alt="De brandstapel" loading="lazy">
-				</picture>
-				<span class="caption">De brandstapel</span>
-			</div>
-			<div class="w-40">
-				<picture>
-					<source type="image/webp" srcset="photos/zomer-boeket-500.webp 500w, photos/zomer-boeket-1000.webp 1000w">
-					<img src="photos/zomer-boeket-500.jpg" srcset="photos/zomer-boeket-500.jpg 500w, photos/zomer-boeket-1000.jpg 1000w" style="width:100%;" alt="Zomer boeket uit de tuin" loading="lazy">
-				</picture>
-				<span class="caption">Boeket uit de tuin</span>
-			</div>
-		</div>
-		 
-		<div id="makers"></div>
-		<div class="inset-narrow" style="margin-top:50px;">
-			<h2>De Makers</h2>
-			<p><b><a href="http://www.loekbuter.com" target="_blank" rel="noopener">Loek Buter</a></b> is <a href="https://www.zilverencamera.nl/jaargang/zc-2021/1e-prijs-serie-loek-buter-een-beer-in-de-polder/" target="_blank">zilveren camera winnend</a> documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
-			<p><a href="mailto:info@loekbuter.com?subject=De%20Vuurtoren%20Rond">info@loekbuter.com</a> — <a href="tel:+31-6-430-640-82">+31 (0)6 430 640 82</a> — <a href="https://www.instagram.com/loekbuter" target="_blank" rel="noopener">@loekbutter</a></p>
 			
-			<p><b><a href="http://www.jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank" rel="noopener">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht. — Jasper is de kleinzoon van &#8224; Reid de Jong.</p>
-			<p><a href="mailto:info@jasperhauser.nl?subject=De%20Vuurtoren%20Rond">info@jasperhauser.nl</a> — <a href="https://twitter.com/jasperhauser">@jasperhauser</a></p>
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/buiten-bijen-500.webp 500w, photos/buiten-bijen-1000.webp 1000w">
+						<img src="photos/buiten-bijen-500.jpg" srcset="photos/buiten-bijen-500.jpg 500w, photos/buiten-bijen-1000.jpg 1000w" style="width:100%;" alt="Honing wordt geoogst" loading="lazy">
+					</picture>
+					<span class="caption">Een honingraad</span>
+				</div>
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/binnen-bonen-500.webp 500w, photos/binnen-bonen-1000.webp 1000w">
+						<img src="photos/binnen-bonen-500.jpg" srcset="photos/binnen-bonen-500.jpg 500w, photos/binnen-bonen-1000.jpg 1000w" style="width:100%;" alt="Keweeperen in een madnje" loading="lazy">
+					</picture>
+					<span class="caption">De bonen voorraad</span>
+				</div>
+			</div>
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-duiven-500.webp 500w, photos/zomer-duiven-1000.webp 1000w">
+						<img src="photos/zomer-duiven-500.jpg" srcset="photos/zomer-duiven-500.jpg 500w, photos/zomer-duiven-1000.jpg 1000w" style="width:100%;" alt="De duiventil, bovenin het kippenhok" loading="lazy">
+					</picture>
+					<span class="caption">De duiventil</span>
+				</div>
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/buiten-groente-mandje-500.webp 500w, photos/buiten-groente-mandje-1000.webp 1000w">
+						<img src="photos/buiten-groente-mandje-500.jpg" srcset="photos/buiten-groente-mandje-500.jpg 500w, photos/buiten-groente-mandje-1000.jpg 1000w" style="width:100%;" alt="Elke dag wordt er vanuit de moestuin geplukt en gegeten" loading="lazy">
+					</picture>
+					<span class="caption">De dag oogst</span>
+				</div>
+			</div>
 
-		</div>
-	</section>
+			<!-- herfst -->
+			<div class="inset-wide flex row">
+				<div class="w-60">
+					<picture>
+						<source type="image/webp" srcset="photos/portret-reid-zeis-500.webp 500w, photos/portret-reid-zeis-1000.webp 1000w">
+						<img src="photos/portret-reid-zeis-500.jpg" srcset="photos/portret-reid-zeis-500.jpg 500w, photos/portret-reid-zeis-1000.jpg 1000w" style="width:100%;" alt="Reid met de zeis, klaar om het gras te maaien" loading="lazy">
+					</picture>
+					<span class="caption">Reid met zijn zeis</span>
+				</div>
+				<div class="w-40">
+					<picture>
+						<source type="image/webp" srcset="photos/herfst-boomgaard-500.webp 500w, photos/herfst-boomgaard-1000.webp 1000w">
+						<img src="photos/herfst-boomgaard-500.jpg" srcset="photos/herfst-boomgaard-500.jpg 500w, photos/herfst-boomgaard-1000.jpg 1000w" style="width:100%;" alt="Met een trapje de appels plukken" loading="lazy">
+					</picture>
+					<span class="caption">De boomgaard</span>
+				</div>
+			</div>
+
+			<!-- winter -->
+			<div id="blue"></div>
+
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/herfst-meertje-500.webp 500w, photos/herfst-meertje-1000.webp 1000w">
+						<img src="photos/herfst-meertje-500.jpg" srcset="photos/herfst-meertje-500.jpg 500w, photos/herfst-meertje-1000.jpg 1000w" style="width:100%;" alt="Zonsondergang over het meertje achter de vuurtoren" loading="lazy">
+					</picture>
+					<span class="caption">Het meertje</span>
+				</div>
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/herfst-reid-bed-500.webp 500w, photos/herfst-reid-bed-1000.webp 1000w">
+						<img src="photos/herfst-reid-bed-500.jpg" srcset="photos/herfst-reid-bed-500.jpg 500w, photos/herfst-reid-bed-1000.jpg 1000w" style="width:100%;" alt="Reid knapt een uiltje op het bed in de vuurtoren samen met de poes" loading="lazy">
+					</picture>
+					<span class="caption">Een uiltje knappen</span>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/winter-wak-500.webp 500w, photos/winter-wak-1000.webp 1000w">
+						<img src="photos/winter-wak-500.jpg" srcset="photos/winter-wak-500.jpg 500w, photos/winter-wak-1000.jpg 1000w" style="width:100%;" alt="Het sloep de WK44, op de besneeuwde Hylperyk" loading="lazy">
+					</picture>
+					<span class="caption">Een wak</span>
+				</div>
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/winter-geiten-500.webp 500w, photos/winter-geiten-1000.webp 1000w">
+						<img src="photos/winter-geiten-500.jpg" srcset="photos/winter-geiten-500.jpg 500w, photos/winter-geiten-1000.jpg 1000w" style="width:100%;" alt="De geiten krijgen takken te eten in een besneeuwd veld" loading="lazy">
+					</picture>
+					<span class="caption">De geiten</span>
+				</div>
+			</div>
+
+			<div class="inset row">
+				<div style="position: relative;">
+					<picture>
+						<source type="image/webp" srcset="photos/winter-meertje-700.webp 700w, photos/winter-meertje-1400.webp 1400w">
+						<img src="photos/winter-meertje-700.jpg" srcset="photos/winter-meertje-700.jpg 700w, photos/winter-meertje-1400.jpg 1400w" style="width:100%;" alt="Cornelie met slee lopend over het bevroren meertje" loading="lazy">
+					</picture>
+					<span class="caption">IJs pret</span>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<picture>
+						<source type="image/webp" srcset="photos/winter-toren-500.webp 500w, photos/winter-toren-1000.webp 1000w">
+						<img src="photos/winter-toren-500.jpg" srcset="photos/winter-toren-500.jpg 500w, photos/winter-toren-1000.jpg 1000w" style="width:100%;" alt="Een spiritus thee lampje" loading="lazy">
+					</picture>
+					<span class="caption">De vuurtoren bij nacht</span>
+				</div>
+				<div class="w-60">
+					<picture>
+						<source type="image/webp" srcset="photos/winter-binnen-500.webp 500w, photos/winter-binnen-1000.webp 1000w">
+						<img src="photos/winter-binnen-500.jpg" srcset="photos/winter-binnen-500.jpg 500w, photos/winter-binnen-1000.jpg 1000w" style="width:100%;" alt="Het geiten hooi huisje in een besneeuwd veld" loading="lazy">
+					</picture>
+					<span class="caption">Cornelie thuis</span>
+				</div>
+			</div>
+		</section>
+		
+		<section id="encore">
+			<!-- encore -->
+			<div id="over"></div>
+			
+			<div class="inset-narrow" style="margin-top:70px; margin-bottom:50px;">
+				<h2>Over De Vuurtoren Rond</h2>
+				<p>Met dit project documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
+			</div>
+
+			<!-- in de media kaartjes -->
+			<div id="links" class="inset">
+				<a class="card" href="https://www.volkskrant.nl/kijkverder/v/2021/rond-de-vuurtoren~v457945/" target="_blank" rel="noopener">
+					<span class="card-image">
+						<img src="images/vk.jpg" srcset="images/vk.jpg 400w, images/vk@2x.jpg 800w" alt="Volkskrant foto reportage November 2021" loading="lazy">
+					</span>
+					<span class="card-text">
+						<span class="card-source">de Volkskrant - volkskrant.nl</span>
+						<span class="card-title">Rond de Vuurtoren - 11/2021</span>
+					</span>
+				</a>
+
+				<a class="card" href="https://www.natgeoshop.nl/magazine" target="_blank" rel="noopener">
+					<span class="card-image">
+						<img src="images/ng.jpg" srcset="images/ng.jpg 400w, images/ng@2x.jpg 800w" alt="Juni editie van de Nederlandse National Geographic met foto van de vuurtoren" loading="lazy">
+					</span>
+					<span class="card-text">
+						<span class="card-source">National Geographic Magazine - natgeoshop.nl</span>
+						<span class="card-title">Autarkie als ambacht - 06/2021</span>
+					</span>
+				</a>
+
+				<a class="card" href="https://www.bnnvara.nl/floortjeblijfthier/videos/554003" target="_blank" rel="noopener">
+					<span class="card-image">
+						<img src="images/floortje.jpg" srcset="images/floortje.jpg 400w, images/floortje@2x.jpg 800w" alt="Floortje Dessing van het tv programme 'floortje blijft hier' op bezoek bij Reid" loading="lazy">
+					</span>
+					<span class="card-text">
+						<span class="card-source">Floortje blijft hier - bnnvara.nl</span>
+						<span class="card-title">Op bezoek bij Reid &amp; Cornelie 11/2020</span>
+					</span>
+				</a>
+			</div>
+		</section>
+
+		<section>
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/portret-cornelie-500.webp 500w, photos/portret-cornelie-1000.webp 1000w">
+						<img src="photos/portret-cornelie-500.jpg" srcset="photos/portret-cornelie-500.jpg 500w, photos/portret-cornelie-1000.jpg 1000w" style="width:100%;" alt="Een spoelhoek langs de sloot" loading="lazy">
+					</picture>
+					<span class="caption">Cornelie</span>
+				</div>
+				<div class="w-50">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-tuin-zonnebloem-500.webp 500w, photos/zomer-tuin-zonnebloem-1000.webp 1000w">
+						<img src="photos/zomer-tuin-zonnebloem-500.jpg" srcset="photos/zomer-tuin-zonnebloem-500.jpg 500w, photos/zomer-tuin-zonnebloem-1000.jpg 1000w" style="width:100%;" alt="Zonnebloemen in de tuin" loading="lazy">
+					</picture>
+					<span class="caption">Zonnebloemen</span>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-60">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-brandstapel-500.webp 500w, photos/zomer-brandstapel-1000.webp 1000w">
+						<img src="photos/zomer-brandstapel-500.jpg" srcset="photos/zomer-brandstapel-500.jpg 500w, photos/zomer-brandstapel-1000.jpg 1000w" style="width:100%;" alt="De brandstapel" loading="lazy">
+					</picture>
+					<span class="caption">De brandstapel</span>
+				</div>
+				<div class="w-40">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-boeket-500.webp 500w, photos/zomer-boeket-1000.webp 1000w">
+						<img src="photos/zomer-boeket-500.jpg" srcset="photos/zomer-boeket-500.jpg 500w, photos/zomer-boeket-1000.jpg 1000w" style="width:100%;" alt="Zomer boeket uit de tuin" loading="lazy">
+					</picture>
+					<span class="caption">Boeket uit de tuin</span>
+				</div>
+			</div>
+		</section>
+			
+		<section>
+			<div id="makers"></div>
+			<div class="inset-narrow" style="margin-top:50px;">
+				<h2>De Makers</h2>
+				<p><b><a href="http://www.loekbuter.com" target="_blank" rel="noopener">Loek Buter</a></b> is <a href="https://www.zilverencamera.nl/jaargang/zc-2021/1e-prijs-serie-loek-buter-een-beer-in-de-polder/" target="_blank">zilveren camera winnend</a> documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
+				<p><a href="mailto:info@loekbuter.com?subject=De%20Vuurtoren%20Rond">info@loekbuter.com</a> — <a href="tel:+31-6-430-640-82">+31 (0)6 430 640 82</a> — <a href="https://www.instagram.com/loekbuter" target="_blank" rel="noopener">@loekbutter</a></p>
+				
+				<p><b><a href="http://www.jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a></b> is techologie ondernemer en oprichter van onder anderen de foto bewerkings app <a href="https://www.darkroom.co" target="_blank" rel="noopener">Darkroom</a>. Is gespecialiseerd in digitaal product design en strategie. Hij studeerde fotografie aan de Fotoacademie in Amsterdam, en grafische vormgeving aan de Hogeschool voor de Kunsten Utrecht. — Jasper is de kleinzoon van &#8224; Reid de Jong.</p>
+				<p><a href="mailto:info@jasperhauser.nl?subject=De%20Vuurtoren%20Rond">info@jasperhauser.nl</a> — <a href="https://twitter.com/jasperhauser">@jasperhauser</a></p>
+
+			</div>
+		</section>
+	</article>
 
 	<section id="newsletter">
 		<div class="inset-wide flex">
-			<div class="w-60" style="position: relative;">
+			<div class="w-50" style="position: relative;">
 				<picture>
 					<source type="image/webp" srcset="photos/portret-rc-500.webp 500w, photos/portret-rc-1000.webp 1000w ">
 					<img src="photos/portret-rc-500.jpg" srcset="photos/portret-rc-500.jpg 500w, photos/portret-rc-1000.jpg 1000w " alt="Portret van Cornelie (links) en Reid (rechts) samen" style="width:100%;" loading="lazy">
@@ -540,7 +449,7 @@
 				<span class="caption">Cornelie en &#8224; Reid</span>
 			</div>
 
-			<div class="w-40 tvc">
+			<div class="w-50 tvc">
 				<div id="form">
 					<h3 style="color: #61738c;">Blijf op de hoogte</h3>
 					<p>Schrijf je in op onze nieuwsbrief om als eerste het laatste nieuws over toekostige ontwikkelingen van het project te ontvangen.</p>
@@ -571,6 +480,7 @@
 		<script>document.getElementById('fyear').textContent = new Date().getFullYear();</script>
 	</footer>
 
+	<script async src="/nav.js"></script>
 	<script>
 
 		// scroll &	resize event listener

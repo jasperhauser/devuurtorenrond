@@ -1,0 +1,135 @@
+/* color variables */
+:root {
+    /* used for the type */
+    --darkBlue: #24567b;
+    --lightBlue: #6a9dc5;
+    --red: #eb5b6a;
+    /* background colors */
+    --paper: #fceee1;
+    --green: #ebf2d5;
+    --orange: #fbe4c9;
+    --blue: #e2effb;
+}
+
+/* base styles */
+body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out;}
+
+p, ul {line-height:2em;}
+footer {padding:0 20px;}
+h1, h2, h3, h4, nav span {font-family: 'Georgia', serif; font-style: italic;}
+h1 {font-size:4.5em; margin:0.3em 0; padding:0;}
+h2 {font-size:2.5em;}
+h3 {font-size:2em;}
+h4 {font-size:1.5em; font-weight: normal;}
+a {color:#000; text-decoration: none; border-bottom:1px solid rgba(0, 0, 0, 0.2); transition: all .2s ease-in-out;}
+  a.white {color:rgba(255, 255, 255, 0.8); border-bottom-color:rgba(255, 255, 255, 0.3);}
+a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
+  a.white:hover {border-bottom-color:rgba(255, 255, 255, 0.9);}
+hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
+
+input, button {display: block; font-size: 15px; border-radius: 6px;}
+input {padding:8px 8px; box-sizing: border-box; margin-top:10px; margin-bottom:10px; border: none;}
+  input:focus {outline: 1px solid var(--darkBlue);}
+button {background-color: var(--darkBlue); color: #fff; padding:10px 15px; border: none;}
+
+/* detailed styles */
+.intro {font-size:23px; font-family: 'Newsreader', serif, 'Georgia'; text-align:center;}
+.drop-cap {color: var(--red); float: left; font-size: 60px; line-height: 60px; padding-right: 8px;}
+
+/* layout */
+.inset, .inset-wide, .inset-narrow {margin:auto; padding:0 20px; box-sizing: border-box;}
+.inset {max-width:950px;}
+.inset-wide {max-width:1200px;}
+.inset-narrow {max-width:700px;}
+.flex {display: flex; flex-direction: row; width:100%;}
+.w-33 {width:33.33%; box-sizing: border-box; position:relative;}
+.w-40 {width:40%; box-sizing: border-box; position:relative;}
+.w-50 {width:50%; box-sizing: border-box; position:relative;}
+.w-60 {width:60%; box-sizing: border-box; position:relative;}
+.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
+
+/* nav */
+nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all 1.0s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 2px 6px rgba(0, 0, 0, 0.15);}
+nav.sticky {position:fixed; top:0;}
+#nav-content {height:48px; position: relative;}
+nav img {position: absolute; width:30px; top:9px; left:20px; }
+nav span {position: absolute; font-size:20px; top:12px; left:60px; font-weight:bold;}
+#nav-menu {position: absolute; right:20px; top:9px; margin:0;}
+#nav-menu li {display: inline; list-style: none; margin-left:8px;}
+
+/* photos */
+#photos {}
+.row {margin-top:20px; position: relative;}
+.row div:first-child {margin-right:10px;}
+.row div:last-child {margin-left:10px;}
+.photo-bottom picture {position: absolute; bottom:0px;}
+.caption {position:absolute; left:20px; top:20px; font-size:0.95em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
+  .caption.dark {color:rgba(0, 0, 0, 0.8); }
+  .photo-bottom .caption {bottom:20px; top:unset;}
+  div div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
+  div div:hover .caption.dark {text-shadow:none;}
+
+/* newsletter */
+#newsletter {margin-top:75px;}
+#form {padding-left:50px;}
+
+/* mailchimp email form style override */
+div#mc_embed_signup {background-color:transparent;}
+div#mc_embed_signup form {padding-left:unset;}
+
+/* footer */
+footer.inset {text-align:center; margin-top: 50px; margin-bottom: 50px; opacity:0.7;}
+footer:hover {opacity:1;}
+
+/* dark mode!! */
+@media (prefers-color-scheme: dark) {
+    /* base styles */
+    body {color: #fff;}
+    h1 {font-size:3.5em;}
+    a, #masthead-title a.white {color:rgba(255, 255, 255, 0.8); border-bottom:1px solid rgba(255, 255, 255, 0.3);}
+    a:hover, #masthead-title a.white:hover {border-bottom:1px solid rgba(255, 255, 255, 0.9);}
+    
+    /* dark mode base colors */
+    :root {
+        /* used for the type */
+          --darkBlue: #396c92;
+          --lightBlue: #6a9dc5;
+          --red: #eb5b6a;
+        /* background colors */
+          --paper: #2d2823;
+          --green: #192111;
+          --orange: #2b150c;
+          --blue: #1a2633;
+      }
+}
+
+/* mobile device breakpoints */
+@media screen and (max-width:1024px){
+    /* hello desktop */
+} 
+@media screen and (max-width: 768px) {
+    /* most tablets */ 
+    .flex {flex-direction: column;}
+    .w-50, .w-40, .w-60 {width:100%;}
+    .photo-bottom picture {position: relative;}
+      .photo-bottom .caption {bottom:unset; top:20px;}
+    .caption {opacity:1;}
+    .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
+    .row div:first-child {margin-bottom:20px;}
+    #nav-menu {display: none;}
+}
+@media screen and (max-width: 640px){
+
+}
+@media screen and (max-width: 640px) and (prefers-color-scheme: dark){
+
+}
+
+@media screen and (max-width: 480px) {
+    /* phablet */
+    input, button {width:100%;}
+
+}
+@media screen and (max-width: 375px) {
+    /* phones */
+}
