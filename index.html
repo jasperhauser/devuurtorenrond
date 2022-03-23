@@ -522,15 +522,6 @@
 				document.body.style.backgroundColor = "var(--paper)";
 				document.getElementById("nav-global").style.backgroundColor = "var(--paper)";
 			}
-
-			// nav title bar show and hide
-			var mastHeight = document.getElementById("masthead-photo").offsetHeight;
-			// add/remove sticky to show the nav
-			if (window.pageYOffset >= mastHeight){
-				document.getElementById("nav-global").classList.add("sticky");
-			} else if (window.pageYOffset < mastHeight) {
-				document.getElementById("nav-global").classList.remove("sticky");
-			}
 		}
 
 	</script>

@@ -18,9 +18,10 @@ function onScroll(){
     // nav title bar show and hide
     var mastHeight = document.getElementById("masthead-photo").offsetHeight;
     // add/remove sticky to show the nav
-    if (window.pageYOffset >= mastHeight){
+    if (window.pageYOffset >= (mastHeight / 2)) {
         document.getElementById("nav-global").classList.add("sticky");
-    } else if (window.pageYOffset < mastHeight) {
+    } else if (window.pageYOffset < (mastHeight / 2)) {
         document.getElementById("nav-global").classList.remove("sticky");
+        console.log("hello")
     }
 }
