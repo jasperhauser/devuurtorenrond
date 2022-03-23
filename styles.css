@@ -118,6 +118,7 @@ footer:hover {opacity:1;}
     .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
     .row div:first-child {margin-bottom:20px;}
     #nav-menu {display: none;}
+    #form {padding-left:unset;}
 }
 @media screen and (max-width: 640px){
 
