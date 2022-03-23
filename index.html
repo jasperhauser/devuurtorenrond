@@ -50,6 +50,7 @@
 		/* header */
 		#masthead {padding:0; position:relative; }
 		#masthead-title {color:#fff; position:absolute; width:400px; right:10%; top:30%; transform: translateY(-30%); box-sizing: border-box; z-index: 1;}
+		#masthead h1 {font-size:5em;}
 		#masthead-photo {position: relative; background-color: #7095b9; line-height: 0;}
 			#masthead-photo img {width:100%; object-fit: cover;}
 		
@@ -75,20 +76,18 @@
 		/* mobile device breakpoints */
 		@media screen and (max-width:1024px){
 			/* hello desktop */
-			#masthead-title {width:300px; right:5%; top: 25%; transform: translateY(-25%);}
+			#masthead-title {width:300px; right:15%; top: 25%; transform: translateY(-25%);}
 			#masthead-photo img {height: 820px;}
-			#masthead h1 {font-size:3.5em;}
+			#masthead h1 {font-size:4em;}
 		} 
 		@media screen and (max-width: 768px) {
 			/* most tablets */ 
-			#masthead-title {width:250px; right:50px; top: 15%; transform: translateY(-15%);}
+			#masthead-title {width:250px; right:20%; top: 15%; transform: translateY(-15%);}
 			#masthead-photo img {height: 680px;}
-			#masthead h1 {font-size:3em;}
 			#form {padding-left:unset;}
 		}
 		@media screen and (max-width: 640px){
 			/* header wraps */
-			#masthead h1 {font-size:4em;}
 			#masthead-title {color: #000; position: relative; transform: none; width:100%; right: unset; top: unset; text-align: left; padding:0 20px;}
 			
 			#masthead-title a.white {color: #000; border-bottom-color:rgba(0, 0, 0, 0.2);}
@@ -111,6 +110,7 @@
 		}
 		@media screen and (max-width: 375px) {
 			/* phones */
+			#masthead h1 {font-size:3em;}
 		}
 	</style>
 </head>
@@ -143,7 +143,7 @@
 			</div>
 
 			<div id="masthead-title">
-				<h1 style="color:var(--darkBlue); font-size: 5em;">De Vuurtoren Rond</h1>
+				<h1 style="color:var(--darkBlue);">De Vuurtoren Rond</h1>
 				<p>Door <a href="https://jasperhauser.nl" target="_blank" rel="noopener" class="white">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" rel="noopener" class="white">Loek Buter</a>
 			</div>
 
