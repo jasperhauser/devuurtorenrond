@@ -85,7 +85,6 @@ footer:hover {opacity:1;}
 @media (prefers-color-scheme: dark) {
     /* base styles */
     body {color: #fff;}
-    h1 {font-size:3.5em;}
     a, #masthead-title a.white {color:rgba(255, 255, 255, 0.8); border-bottom:1px solid rgba(255, 255, 255, 0.3);}
     a:hover, #masthead-title a.white:hover {border-bottom:1px solid rgba(255, 255, 255, 0.9);}
     

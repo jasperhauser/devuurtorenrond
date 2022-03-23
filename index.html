@@ -58,7 +58,7 @@
 
 		/* media cards */
 		#links {display: flex; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
-		.card {display: block; max-width:400px; border-bottom:none; box-sizing: border-box; margin:0 10px;}
+		.card {display: block; max-width:600px; border-bottom:none; box-sizing: border-box; margin:0 10px;}
 		.card:hover {border-bottom:none; transform: scale(1.02); transition: all .2s ease-in-out; }
 		.card:hover {color:var(--red);}
 		.card-image {display: block; width:100%;}
@@ -177,169 +177,62 @@
 		</section>
 
 		<section>
+			<div class="inset-narrow" style="margin-bottom:60px;">
+				<h2>Publicaties</h2>
+				<p>In 2022 publiceren wij elk seizoen een neiuw beeldend verhaal, waarin het aankomende seizoen op de bijzondere plek uitgelicht wordt.</p>
+			</div>
+
+			<div id="links" class="inset-wide">
+				<a class="card" href="/lente" rel="noopener">
+					<span class="card-image">
+						<img src="images/vk.jpg" srcset="/images/social-card-lente.jpg 400w, /images/social-card-lente@2x.jpg 800w" alt="lente ronde de vuurtoren" loading="lazy">
+					</span>
+					<span class="card-text">
+						<span class="card-source">Maart 2022 — Eerste editie</span>
+						<span class="card-title">Lente rond de Vuurtoren</span>
+					</span>
+				</a>
+
+				<div class="card" style="opacity:0.5;">
+					<span class="card-image">
+						<img src="images/ng.jpg" srcset="/images/card-zomer-herfst-winter.jpg 400w, /images/card-zomer-herfst-winter@2x.jpg 800w" alt="Alle seizoenen rond de vuurtoren" loading="lazy">
+					</span>
+					<span class="card-text">
+						<span class="card-source">Elk seizoen een nieuwe uitgave</span>
+						<span class="card-title">Zomer, Herft en Winter</span>
+					</span>
+				</div>
+			</div>
+		</section>
+
+		<section>
 			<!-- eten -->
 			<div id="green"></div>
 
+			<!-- oogst zomer -->
+			<div id="orange"></div>
+
+			<!-- herfst -->
 			<div class="inset-wide flex row">
-				<div class="w-50">
+				<div class="w-60">
 					<picture>
 						<source type="image/webp" srcset="photos/lente-tuin-c-500.webp 500w, photos/lente-tuin-c-1000.webp 1000w">
 						<img src="photos/lente-tuin-c-500.jpg" srcset="photos/lente-tuin-c-500.jpg 500w, photos/lente-tuin-c-1000.jpg 1000w" style="width:100%;" alt="Cornelie in de moestuin" loading="lazy">
 					</picture>
 					<span class="caption">Cornelie in de moestuin</span>
 				</div>
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/zomer-kas-500.webp 500w, photos/zomer-kas-1000.webp 1000w">
-						<img src="photos/zomer-kas-500.jpg" srcset="photos/zomer-kas-500.jpg 500w, photos/zomer-kas-1000.jpg 1000w" style="width:100%;" alt="De kas in de zomer, tomaten en courgetten" loading="lazy">
-					</picture>
-					<span class="caption">De kas</span>
-				</div>
-			</div>
-			<div class="inset-wide flex row">
-				<div class="w-60">
-					<picture>
-						<source type="image/webp" srcset="photos/binnen-noten-500.webp 500w, photos/binnen-noten-1000.webp 1000w">
-						<img src="photos/binnen-noten-500.jpg" srcset="photos/binnen-noten-500.jpg 500w, photos/binnen-noten-1000.jpg 1000w" style="width:100%;" alt="Reid zit walnoten te pellen" loading="lazy">
-					</picture>
-					<span class="caption">Walnoten pellen</span>
-				</div>
 				<div class="w-40">
-					<picture>
-						<source type="image/webp" srcset="photos/binnen-fruit-mandje-500.webp 500w, photos/binnen-fruit-mandje-1000.webp 1000w">
-						<img src="photos/binnen-fruit-mandje-500.jpg" srcset="photos/binnen-fruit-mandje-500.jpg 500w, photos/binnen-fruit-mandje-1000.jpg 1000w" style="width:100%;" alt="Mandje met kweeperen naast een raam" loading="lazy">
-					</picture>
-					<span class="caption">Kweeperen</span>
-				</div>
-			</div>
-
-			<!-- oogst zomer -->
-			<div id="orange"></div>
-
-			<div class="inset row">
-				<div style="position: relative;">
-					<picture>
-						<source type="image/webp" srcset="photos/binnen-keuken-700.webp 700w, photos/binnen-keuken-1400.webp 1400w">
-						<img src="photos/binnen-keuken-700.jpg" srcset="photos/binnen-keuken-700.jpg 700w, photos/binnen-keuken-1400.jpg 1400w" style="width:100%;" alt="De gele keuken in de vuurtoren, met handpopm voor het eigen grond water" loading="lazy">
-					</picture>
-					<span class="caption">De vuurtoren keuken, met grondwater handpomp</span>
-				</div>
-			</div>
-			
-			<div class="inset-wide flex row">
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/buiten-bijen-500.webp 500w, photos/buiten-bijen-1000.webp 1000w">
-						<img src="photos/buiten-bijen-500.jpg" srcset="photos/buiten-bijen-500.jpg 500w, photos/buiten-bijen-1000.jpg 1000w" style="width:100%;" alt="Honing wordt geoogst" loading="lazy">
-					</picture>
-					<span class="caption">Een honingraad</span>
-				</div>
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/binnen-bonen-500.webp 500w, photos/binnen-bonen-1000.webp 1000w">
-						<img src="photos/binnen-bonen-500.jpg" srcset="photos/binnen-bonen-500.jpg 500w, photos/binnen-bonen-1000.jpg 1000w" style="width:100%;" alt="Keweeperen in een madnje" loading="lazy">
-					</picture>
-					<span class="caption">De bonen voorraad</span>
-				</div>
-			</div>
-			<div class="inset-wide flex row">
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/zomer-duiven-500.webp 500w, photos/zomer-duiven-1000.webp 1000w">
-						<img src="photos/zomer-duiven-500.jpg" srcset="photos/zomer-duiven-500.jpg 500w, photos/zomer-duiven-1000.jpg 1000w" style="width:100%;" alt="De duiventil, bovenin het kippenhok" loading="lazy">
-					</picture>
-					<span class="caption">De duiventil</span>
-				</div>
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/buiten-groente-mandje-500.webp 500w, photos/buiten-groente-mandje-1000.webp 1000w">
-						<img src="photos/buiten-groente-mandje-500.jpg" srcset="photos/buiten-groente-mandje-500.jpg 500w, photos/buiten-groente-mandje-1000.jpg 1000w" style="width:100%;" alt="Elke dag wordt er vanuit de moestuin geplukt en gegeten" loading="lazy">
-					</picture>
-					<span class="caption">De dag oogst</span>
-				</div>
-			</div>
-
-			<!-- herfst -->
-			<div class="inset-wide flex row">
-				<div class="w-60">
 					<picture>
 						<source type="image/webp" srcset="photos/portret-reid-zeis-500.webp 500w, photos/portret-reid-zeis-1000.webp 1000w">
 						<img src="photos/portret-reid-zeis-500.jpg" srcset="photos/portret-reid-zeis-500.jpg 500w, photos/portret-reid-zeis-1000.jpg 1000w" style="width:100%;" alt="Reid met de zeis, klaar om het gras te maaien" loading="lazy">
 					</picture>
 					<span class="caption">Reid met zijn zeis</span>
 				</div>
-				<div class="w-40">
-					<picture>
-						<source type="image/webp" srcset="photos/herfst-boomgaard-500.webp 500w, photos/herfst-boomgaard-1000.webp 1000w">
-						<img src="photos/herfst-boomgaard-500.jpg" srcset="photos/herfst-boomgaard-500.jpg 500w, photos/herfst-boomgaard-1000.jpg 1000w" style="width:100%;" alt="Met een trapje de appels plukken" loading="lazy">
-					</picture>
-					<span class="caption">De boomgaard</span>
-				</div>
 			</div>
 
 			<!-- winter -->
 			<div id="blue"></div>
 
-			<div class="inset-wide flex row">
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/herfst-meertje-500.webp 500w, photos/herfst-meertje-1000.webp 1000w">
-						<img src="photos/herfst-meertje-500.jpg" srcset="photos/herfst-meertje-500.jpg 500w, photos/herfst-meertje-1000.jpg 1000w" style="width:100%;" alt="Zonsondergang over het meertje achter de vuurtoren" loading="lazy">
-					</picture>
-					<span class="caption">Het meertje</span>
-				</div>
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/herfst-reid-bed-500.webp 500w, photos/herfst-reid-bed-1000.webp 1000w">
-						<img src="photos/herfst-reid-bed-500.jpg" srcset="photos/herfst-reid-bed-500.jpg 500w, photos/herfst-reid-bed-1000.jpg 1000w" style="width:100%;" alt="Reid knapt een uiltje op het bed in de vuurtoren samen met de poes" loading="lazy">
-					</picture>
-					<span class="caption">Een uiltje knappen</span>
-				</div>
-			</div>
-
-			<div class="inset-wide flex row">
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/winter-wak-500.webp 500w, photos/winter-wak-1000.webp 1000w">
-						<img src="photos/winter-wak-500.jpg" srcset="photos/winter-wak-500.jpg 500w, photos/winter-wak-1000.jpg 1000w" style="width:100%;" alt="Het sloep de WK44, op de besneeuwde Hylperyk" loading="lazy">
-					</picture>
-					<span class="caption">Een wak</span>
-				</div>
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/winter-geiten-500.webp 500w, photos/winter-geiten-1000.webp 1000w">
-						<img src="photos/winter-geiten-500.jpg" srcset="photos/winter-geiten-500.jpg 500w, photos/winter-geiten-1000.jpg 1000w" style="width:100%;" alt="De geiten krijgen takken te eten in een besneeuwd veld" loading="lazy">
-					</picture>
-					<span class="caption">De geiten</span>
-				</div>
-			</div>
-
-			<div class="inset row">
-				<div style="position: relative;">
-					<picture>
-						<source type="image/webp" srcset="photos/winter-meertje-700.webp 700w, photos/winter-meertje-1400.webp 1400w">
-						<img src="photos/winter-meertje-700.jpg" srcset="photos/winter-meertje-700.jpg 700w, photos/winter-meertje-1400.jpg 1400w" style="width:100%;" alt="Cornelie met slee lopend over het bevroren meertje" loading="lazy">
-					</picture>
-					<span class="caption">IJs pret</span>
-				</div>
-			</div>
-
-			<div class="inset-wide flex row">
-				<div class="w-40">
-					<picture>
-						<source type="image/webp" srcset="photos/winter-toren-500.webp 500w, photos/winter-toren-1000.webp 1000w">
-						<img src="photos/winter-toren-500.jpg" srcset="photos/winter-toren-500.jpg 500w, photos/winter-toren-1000.jpg 1000w" style="width:100%;" alt="Een spiritus thee lampje" loading="lazy">
-					</picture>
-					<span class="caption">De vuurtoren bij nacht</span>
-				</div>
-				<div class="w-60">
-					<picture>
-						<source type="image/webp" srcset="photos/winter-binnen-500.webp 500w, photos/winter-binnen-1000.webp 1000w">
-						<img src="photos/winter-binnen-500.jpg" srcset="photos/winter-binnen-500.jpg 500w, photos/winter-binnen-1000.jpg 1000w" style="width:100%;" alt="Het geiten hooi huisje in een besneeuwd veld" loading="lazy">
-					</picture>
-					<span class="caption">Cornelie thuis</span>
-				</div>
-			</div>
 		</section>
 		
 		<section id="encore">
@@ -387,36 +280,19 @@
 
 		<section>
 			<div class="inset-wide flex row">
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/portret-cornelie-500.webp 500w, photos/portret-cornelie-1000.webp 1000w">
-						<img src="photos/portret-cornelie-500.jpg" srcset="photos/portret-cornelie-500.jpg 500w, photos/portret-cornelie-1000.jpg 1000w" style="width:100%;" alt="Een spoelhoek langs de sloot" loading="lazy">
-					</picture>
-					<span class="caption">Cornelie</span>
-				</div>
-				<div class="w-50">
-					<picture>
-						<source type="image/webp" srcset="photos/zomer-tuin-zonnebloem-500.webp 500w, photos/zomer-tuin-zonnebloem-1000.webp 1000w">
-						<img src="photos/zomer-tuin-zonnebloem-500.jpg" srcset="photos/zomer-tuin-zonnebloem-500.jpg 500w, photos/zomer-tuin-zonnebloem-1000.jpg 1000w" style="width:100%;" alt="Zonnebloemen in de tuin" loading="lazy">
-					</picture>
-					<span class="caption">Zonnebloemen</span>
-				</div>
-			</div>
-
-			<div class="inset-wide flex row">
-				<div class="w-60">
-					<picture>
-						<source type="image/webp" srcset="photos/zomer-brandstapel-500.webp 500w, photos/zomer-brandstapel-1000.webp 1000w">
-						<img src="photos/zomer-brandstapel-500.jpg" srcset="photos/zomer-brandstapel-500.jpg 500w, photos/zomer-brandstapel-1000.jpg 1000w" style="width:100%;" alt="De brandstapel" loading="lazy">
-					</picture>
-					<span class="caption">De brandstapel</span>
-				</div>
 				<div class="w-40">
 					<picture>
 						<source type="image/webp" srcset="photos/zomer-boeket-500.webp 500w, photos/zomer-boeket-1000.webp 1000w">
 						<img src="photos/zomer-boeket-500.jpg" srcset="photos/zomer-boeket-500.jpg 500w, photos/zomer-boeket-1000.jpg 1000w" style="width:100%;" alt="Zomer boeket uit de tuin" loading="lazy">
 					</picture>
 					<span class="caption">Boeket uit de tuin</span>
+				</div>
+				<div class="w-60">
+					<picture>
+						<source type="image/webp" srcset="photos/zomer-brandstapel-500.webp 500w, photos/zomer-brandstapel-1000.webp 1000w">
+						<img src="photos/zomer-brandstapel-500.jpg" srcset="photos/zomer-brandstapel-500.jpg 500w, photos/zomer-brandstapel-1000.jpg 1000w" style="width:100%;" alt="De brandstapel" loading="lazy">
+					</picture>
+					<span class="caption">De brandstapel</span>
 				</div>
 			</div>
 		</section>
