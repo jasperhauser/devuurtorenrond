@@ -5,6 +5,7 @@
     --lightBlue: #6a9dc5;
     --red: #eb5b6a;
     /* background colors */
+    --yellow: #F7F0EE;
     --paper: #fcf3eb;
     --green: #ebf2d5;
     --orange: #fbe4c9;
@@ -95,6 +96,7 @@ footer:hover {opacity:1;}
           --lightBlue: #6a9dc5;
           --red: #eb5b6a;
         /* background colors */
+          --yellow: #2d2823;
           --paper: #2d2823;
           --green: #192111;
           --orange: #2b150c;
