@@ -115,7 +115,7 @@ footer:hover {opacity:1;}
     .w-50, .w-40, .w-60 {width:100%;}
     .photo-bottom picture {position: relative;}
       .photo-bottom .caption {bottom:unset; top:20px;}
-    .caption {opacity:1;}
+    /* .caption {opacity:1;} */
     .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
     .row div:first-child {margin-bottom:20px;}
     #nav-menu {display: none;}
