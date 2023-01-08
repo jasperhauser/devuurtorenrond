@@ -91,6 +91,7 @@ div#mc_embed_signup form {padding-left:unset;}
 
 /* hide that hideous google translate bar */
 .goog-te-banner-frame, #gt-nvframe, iframe#gt-nvframe, body iframe #gt-nvframe {
+  z-index: 0;
   display: none !important;
 }
 /* footer */
