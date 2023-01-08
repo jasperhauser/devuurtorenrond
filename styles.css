@@ -90,7 +90,7 @@ div#mc_embed_signup {background-color:transparent;}
 div#mc_embed_signup form {padding-left:unset;}
 
 /* hide that hideous google translate bar */
-body iframe #gt-nvframe {
+#gt-nvframe, iframe#gt-nvframe, body iframe #gt-nvframe {
   display: none !important;
 }
 
