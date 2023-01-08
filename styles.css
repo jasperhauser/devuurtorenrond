@@ -13,7 +13,7 @@
 }
 
 /* base styles */
-body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out;}
+body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out; top: 0px !important; position: static !important;}
 
 p, ul {line-height:2em;}
 footer {padding:0 20px;}
@@ -90,10 +90,9 @@ div#mc_embed_signup {background-color:transparent;}
 div#mc_embed_signup form {padding-left:unset;}
 
 /* hide that hideous google translate bar */
-#gt-nvframe, iframe#gt-nvframe, body iframe #gt-nvframe {
+.goog-te-banner-frame, #gt-nvframe, iframe#gt-nvframe, body iframe #gt-nvframe {
   display: none !important;
 }
-
 /* footer */
 footer.inset {text-align:center; margin-top: 50px; margin-bottom: 50px; opacity:0.7;}
 footer:hover {opacity:1;}
