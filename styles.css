@@ -13,7 +13,7 @@
 }
 
 /* base styles */
-body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out; top: 0px !important; position: static !important;}
+body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out; top: 0px !important; position: static !important; margin-top: 0 !important;}
 
 p, ul {line-height:2em;}
 footer {padding:0 20px;}
