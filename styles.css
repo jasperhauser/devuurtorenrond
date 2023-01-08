@@ -89,6 +89,11 @@ nav span {position: absolute; font-size:20px; top:12px; left:60px; font-weight:b
 div#mc_embed_signup {background-color:transparent;}
 div#mc_embed_signup form {padding-left:unset;}
 
+/* hide that hideous google translate bar */
+body > .skiptranslate {
+  display: none;
+}
+
 /* footer */
 footer.inset {text-align:center; margin-top: 50px; margin-bottom: 50px; opacity:0.7;}
 footer:hover {opacity:1;}
