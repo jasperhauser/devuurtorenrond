@@ -33,7 +33,8 @@ function onScroll(){
             document.getElementById("nav-global").classList.add("sticky");
         } else if (window.pageYOffset < (mastHeight / 2)) {
             document.getElementById("nav-global").classList.remove("sticky");
-            console.log("hello")
+            document.getElementById("nav-menu").classList.remove('open');
+            // console.log("hello")
         }
     }
 }
