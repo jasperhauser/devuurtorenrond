@@ -27,7 +27,7 @@ a {color:#000; text-decoration: none; border-bottom:1px solid rgba(0, 0, 0, 0.2)
 a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
   a.white:hover {border-bottom-color:rgba(255, 255, 255, 0.9);}
 hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
-picture img {background-color: rgba(150, 150, 150, 0.2); width: 100%; height: auto;}
+picture img {background-color: rgba(150, 150, 150, 0.15); width: 100%; height: auto;}
 
 input, button {display: block; font-size: 15px; border-radius: 6px;}
 input {padding:8px 8px; box-sizing: border-box; margin-top:10px; margin-bottom:10px; border: none;}
@@ -86,7 +86,7 @@ nav a span {position: absolute; font-size:20px; top:12px; left:60px; font-weight
 .card:hover {border-bottom:none; transform: scale(1.02); transition: all .2s ease-in-out; }
 .card:hover {color:var(--red);}
 .card-image {display: block; width:100%;}
-.card-image img {width:100%; height: auto; border-radius:4px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.2); background-color: rgba(150, 150, 150, 0.2);}
+.card-image img {width:100%; height: auto; border-radius:4px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.2); background-color: rgba(150, 150, 150, 0.15);}
 .card-text {display:block; margin-top:10px;}
 .card-title {font-weight:bold; display:block;}
 .card-source {opacity:0.9; font-size:0.7em; display:block; margin:5px 0;}
