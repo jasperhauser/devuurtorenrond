@@ -1,10 +1,14 @@
 // nav bar more (hamburger) menu behavior
 document.getElementById("nav-more").onclick = function(){
-    document.getElementById("nav-menu").classList.toggle('open'); // let's make this things smooth
+    document.body.classList.toggle('open'); // let's make this things smooth
 };
 // close nav when any tap/click registers on it
 document.getElementById("nav-menu-list").onclick = function(){
-    document.getElementById("nav-menu").classList.remove('open'); // let's make this things smooth
+    document.body.classList.remove('open'); // let's make this things smooth
+};
+// close nav when any tap/click registers on it
+document.getElementById("nav-menu-backdrop").onclick = function(){
+    document.body.classList.remove('open'); // let's make this things smooth
 };
 
 // scroll &	resize event listener
