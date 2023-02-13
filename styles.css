@@ -47,7 +47,7 @@ button {background-color: var(--darkBlue); color: #fff; padding:10px 15px; borde
 .w-40 {width:40%; box-sizing: border-box; position:relative;}
 .w-50 {width:50%; box-sizing: border-box; position:relative;}
 .w-60 {width:60%; box-sizing: border-box; position:relative;}
-.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical allign */
+.tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical align */
 
 /* nav */
 nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all 1.0s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 2px 6px rgba(0, 0, 0, 0.15);}
@@ -59,7 +59,7 @@ nav a span {position: absolute; font-size:20px; top:12px; left:60px; font-weight
 /* nav menu */
 #nav-menu-list {position: absolute; right:20px; top:9px; margin:0; padding: 0;}
 #nav-menu-list li {display: inline; list-style: none; margin-left:8px;}
-#nav-menu.open #nav-menu-list {position: absolute; display: block; background-color: rgba(255, 249, 244, 0.9); width: 100%; right:0; top:48px; padding:20px 0; font-size: 1.2em; box-shadow:0px 3px 4px rgba(0, 0, 0, 0.15); border-top: 1px solid rgba(0,0,0,0.1); -webkit-backdrop-filter: blur(10px);}
+#nav-menu.open #nav-menu-list {position: absolute; display: block; background-color: rgba(255, 249, 244, 0.9); width: 100%; right:0; top:48px; padding:20px 0; font-size: 1.2em; box-shadow:0px 3px 4px rgba(0, 0, 0, 0.15); border-top: 1px solid rgba(0,0,0,0.1); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);}
 #nav-menu.open #nav-menu-list li {display: block; text-align: center; padding: 10px 0;}
 #nav-more {display:none; width: 32px; height: 32px; background-color: rgba(0, 0, 0, 0.05); border-radius: 6px; top: 8px; right:20px; position: absolute;}
 .nav-line {width:20px; height:2px; position: absolute; right:6px; background-color: rgba(0, 0, 0, 0.6); border-radius: 2px;}
@@ -69,7 +69,6 @@ nav a span {position: absolute; font-size:20px; top:12px; left:60px; font-weight
 #nav-menu.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;}
 
 /* photos */
-#photos {}
 .row {margin-top:20px; position: relative;}
 .row div:first-child {margin-right:10px;}
 .row div:last-child {margin-left:10px;}
