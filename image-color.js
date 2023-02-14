@@ -16,8 +16,8 @@ for (var i = 0; i < images.length; i++) {
         // if color matches regex, set background color
         if(reg.test(color)) {
             // set the background color
-            console.log(url);
-            console.log(color);
+            // console.log(url);
+            // console.log(color);
             images[i].style.backgroundColor = "#" + color;
         }
     }
