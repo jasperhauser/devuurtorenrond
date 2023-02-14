@@ -94,8 +94,8 @@ body.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;}
 .card-image {display: block; width:100%;}
 .card-image img {width:100%; height: auto; border-radius:4px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.2); background-color: rgba(150, 150, 150, 0.15);}
 .card-text {display:block; margin-top:10px;}
-.card-title {font-weight:bold; display:block;}
-.card-source {opacity:0.9; font-size:0.7em; display:block; margin:5px 0;}
+.card-title {font-weight:700; display:block;}
+.card-source {font-size:0.8em; display:block; margin:5px 0;}
 
   /* newsletter */
 #newsletter {margin-top:75px;}
@@ -117,27 +117,30 @@ footer:hover {opacity:1;}
 /* dark mode!! */
 @media (prefers-color-scheme: dark) {
     /* base styles */
-    body {color: #fff;}
+    body, h1 {color: #fff;}
     a, #masthead-title a.white {color:rgba(255, 255, 255, 0.8); border-bottom:1px solid rgba(255, 255, 255, 0.3);}
     a:hover, #masthead-title a.white:hover {border-bottom:1px solid rgba(255, 255, 255, 0.9);}
     
     /* dark mode base colors */
     :root {
-        /* used for the type */
-          --darkBlue: #396c92;
-          --lightBlue: #6a9dc5;
-          --red: #eb5b6a;
-        /* background colors */
-          --yellow: #2d2823;
-          --paper: #2d2823;
-          --green: #192111;
-          --orange: #2b150c;
-          --blue: #1a2633;
-      }
+      /* used for the type */
+        --darkBlue: #5d97c2;
+        /* --lightBlue: #6a9dc5; */
+        /* --red: #eb5b6a; */
+      /* background colors */
+        --yellow: #2d2823;
+        --paper: #2d2823;
+        --green: #192111;
+        --orange: #2b150c;
+        --blue: #1a2633;
+    }
 
-      body.open #nav-menu-list {background-color: rgba(30, 30, 30, 0.9);}
-      #nav-more {background-color: rgba(255, 255, 255, 0.1);}
-      .nav-line {background-color: rgba(255, 255, 255, 0.8); }
+    body.open #nav-menu-list {background-color: rgba(30, 30, 30, 0.9);}
+    #nav-more {background-color: rgba(255, 255, 255, 0.1);}
+    .nav-line {background-color: rgba(255, 255, 255, 0.8); }
+    
+    button {background-color: #7fc8ff; color: #000; padding:10px 15px; border: none;}
+
 }
 
 /* mobile device breakpoints */
