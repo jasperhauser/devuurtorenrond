@@ -1,14 +1,42 @@
+
+
+function openMenuAnimation() {
+    document.querySelector('#top-line').classList.add('animate-top-line');
+    document.querySelector('#bottom-line').classList.add('animate-bottom-line');
+    document.querySelector('#top-line').classList.remove('animate-top-line-reverse');
+    document.querySelector('#bottom-line').classList.remove('animate-bottom-line-reverse');
+}
+
+function closeMenuAnimation() {
+    document.querySelector('#top-line').classList.add('animate-top-line-reverse');
+    document.querySelector('#bottom-line').classList.add('animate-bottom-line-reverse');
+    document.querySelector('#top-line').classList.remove('animate-top-line');
+    document.querySelector('#bottom-line').classList.remove('animate-bottom-line'); 
+}
+
+let isMenuOpen = false;
+
+function toggleMenu() {
+    !isMenuOpen ? openMenuAnimation() : closeMenuAnimation();
+    isMenuOpen = !isMenuOpen;
+}
+
 // nav bar more (hamburger) menu behavior
 document.getElementById("nav-more").onclick = function(){
     document.body.classList.toggle('open'); // let's make this things smooth
+    toggleMenu();
 };
+
 // close nav when any tap/click registers on it
 document.getElementById("nav-menu-list").onclick = function(){
     document.body.classList.remove('open'); // let's make this things smooth
+    toggleMenu();
 };
+
 // close nav when any tap/click registers on it
 document.getElementById("nav-menu-backdrop").onclick = function(){
     document.body.classList.remove('open'); // let's make this things smooth
+    toggleMenu();
 };
 
 // scroll &	resize event listener

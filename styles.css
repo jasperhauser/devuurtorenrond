@@ -70,10 +70,41 @@ body.open #nav-menu-backdrop {display: block;}
 /* hamburger menu */
 #nav-more {display:none; width: 32px; height: 32px; background-color: rgba(0, 0, 0, 0.05); border-radius: 6px; top: 8px; right:20px; position: absolute;}
 .nav-line {width:20px; height:2px; position: absolute; right:6px; background-color: rgba(0, 0, 0, 0.6); border-radius: 2px;}
-.nav-line:first-child {top: 11px;}
-.nav-line:last-child {top: 19px;}
-body.open .nav-line:first-child {transform: rotate(45deg); top: 15px;}
-body.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;}
+.nav-line:first-child {transform: translateY(11px);}
+.nav-line:last-child {transform: translateY(19px);}
+/* body.open .nav-line:first-child {transform: rotate(45deg); top: 15px;}
+body.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;} */
+
+/* hamburger menu animations */
+@keyframes hamburgerOpenTop {
+  0% {transform: translateY(11px);}
+  50% {transform: translateY(15px) rotate(0deg);}
+  100% {transform:  translateY(15px) rotate(45deg);}
+}
+
+@keyframes hamburgerOpenBottom {
+  0% {transform: translateY(19px);}
+  50% {transform: translateY(15px) rotate(0deg);}
+  100% {transform:  translateY(15px) rotate(-45deg);}
+}
+
+@keyframes hamburgerOpenTopReverse {
+  0% {transform:  translateY(15px) rotate(45deg);}
+  50% {transform: translateY(15px) rotate(0deg);}
+  100% {transform: translateY(11px);}
+}
+
+@keyframes hamburgerOpenBottomReverse {
+  0% {transform:  translateY(15px) rotate(-45deg);}
+  50% {transform: translateY(15px) rotate(0deg);}
+  100% {transform: translateY(19px);}
+}
+
+.animate-top-line {animation: hamburgerOpenTop 0.1s forwards ease-in-out;}
+.animate-bottom-line {animation: hamburgerOpenBottom 0.1s forwards ease-in-out;}
+.animate-top-line-reverse {animation: hamburgerOpenTopReverse 0.1s forwards ease-in-out;}
+.animate-bottom-line-reverse {animation: hamburgerOpenBottomReverse 0.1s forwards ease-in-out;}
+
 
 /* photos */
 .row {margin-top:20px; position: relative;}
