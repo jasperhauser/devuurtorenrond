@@ -28,6 +28,7 @@ a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
   a.white:hover {border-bottom-color:rgba(255, 255, 255, 0.9);}
 hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
 picture img {background-color: rgba(150, 150, 150, 0.15); width: 100%; height: auto; border: none;}
+figure {margin:0;}
 
 input, textarea, button {display: block; font-size: 16px; border-radius: 6px;}
 input {padding:8px 8px; box-sizing: border-box; margin-top:10px; margin-bottom:10px; border: none;}
@@ -112,11 +113,11 @@ body.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;} */
 .row div:first-child {margin-right:10px;}
 .row div:last-child {margin-left:10px;}
 .photo-bottom picture {position: absolute; bottom:0px;}
-.caption {position:absolute; left:10px; top:10px; font-size:0.95em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
-  .caption.dark {color:rgba(0, 0, 0, 0.8); }
-  .photo-bottom .caption {bottom:20px; top:unset;}
-  div div:hover .caption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
-  div div:hover .caption.dark {text-shadow:none;}
+.caption, figcaption {position:absolute; left:10px; top:10px; font-size:0.85em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
+  .caption.dark, figcaption.dark {color:rgba(0, 0, 0, 0.8); }
+  .photo-bottom .caption, .photo-bottom figcaption {bottom:20px; top:unset;}
+  div div:hover .caption, figure:hover figcaption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
+  div div:hover .caption.dark, fugure:hover figcaption.dark {text-shadow:none;}
 
 /* media cards */
 .cards {display: flex; flex-wrap: wrap; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
@@ -185,7 +186,7 @@ footer:hover {opacity:1;}
     .flex {flex-direction: column;}
     .w-50, .w-40, .w-60 {width:100%;}
     .photo-bottom picture {position: relative;}
-      .photo-bottom .caption {bottom:unset; top:20px;}
+      .photo-bottom .caption, .photo-bottom figcaption {bottom:unset; top:20px;}
     /* .caption {opacity:1;} */
     .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
     .row div:first-child {margin-bottom:20px;}
