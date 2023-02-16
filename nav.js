@@ -69,4 +69,17 @@ function onScroll(){
             // console.log("hello")
         }
     }
+    
+    // show hide nav bar shadow on article pages
+    var article = document.getElementById("article");
+    if (article) {
+        // nav bar height
+        var navHeight = document.getElementById("nav-global").offsetHeight;
+        // nav toggle nav shadow
+        if (window.pageYOffset >= navHeight) {
+            document.getElementById("nav-global").classList.add("shadow");
+        } else if (window.pageYOffset < navHeight) {
+            document.getElementById("nav-global").classList.remove("shadow");
+        }
+    }
 }

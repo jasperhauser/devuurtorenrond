@@ -13,7 +13,7 @@
 }
 
 /* base styles */
-body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:15px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out; top: 0px !important; position: static !important; margin-top: 0 !important;}
+body {font-family: 'Inter', sans-serif, 'Helvetica'; font-size:16px; padding:0; margin:0; background-color:var(--paper); transition: background-color 1.5s ease-in-out; top: 0px !important; position: static !important; margin-top: 0 !important;}
 
 p, ul {line-height:2em;}
 footer {padding:0 20px;}
@@ -51,7 +51,8 @@ button {background-color: var(--darkBlue); color: #fff; padding:10px 15px; borde
 .tvc {display: flex; flex-direction: column; justify-content: center;} /* text vertical align */
 
 /* nav */
-nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all 1.0s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 2px 6px rgba(0, 0, 0, 0.15);}
+nav {height: 48px; width:100%; z-index: 3; position:fixed; top: -200px; transition: all 1.0s ease-in-out; background-color: rgba(252, 238, 225, 0.8); box-shadow:0px 1px 4px rgba(0, 0, 0, 0.15);}
+nav.shadow {box-shadow:0px 1px 4px rgba(0, 0, 0, 0.15);}
 nav.sticky {position:fixed; top:0;}
 #nav-content {height:48px; position: relative;}
 nav a img {position: absolute; width:30px; top:9px; left:20px; }
