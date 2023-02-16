@@ -90,7 +90,7 @@
 			#masthead-photo img {height: 350px;}
 			.intro {text-align: left;}
 
-			#links {flex-direction:column;}
+			.cards {flex-direction:column;}
 			.card, .media .card {max-width: 100%; margin-bottom: 20px;}
 		}
 		@media screen and (max-width: 640px) and (prefers-color-scheme: dark){
@@ -117,7 +117,7 @@
 
 			<div id="nav-menu">
 				<ul id="nav-menu-list">
-					<li><a href="#intro">Introductie</a></li>
+					<li><a href="#publicaties">Publicaties</a></li>
 					<li><a href="#over">Het project</a></li>
 					<li><a href="#makers">De makers</a></li>
 					<li><a href="#newsletter">Nieuwsbrief</a></li>
@@ -159,7 +159,7 @@
 		</section>
 
 		<section style="margin-top:50px;" id="photos">
-			<!-- intro -->
+			<!-- set the scene -->
 			<div class="inset-wide flex row">
 				<div class="w-40">
 					<picture>
@@ -176,22 +176,15 @@
 					<span class="caption">De Hylperdyk</span>
 				</div>
 			</div>
-
-			<div id="intro"></div>
-			<div class="inset-narrow" style="margin-top:50px; margin-bottom:50px;">
-				<p>Is het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
-
-				<p>Met een zeis maakten Reid en Cornelie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legden een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekken ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. En houden ze de bedstee warm met op de houtkachel verwarmde stenen in sokken. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
-			</div>
 		</section>
 
 		<section>
 			<div class="inset-narrow">
-				<h2>Publicaties</h2>
+				<h2 id="publicaties" style="padding-top:60px; margin-top: 0;">Publicaties</h2>
 				<p>In '22 & '23 publiceren wij elk seizoen een nieuw beeldend verhaal, waarin een aankomend seizoen op deze bijzondere plek uitgelicht wordt.</p>
 			</div>
 
-			<div id="links" class="inset-wide publications">
+			<div class="inset-wide publications cards">
 				
 				<!-- gepubliceerde uitgaven -->
 				<a class="card" href="/winter" rel="noopener">
@@ -252,8 +245,13 @@
 			<!-- color switch -->
 			<div id="green"></div>
 
-			<div id="over" class="inset-narrow" style="margin-top:70px; margin-bottom:50px;">
-				<h2>Over De Vuurtoren Rond</h2>
+			<div class="inset-narrow" style="margin-bottom:50px;">
+				<h2  id="over" style="padding-top:60px; margin-top: 0;">Over De Vuurtoren Rond</h2>
+			
+				<p>Is het mogelijk om samen te leven met de natuur? Anno nu lijkt een zelfvoorzienend bestaan een echo uit een ver verleden, maar in Workum is deze kennis nog niet verloren gegaan.</p>
+	
+				<p>Met een zeis maakten Reid en Cornelie de landjes rondom de voortoren vrij van riet. Ze plantten bomen voor luwte, groeven greppels voor afwatering en legden een moestuin en boomgaard aan. Het verwaarloosde huis herstelden zij in oude luister. Ze haalden geiten voor de melk en schapen voor de wol en vingen vis in het IJsselmeer. Groenten kwamen uit de eigen moestuin. Water komt uit een eigen bron en elektriciteit wekken ze op met een windmolentje en enkele zonnepanelen, nét genoeg om een paar lampen van te laten branden. ’s Winters stoken ze het huis warm met een houtkachel. En houden ze de bedstee warm met op de houtkachel verwarmde stenen in sokken. In de loop der jaren ontstond zo hun eigen hof van Eden.</p>
+
 				<p>Met dit project documenteren wij deze bijzondere zelfvoorzienende manier van leven met als doel om kennis over te dragen. De getoonde foto’s geven een eerste impressie van het rijke leven rondom ‘It Toarntsje’. Doel is om deze website uit te breiden met meer foto’s en tekst en zoveel mogelijk kennis openbaar te maken. Dit project is tot stand gekomen op initiatief van Jasper Hauser in samenwerking met fotograaf Loek Buter. Samen zijn zij op zoek naar nieuwe samenwerkingen om het uit te kunnen breiden met een boek en expositie.</p>
 			</div>
 
@@ -283,7 +281,7 @@
 			</div>
 
 			<!-- in de media kaartjes -->
-			<div id="links" class="inset media" >
+			<div class="inset media cards" >
 				<a class="card" href="https://dekleurvangeld.nl/artikelen/2022/zelfvoorzienend-leven-is-leren-wat-genoeg-precies-is" target="_blank" rel="noopener">
 					<span class="card-image">
 						<img src="images/media-triodos.jpg" srcset="images/media-triodos.jpg 400w, images/media-triodos@2x.jpg 800w" alt="Schermafbeelding van online artikel van De kleur van geld" width="280" height="174" loading="lazy">
@@ -389,9 +387,8 @@
 		</section>
 			
 		<section>
-			<div id="makers"></div>
-			<div class="inset-narrow" style="margin-top:50px;">
-				<h2>De Makers</h2>
+			<div class="inset-narrow">
+				<h2 id="makers" style="padding-top:60px; margin-top: 0;">De Makers</h2>
 				<p><b><a href="http://www.loekbuter.com" target="_blank" rel="noopener">Loek Buter</a></b> is <a href="https://www.zilverencamera.nl/jaargang/zc-2021/1e-prijs-serie-loek-buter-een-beer-in-de-polder/" target="_blank">zilveren camera winnend</a> documentair en portret fotograaf. In zijn fotografie ligt de focus op thema’s als duurzaamheid, natuur, landbouw, en het Hollands landschap. Hij studeerde aan de Fotoacademie in Amsterdam en woont in Noord-Holland. Opdrachtgevers zijn onder meer De Volkskrant, National Geographic, NRC, Provincie Noord-Holland, Het Parool en Trouw.</p>
 				<p><a href="mailto:info@loekbuter.com?subject=De%20Vuurtoren%20Rond">info@loekbuter.com</a> — <a href="tel:+31-6-430-640-82">+31 (0)6 430 640 82</a> — <a href="https://www.instagram.com/loekbuter" target="_blank" rel="noopener">@loekbutter</a></p>
 				

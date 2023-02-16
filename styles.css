@@ -118,7 +118,7 @@ body.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;} */
   div div:hover .caption.dark {text-shadow:none;}
 
 /* media cards */
-#links {display: flex; flex-wrap: wrap; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
+.cards {display: flex; flex-wrap: wrap; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
 .card {display: block; border-bottom:none; box-sizing: border-box; margin:10px 10px;}
 .card:hover {border-bottom:none; transform: scale(1.02); transition: all .2s ease-in-out; }
 .card:hover {color:var(--red);}
