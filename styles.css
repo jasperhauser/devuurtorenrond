@@ -29,7 +29,7 @@ a:hover {border-bottom:1px solid rgba(0, 0, 0, 0.9);}
 hr {height: 1px; border: none; border-top: 1px solid rgba(150, 150, 150, 0.4); width: 100px; margin: 35px 0;}
 picture img {background-color: rgba(150, 150, 150, 0.15); width: 100%; height: auto; border: none;}
 
-input, button {display: block; font-size: 15px; border-radius: 6px;}
+input, textarea, button {display: block; font-size: 16px; border-radius: 6px;}
 input {padding:8px 8px; box-sizing: border-box; margin-top:10px; margin-bottom:10px; border: none;}
   input:focus {outline: 1px solid var(--darkBlue);}
 button {background-color: var(--darkBlue); color: #fff; padding:10px 15px; border: none;}
