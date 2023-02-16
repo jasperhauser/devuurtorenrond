@@ -40,8 +40,8 @@ document.getElementById("nav-menu-backdrop").onclick = function(){
 };
 
 // scroll &	resize event listener
-window.addEventListener('resize', throttle(onScroll, 200));
-window.addEventListener('scroll', throttle(onScroll, 200));
+window.addEventListener('resize', throttle(onScroll, 50));
+window.addEventListener('scroll', throttle(onScroll, 50));
 
 // let's make the events not eat all the resources
 function throttle(fn, wait) {
@@ -81,5 +81,13 @@ function onScroll(){
         } else if (window.pageYOffset < navHeight) {
             document.getElementById("nav-global").classList.remove("shadow");
         }
+        // progress bar for artcile pages
+        var progress = document.getElementById('progress');
+        // get the total height of the page
+        var totalHeight = document.body.scrollHeight - window.innerHeight;
+        // calculate the percentage of the page scrolled
+        var progressWidth = (window.pageYOffset / totalHeight) * 100;
+        // set the width of the progress bar
+        progress.style.width = progressWidth + "%";
     }
 }
