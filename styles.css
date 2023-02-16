@@ -124,7 +124,8 @@ figcaption {position:absolute; left:10px; top:10px; font-size:0.85em; color:#fff
 
 /* media */
 audio {display:block; margin:0 auto 8px auto; width:320px;}
-#audio-player {width: fit-content; margin: auto; font-size: 0.8em; background-color: rgba(255, 255, 255, 0.52); padding: 8px 8px 8px 8px; border-radius: 14px; color: #4d4d4d;}
+#audio-player {box-sizing: border-box; width: fit-content; margin: auto; font-size: 0.8em; background-color: rgba(255, 255, 255, 0.52); padding: 8px 8px 8px 8px; border-radius: 14px; color: #4d4d4d; }
+#audio-player div {text-align: center;}
 
 
 /* media cards */
@@ -200,7 +201,7 @@ footer:hover {opacity:1;}
     #nav-menu-list {display: none;}
     #nav-more {display: block;}
     #form {padding-left:unset;}
-    audio {margin-left: unset; margin-right: unset;}
+    audio, #audio-player {margin-left: unset; margin-right: unset;}
 }
 @media screen and (max-width: 640px){
 
@@ -212,7 +213,7 @@ footer:hover {opacity:1;}
 @media screen and (max-width: 480px) {
     /* phablet */
     input, button {width:100%;}
-    audio {width:100%;}
+    audio, #audio-player {width:100%;}
 }
 @media screen and (max-width: 375px) {
     /* phones */
