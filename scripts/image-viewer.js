@@ -56,6 +56,30 @@ figures.forEach(figure => {
             }
         });
 
+        // close modal when swiped down
+        let touchstartY = 0
+        let touchendY = 0
+
+        function checkDirection() {
+            if (touchendY < touchstartY) {
+                closeModal();
+                console.log('swiped down!')
+                alert('swiped right!')
+            } else if (touchendX > touchstartX) {
+                closeModal();
+                console.log('swiped up!')
+                alert('swiped right!')
+            }
+        };
+
+        document.addEventListener('touchstart', e => {
+            touchstartY = e.changedTouches[0].screenY
+        });
+
+        document.addEventListener('touchend', e => {
+            touchendY = e.changedTouches[0].screenY
+            checkDirection()
+        });
     });
 });
 
