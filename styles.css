@@ -132,7 +132,8 @@ figure picture {cursor: zoom-in;}
 .modal-close:hover span {opacity: 1;}
 .modal-open {opacity: 1;}
 .modal figcaption {opacity: 1; display:block; bottom: 20px; left: 20px; top: unset;}
-.modal figure:hover figcaption {display: block;}
+.modal figcaption.dark {color: #fff; }
+.modal figure:hover figcaption {display: blockx;}
 
 /* media */
 audio {display:block; margin:0 auto 8px auto; width:320px;}
