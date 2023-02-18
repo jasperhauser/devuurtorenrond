@@ -64,19 +64,19 @@ figures.forEach(figure => {
             if (touchendY < touchstartY) {
                 closeModal();
                 console.log('swiped down!')
-                alert('swiped right!')
-            } else if (touchendX > touchstartX) {
+                // alert('swiped down!')
+            } else if (touchendY > touchstartY) {
                 closeModal();
                 console.log('swiped up!')
-                alert('swiped right!')
+                // alert('swiped up!')
             }
         };
 
-        document.addEventListener('touchstart', e => {
+        modal.addEventListener('touchstart', e => {
             touchstartY = e.changedTouches[0].screenY
         });
 
-        document.addEventListener('touchend', e => {
+        modal.addEventListener('touchend', e => {
             touchendY = e.changedTouches[0].screenY
             checkDirection()
         });
