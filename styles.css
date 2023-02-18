@@ -122,6 +122,17 @@ figcaption {position:absolute; left:10px; top:10px; font-size:0.85em; color:#fff
   figure:hover figcaption {opacity:1; text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);}
   figure:hover figcaption.dark {text-shadow:none;}
 
+/* image viewer */
+figure picture {cursor: zoom-in;}
+.modal {width:100%; height:100%; position: fixed; top:0; left:0; opacity: 0; transition: opacity 0.2s ease-in-out; background-color: rgba(0, 0, 0, 0.9); z-index: 10; text-align: center; display: none;}
+.modal picture {cursor: zoom-out;}
+.modal picture img {width: unset; height: unset;  max-height: 100%; max-width: 100%; top:50%; left:50%; transform: translate(-50%, -50%); position: absolute;}
+.modal-close {position: absolute; top:20px; right:20px; width:42px; height: 42px; font-size: 1.5em; background-color: rgba(100, 100, 100, 0.45); border-radius: 21px; transition: all .2s ease-in-out; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);}
+.modal-close span {color: #ffffff; opacity: 0.5; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); cursor: default;}
+.modal-close:hover span {opacity: 1;}
+.modal-open {opacity: 1;}
+.modal figcaption {opacity: 1; bottom:20px; top: unset;}
+
 /* media */
 audio {display:block; margin:0 auto 8px auto; width:320px;}
 #audio-player {box-sizing: border-box; width: fit-content; margin: auto; font-size: 0.8em; background-color: rgba(255, 255, 255, 0.52); padding: 8px 8px 8px 8px; border-radius: 14px; color: #4d4d4d; }
