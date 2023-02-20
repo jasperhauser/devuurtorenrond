@@ -59,9 +59,10 @@
 		}
 	</style>
 </head>
-<body>
+<body id="article">
 
 	<nav id="nav-global">
+		<div id="progress"></div>
 		<div id="nav-content" class="inset-wide">
 			<a href="/" id="logo">
 				<img src="/images/torentje.svg" alt="Beeldmerk De vuurtoren Rond">
@@ -70,95 +71,337 @@
 
 			<div id="nav-menu">
 				<ul id="nav-menu-list">
-					<!-- <li><a href="#intro">Introductie</a></li> -->
 					<li><a href="/">Het project</a></li>
 					<li><a href="/#makers">De makers</a></li>
 					<li><a href="#newsletter">Nieuwsbrief</a></li>
 				</ul>
 				<div id="nav-more">
-					<div class="nav-line"></div>
-					<div class="nav-line"></div>
+					<div class="nav-line" id="top-line"></div>
+					<div class="nav-line" id="bottom-line"></div>
 				</div>
 			</div>
 		</div>
 	</nav>
+	<div id="nav-menu-backdrop"></div>
 
 	<article>
 
 		<!-- introductie -->
 		<section id="header">
 			<div class="inset-wide header-title" style="margin-top: 100px;">
-				<h1 style="color:var(--darkBlue);">Zomer rond de vuurtoren</h1>
+				<h1 style="color:#9eb84a;">Zomer rond de vuurtoren</h1>
 				<p>Door <a href="https://jasperhauser.nl" target="_blank" rel="noopener">Jasper Hauser</a> en <a href="https://www.loekbuter.com" target="_blank" rel="noopener">Loek Buter</a> — December 2022 <br>
 				<span id="readingTime">3</span> min lezen - <a href="https://www-devuurtorenrond-nl.translate.goog/winter/?_x_tr_sl=nl&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp">English</a>, <a href="https://www-devuurtorenrond-nl.translate.goog/winter/?_x_tr_sl=nl&_x_tr_tl=fr&_x_tr_hl=en-US&_x_tr_pto=wapp">Français</a>, <a href="https://www-devuurtorenrond-nl.translate.goog/winter/?_x_tr_sl=nl&_x_tr_tl=de&_x_tr_hl=en-US&_x_tr_pto=wapp">Deutsch</a></p>
 			</div>
-			<div class="inset-narrow">
-				<p>Deze winterpublicatie is onderdeel van een reeks over het zelfvoorzienende leven rond 'It Toarntsje', de Vuurtoren van het Friese Workum. Boven op de Hylperdyk uitkijkend over het IJsselmeer bouwden Reid en Cornelie hun eigen zelfvoorzienende biotoop. Een wereld waarin alles draait om de relatie tussen mens, dier en natuur.</p> <!-- subscribe en koop prints! -->
-			</div>
 		</section>
 
 		<section>
-			<div class="inset-wide" style="margin-top:40px; margin-bottom:60px;">
+			<div class="inset-wide" style="margin-top:40px;">
 				<div class="row">
-					<picture>
-						<source type="image/webp" srcset="/photos/winter/winter-wak-600.webp 600w, /photos/winter/winter-wak-1200.webp 1200w, /photos/winter/winter-wak-2000.webp 2000w">
-						<img src="/photos/winter/winter-wak-1200.jpg" srcset="/photos/winter/winter-wak-600.jpg 600w, /photos/winter/winter-wak-1200.jpg 1200w, /photos/winter/winter-wak-2000.jpg 2000w" style="width:100%;" alt="Een wak op het weidse bevroren IJsselmeer" loading="lazy">
-					</picture>
-					<span class="caption">Een wak op het weidse bevroren IJsselmeer</span>
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/winter/winter-wak-600.webp 600w, /photos/winter/winter-wak-1200.webp 1200w, /photos/winter/winter-wak-2000.webp 2000w"> -->
+							<img src="/photos/zomer/tuin.jpg" srcset="/photos/zomer/tuin.jpg 600w, /photos/zomer/tuin.jpg 1200w, /photos/zomer/tuin.jpg 2000w" width="1160" height="1160" alt="Een wak op het weidse bevroren IJsselmeer">
+						</picture>
+						<figcaption>Een wak op het weidse bevroren IJsselmeer</figcaption>
+					</figure>
 				</div>
 			</div>
 
-			<div class="inset-narrow">
-				<h2>Terug de vuurtoren in</h2>
-				<h4 style="margin-top:-20px;">Jasper Hauser, initiator en kleinzoon</h4>
-				<p>Het Friese, winterse landschap rond de vuurtoren aan het IJsselmeer en het natuurgebied <a href="https://nl.wikipedia.org/wiki/Stoenckherne">Stoenckherne</a>, voelt alsof het werk van <a href="https://www.google.com/search?client=safari&rls=en&q=Jan+Schoonhoven">Jan Schoonhoven</a> tot leven is gekomen. Het minimalistische landschap met slechts enkele sloten en kale bomen; alles lijkt een groot, wit reliëf te vormen.</p>
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin.jpg" srcset="/photos/zomer/moestuin.jpg 600w, /photos/zomer/moestuin.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin-bloemen.jpg" srcset="/photos/zomer/moestuin-bloemen.jpg 600w, /photos/zomer/moestuin-bloemen.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/klaprozen.jpg" srcset="/photos/zomer/klaprozen.jpg 600w, /photos/zomer/klaprozen.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin-cornelie.jpg" srcset="/photos/zomer/moestuin-cornelie.jpg 600w, /photos/zomer/moestuin-cornelie.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
 			</div>
 		</section>
 
-		<!-- het landschap -->
+
 		<section>
-			<div class="inset-wide flex row" style="margin-top:60px;">
+			<div class="inset-narrow" style="margin-top: 60px; margin-bottom: 60px;">
+				<p>Een zomer bezoek aan de vuurtoren is er een waar ik altijd naar uitkijk. Tijdens deze lange maanden overspoelt de natuur rond de vuurtoren alles in een warme golf aan weelderig leven. De bladeren zijn nog groener, de bloeiende bloemen nog kleurrijker, en het gras is nog geparfumeerder. Overal in de lucht weerklinken de geluiden van vogels, en het gezoem van de bijen die druk tussen de velden en de boomgaard heen en weer vliegen. De zomer op de vuurtoren is de verwezenlijking van de cliche van het Hof van Eden, Jan Toorop lijkt het hier haast bezocht te hebben.</p>
+			</div>
+
+			<div class="inset-wide flex row">
 				<div class="w-60">
-					<picture>
-						<source type="image/webp" srcset="/photos/winter/winter-meertje-600.webp 600w, /photos/winter/winter-meertje-1200.webp 1200w">
-						<img src="/photos/winter/winter-meertje-600.jpg" srcset="/photos/winter/winter-meertje-600.jpg 600w, /photos/winter/winter-meertje-1200.jpg 1200w" style="width:100%;" alt="Tussendoor over het bevroren meertje" loading="lazy">
-					</picture>
-					<span class="caption">Tussendoor over het bevroren meertje</span>
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/reid-zeis.jpg" srcset="/photos/zomer/reid-zeis.jpg 600w, /photos/zomer/reid-zeis.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
 				</div>
 				<div class="w-40 photo-bottom">
-					<picture>
-						<source type="image/webp" srcset="/photos/winter/winter-steiger-600.webp 600w, /photos/winter/winter-steiger-1200.webp 1200w">
-						<img src="/photos/winter/winter-steiger-600.jpg" srcset="/photos/winter/winter-steiger-600.jpg 600w, /photos/winter/winter-steiger-1200.jpg 1200w" style="width:100%;" alt="De steiger" loading="lazy">
-					</picture>
-					<span class="caption">De steiger</span>
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/duive-til.jpg" srcset="/photos/zomer/duive-til.jpg 600w, /photos/zomer/duive-til.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/kat.jpg" srcset="/photos/zomer/kat.jpg 600w, /photos/zomer/kat.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/kippen.jpg" srcset="/photos/zomer/kippen.jpg 600w, /photos/zomer/kippen.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/spoelhoek.jpg" srcset="/photos/zomer/spoelhoek.jpg 600w, /photos/zomer/spoelhoek.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/cornelie-boeket.jpg" srcset="/photos/zomer/cornelie-boeket.jpg 600w, /photos/zomer/cornelie-boeket.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
+		</section>
+
+		<section>
+			<div class="inset-narrow" style="margin-top: 60px; margin-bottom: 60px;">
+				<p>Rond de tuinen en de boomgaard heerst een idyllisch aanstekelijke sfeer van rustige drukte. Alles is zo overvloedig dat de lange dagen hard nodig zijn om de natuur niet alles over te laten nemen, en het iets binnen de perken te houden. Deze maanden biedt het land makkelijk de concurrentie aan met de lokale boodschappen-, groente- en bloemenwinkel. Boontjes, komkommers, tomaten, sla, courgetten, aardbeien, kruisbessen, honing, eiren, geiten melk, verse schapen kaas, en eindeloze keuze aan bloemen: alles is verkrijgbaar. Voor het eten hoeft dan ook alleen maar een ommetje gemaakt te worden door de eigen winkelstraat. Een korte wandeling om de ogen te laten genieten van de vruchten van de arbeid en om de natuur te waarderen.</p>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/kas-tafel.jpg" srcset="/photos/zomer/kas-tafel.jpg 600w, /photos/zomer/kas-tafel.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-40 photo-bottom">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/kas.jpg" srcset="/photos/zomer/kas.jpg 600w, /photos/zomer/kas.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin-bonenstaak.jpg" srcset="/photos/zomer/moestuin-bonenstaak.jpg 600w, /photos/zomer/moestuin-bonenstaak.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin-boontjes.jpg" srcset="/photos/zomer/moestuin-boontjes.jpg 600w, /photos/zomer/moestuin-boontjes.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+			
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin-courgette.jpg" srcset="/photos/zomer/moestuin-courgette.jpg 600w, /photos/zomer/moestuin-courgette.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/moestuin-mand.jpg" srcset="/photos/zomer/moestuin-mand.jpg 600w, /photos/zomer/moestuin-mand.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+		
+		<section>
+			<div class="inset-narrow" style="margin-top: 60px; margin-bottom: 60px;">
+				<p>Ook aan de voorkant van de vuurtoren op de dijk, uitkijkend over het IJsselmeer is er van alles te zien of beleven. Wandelaars komen en gaan over de dijk tussen Workum en Stavoren om het IJsselmeer en natuurgebied [Stoenckherne](https://nl.wikipedia.org/wiki/Stoenckherne) in het weekend te bewonderen. Moderne en klassieke Nederlandse bootjes varen over het Soal naar en van de haven van Workum. Aan de overkant is het strand een paradijs voor kite-surfers. En in de verte prijkt het nieuwe windmolen park in het IJsselmeer aan de horizon.</p>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/vuurtoren.jpg" srcset="/photos/zomer/vuurtoren.jpg 600w, /photos/zomer/vuurtoren.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+				<div class="w-40 photo-bottom">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/uitzicht-toren.jpg" srcset="/photos/zomer/uitzicht-toren.jpg 600w, /photos/zomer/uitzicht-toren.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+			</div>
+			
+			<!-- uitzicht -->
+			<div class="inset-wide flex row">
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/dijk-reid-cornelie.jpg" srcset="/photos/zomer/dijk-reid-cornelie.jpg 600w, /photos/zomer/dijk-reid-cornelie.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-50">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/dijk-bloemen-eten.jpg" srcset="/photos/zomer/dijk-bloemen-eten.jpg 600w, /photos/zomer/dijk-bloemen-eten.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/tweeluik-1.jpg" srcset="/photos/zomer/tweeluik-1.jpg 600w, /photos/zomer/tweeluik-1.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/tweeluik-2.jpg" srcset="/photos/zomer/tweeluik-2.jpg 600w, /photos/zomer/tweeluik-2.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
 				</div>
 			</div>
 		</section>
 
 		<section>
-			<div class="inset-narrow">
-				<p>Een zomer bezoek aan de vuurtoren is er een waar ik altijd naar uitkijk. Tijdens deze lange maanden overspoelt de natuur rond de vuurtoren alles in een warme golf aan weelderig leven. De bladeren zijn nog groener, de bloeiende bloemen nog kleurrijker, en het gras is nog geparfumeerder. Overal in de lucht weerklinken de geluiden van vogels, en het gezoem van de bijen die druk tussen de velden en de boomgaard heen en weer vliegen. De zomer op de vuurtoren is de verwezenlijking van de cliche van het Hof van Eden, Jan Toorop lijkt het hier haast bezocht te hebben.</p>
-
-				<p>Rond de tuinen en de boomgaard heerst een idyllisch aanstekelijke sfeer van rustige drukte. Alles is zo overvloedig dat de lange dagen hard nodig zijn om de natuur niet alles over te laten nemen, en het iets binnen de perken te houden. Deze maanden biedt het land makkelijk de concurrentie aan met de lokale boodschappen-, groente- en bloemenwinkel. Boontjes, komkommers, tomaten, sla, courgetten, aardbeien, kruisbessen, honing, eiren, geiten melk, verse schapen kaas, en eindeloze keuze aan bloemen: alles is verkrijgbaar. Voor het eten hoeft dan ook alleen maar een ommetje gemaakt te worden door de eigen winkelstraat. Een korte wandeling om de ogen te laten genieten van de vruchten van de arbeid en om de natuur te waarderen.</p>
-
-				<p>Ook aan de voorkant van de vuurtoren op de dijk, uitkijkend over het IJsselmeer is er van alles te zien of beleven. Wandelaars komen en gaan over de dijk tussen Workum en Stavoren om het IJsselmeer en natuurgebied [Stoenckherne](https://nl.wikipedia.org/wiki/Stoenckherne) in het weekend te bewonderen. Moderne en klassieke Nederlandse bootjes varen over het Soal naar en van de haven van Workum. Aan de overkant is het strand een paradijs voor kite-surfers. En in de verte prijkt het nieuwe windmolen park in het IJsselmeer aan de horizon.</p>
-
+			<div class="inset-narrow" style="margin-top: 60px; margin-bottom: 60px;">
 				<p>Na een lange dag is het een perfect moment om te ontspannen en de natuur te bewonderen. Zittend boven op de dijk is een van de beste plekken om 's avonds te genieten van het uitzicht over het meer. Reflecterend op de fascinerende contrasten tussen de oude en nieuwe manieren van samenleven met de natuur, geniet je van de zonsondergang over het IJsselmeer in de warme avonduren. Vliegen de zwaluwen en vleermuizen nog ijverig rond, terwijl je de rust en schoonheid van het landschap om je heen bewondert.</p>
 			</div>
+
+			<div class="inset-wide flex row">
+				<div class="w-40">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-10-600.webp 600w, /photos/lente/voorjaar-10-1200.webp 1200w"> -->
+							<img src="/photos/zomer/uitzicht-vuurtoren.jpg" srcset="/photos/zomer/uitzicht-vuurtoren.jpg 600w, /photos/zomer/uitzicht-vuurtoren.jpg 1200w" width="570" height="570" alt="Jam potjes als mini kassen">
+						</picture>
+						<figcaption>Jam potjes als mini kassen</figcaption>
+					</figure>
+				</div>
+				<div class="w-60">
+					<figure>
+						<picture>
+							<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+							<img src="/photos/zomer/uitzicht-binnen.jpg" srcset="/photos/zomer/uitzicht-binnen.jpg 600w, /photos/zomer/uitzicht-binnen.jpg 1200w" width="570" height="570" alt="De moestuin in voorbereiding">
+						</picture>
+						<figcaption>De moestuin in voorbereiding</figcaption>
+					</figure>
+				</div>
+			</div>
+
 		</section>
 		
 	</article>
 
 	<section>
+		<hr style="margin-left: auto; margin-right: auto; margin-top: 60px;">
 		<div class="inset-narrow">
 			<h2 style="text-align: center;">Lees ook</h2>
 			<a class="card" href="/lente" rel="noopener">
 				<span class="card-image">
-					<img src="/images/social-card-lente.jpg" srcset="/images/social-card-lente.jpg 400w, /images/social-card-lente@2x.jpg 800w" alt="lente ronde de vuurtoren" loading="lazy">
+					<img src="/images/social-card-lente-f7fbe2.jpg" srcset="/images/social-card-lente-f7fbe2.jpg 400w, /images/social-card-lente@2x-f7fbe2.jpg 800w" alt="lente ronde de vuurtoren" loading="lazy">
 				</span>
 				<span class="card-text">
-					<span class="card-source">Maart 2022 — Eerste editie</span>
 					<span class="card-title">Lente rond de Vuurtoren</span>
+					<span class="card-source">Maart 2022 — Eerste editie</span>
 				</span>
 			</a>
 		<hr style="margin-left: auto; margin-right: auto;">
@@ -167,17 +410,19 @@
 
 	<section id="newsletter">
 		<div class="inset-wide flex">
-			<div class="w-50" style="position: relative;">
-				<picture>
-					<source type="image/webp" srcset="/photos/winter/winter-ijsselmeer-bootje-600.webp 600w, /photos/winter/winter-ijsselmeer-bootje-1200.webp 1200w">
-					<img src="/photos/winter/winter-ijsselmeer-bootje-600.jpg" srcset="/photos/winter/winter-ijsselmeer-bootje-600.jpg 600w, /photos/winter/winter-ijsselmeer-bootje-1200.jpg 1200w" style="width:100%;" alt="WK 44" loading="lazy">
-				</picture>
-				<span class="caption">WK 44</span>
+			<div class="w-50">
+				<figure>
+					<picture>
+						<!-- <source type="image/webp" srcset="/photos/lente/voorjaar-11-600.webp 600w, /photos/lente/voorjaar-11-1200.webp 1200w"> -->
+						<img src="/photos/zomer/veld-orchidee.jpg" srcset="/photos/zomer/veld-orchidee.jpg 600w, /photos/zomer/veld-orchidee.jpg 1200w" alt="WK 44" loading="lazy">
+					</picture>
+					<figcaption>De moestuin in voorbereiding</figcaption>
+				</figure>
 			</div>
 
 			<div class="w-50 tvc">
 				<div id="form">
-					<h3 style="color: #61738c;">Blijf op de hoogte</h3>
+					<h2>Blijf op de hoogte</h2>
 					<p>Schrijf je in op onze nieuwsbrief om als eerste het laatste publicaties en nieuws over toekomstige ontwikkelingen van het project te ontvangen.</p>
 			
 					<!-- Begin Mailchimp Signup Form -->
@@ -206,8 +451,9 @@
 		<script>document.getElementById('fyear').textContent = new Date().getFullYear();</script>
 	</footer>
 
-	<script async src="/readtime.js"></script>
-	<script async src="/nav.js"></script>
+	<script async src="/scripts/readtime.js"></script>
+	<script async src="/scripts/nav.js"></script>
+	<script async src="/scripts/image-viewer.js"></script>
 
 </body>
 </html>
