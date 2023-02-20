@@ -123,7 +123,7 @@ figcaption {position:absolute; left:10px; top:10px; font-size:0.85em; color:#fff
   figure:hover figcaption.dark {text-shadow:none;}
 
 /* image viewer */
-figure picture {cursor: zoom-in;}
+figure {cursor: zoom-in;}
 .modal {width:100%; height:100%; position: fixed; top:0; left:0; opacity: 0; transition: opacity 0.2s ease-in-out; background-color: rgba(0, 0, 0, 0.9); z-index: 10; text-align: center; display: none;}
 .modal picture {cursor: zoom-out;}
 .modal picture img {width: unset; height: unset;  max-height: 100%; max-width: 100%; top:50%; left:50%; transform: translate(-50%, -50%); position: absolute;}
@@ -134,6 +134,13 @@ figure picture {cursor: zoom-in;}
 .modal figcaption {opacity: 1; display:block; bottom: 20px; left: 20px; top: unset;}
 .modal figcaption.dark {color: #fff; }
 .modal figure:hover figcaption {display: blockx;}
+
+/* fullscreen icon on image */
+.modal .fullscreen, .modal figure:hover .fullscreen {display: none;}
+figure .fullscreen {display:none; position: absolute; top:10px; right:10px; width:32px; height: 32px; background-color:  rgba(100, 100, 100, 0.45); border-radius: 8px; transition: all .2s ease-in-out; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); background-image: url(/images/fullscreen.svg); background-size: 24px; background-position: center; background-repeat: no-repeat; }
+figure:hover .fullscreen {display:block;}
+.photo-bottom .fullscreen {top:unset; bottom:10px;}
+
 
 /* media */
 audio {display:block; margin:0 auto 8px auto; width:320px;}
@@ -208,7 +215,8 @@ footer:hover {opacity:1;}
     .flex {flex-direction: column;}
     .w-50, .w-40, .w-60 {width:100%;}
     .photo-bottom picture {position: relative;}
-      .photo-bottom figcaption {bottom:unset; top:20px;}
+      .photo-bottom figcaption {bottom:unset; top:10px;}
+      .photo-bottom .fullscreen {top:10px; bottom:unset;}
     .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
     .row div:first-child {margin-bottom:20px;}
     #nav-menu-list {display: none;}
@@ -228,6 +236,7 @@ footer:hover {opacity:1;}
     input, button {width:100%;}
     audio, #audio-player {width:100%;}
     figure:hover figcaption {display: none;}
+    figure:hover .fullscreen {display:none;}
 }
 @media screen and (max-width: 375px) {
     /* phones */

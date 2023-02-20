@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <path d="M9.5,21 C8.74444444,21 8.11111111,21 6.6,21 C4.6117749,21 3,19.3882251 3,17.4 C3,16.0502863 3,15.0836197 3,14.5 M3,9.5 C3,8.63333333 3,8.33333333 3,6.6 C3,4.6117749 4.6117749,3 6.6,3 C8.44174113,3 8.74174113,3 9.5,3 M14.5,3 C15.2555556,3 15.8888889,3 17.4,3 C19.3882251,3 21,4.6117749 21,6.6 C21,8.71319972 21,8.67986638 21,9.5 M21,14.5 C21,15.3666667 21,15.6666667 21,17.4 C21,19.3882251 19.3882251,21 17.4,21 C15.8093782,21 15.1760448,21 14.5,21" id="Shape" stroke="#FFFFFF"></path>
+        <line x1="7.5" y1="16.5" x2="16.5" y2="7.5" id="Line" stroke="#FFFFFF"></line>
+        <polyline id="Path-2" stroke="#FFFFFF" points="13 7 17 7 17 11"></polyline>
+        <polyline id="Path-2" stroke="#FFFFFF" transform="translate(9.000000, 15.000000) rotate(-180.000000) translate(-9.000000, -15.000000) " points="7 13 11 13 11 17"></polyline>
+    </g>
+</svg>

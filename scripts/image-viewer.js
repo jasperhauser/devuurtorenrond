@@ -29,6 +29,11 @@ figures.forEach(figure => {
     figureNumber++;
     figure.id = figureNumber;
 
+    // insert a div with class fullscreen inside each figure
+    var fullscreen = document.createElement('div');
+    fullscreen.classList.add('fullscreen');
+    figure.appendChild(fullscreen);
+
     // listen for click on figure
     figure.addEventListener('click', () => {
         // clone the figure inside the modal
@@ -41,6 +46,8 @@ figures.forEach(figure => {
 
         // set style display to block to show modal
         modal.style.display = 'block';
+        // prevent scrolling on body while modal is open
+        document.querySelector("body").style.overflow = "hidden";
         // wait 0.2 seconds then add class modal-open to animate the modal
         setTimeout(() => {
             modal.classList.add('modal-open');
@@ -141,5 +148,7 @@ function closeModal() {
         // remove the figure from the modal
         var figure = document.querySelector('.modal figure');
         figure.remove();
+        // reset the body overflow to auto, so we can scroll again
+        document.querySelector("body").style.overflow = "auto";
     }
 };
