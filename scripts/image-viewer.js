@@ -64,7 +64,22 @@ document.addEventListener('keydown', (e) => {
             var previousFigure = document.getElementById(figure.id - 1);
             // clone the previous figure
             if (previousFigure === null){
-                closeModal();
+                
+                // we are at the first figure, let's loop around and show the last figure
+                // let's loop around and show the last figure
+
+                // remove the current figure present in the modal
+                figure.remove();
+                // clone the last figure
+                var lastFigure = document.getElementById(figureNumber);
+                var lastFigureClone = lastFigure.cloneNode(true);
+                // insert the last figure clone into the modal
+                modal.appendChild(lastFigureClone);
+
+                // prepend the previousFigure.id to the previousFigure figcaption
+                var previousFigureCaption = previousFigureClone.querySelector('figcaption');
+                previousFigureCaption.textContent = previousFigure.id + '. ' + previousFigureCaption.textContent;
+
             } else {
                 // remove the current figure present in the modal
                 figure.remove();
@@ -80,7 +95,21 @@ document.addEventListener('keydown', (e) => {
             // get the next figure
             var nextFigure = document.getElementById(parseInt(figure.id) + 1);
             if (nextFigure === null){
-                closeModal();
+                
+                // we have reached the end of the figures, let's loop around and show the first figure
+                
+                // remove the current figure present in the modal
+                figure.remove();
+                // clone the first figure
+                var firstFigure = document.getElementById(1);
+                var firstFigureClone = firstFigure.cloneNode(true);
+                // insert the first figure clone into the modal
+                modal.appendChild(firstFigureClone);
+
+                // prepend the nextFigure.id to the nextFigure figcaption
+                var nextFigureCaption = nextFigureClone.querySelector('figcaption');
+                nextFigureCaption.textContent = nextFigure.id + '. ' + nextFigureCaption.textContent;
+
             } else {
                 // remove the current figure present in the modal
                 figure.remove();
