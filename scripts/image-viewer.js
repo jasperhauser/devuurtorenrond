@@ -77,8 +77,8 @@ document.addEventListener('keydown', (e) => {
                 modal.appendChild(lastFigureClone);
 
                 // prepend the previousFigure.id to the previousFigure figcaption
-                var previousFigureCaption = previousFigureClone.querySelector('figcaption');
-                previousFigureCaption.textContent = previousFigure.id + '. ' + previousFigureCaption.textContent;
+                var previousFigureCaption = lastFigureClone.querySelector('figcaption');
+                previousFigureCaption.textContent = lastFigure.id + '. ' + previousFigureCaption.textContent;
 
             } else {
                 // remove the current figure present in the modal
@@ -107,8 +107,9 @@ document.addEventListener('keydown', (e) => {
                 modal.appendChild(firstFigureClone);
 
                 // prepend the nextFigure.id to the nextFigure figcaption
-                var nextFigureCaption = nextFigureClone.querySelector('figcaption');
-                nextFigureCaption.textContent = nextFigure.id + '. ' + nextFigureCaption.textContent;
+                var nextFigureCaption = firstFigureClone.querySelector('figcaption');
+                console.log(nextFigureCaption);
+                nextFigureCaption.textContent = firstFigure.id + '. ' + nextFigureCaption.textContent;
 
             } else {
                 // remove the current figure present in the modal
