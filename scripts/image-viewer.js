@@ -11,11 +11,54 @@ const modalClose = document.createElement('div');
 modalClose.classList.add('modal-close');
 modal.appendChild(modalClose);
 
-// add a span inside the button
-const modalCloseSpan = document.createElement('span');
-// insert the span inside the button
-modalCloseSpan.textContent = '×';
-modalClose.appendChild(modalCloseSpan);
+// insert a div with class fullscreen
+const fullscreen = document.createElement('div');
+fullscreen.classList.add('fullscreen');
+modal.appendChild(fullscreen);
+
+// when clicked on the fullscreen element, fullscreen the modal
+fullscreen.addEventListener('click', () => {
+
+    // if the fullscreen element is clicked, open the modal in fullscreen
+    if (modal.requestFullscreen) {
+        modal.requestFullscreen();
+        modal.classList.add('fullscreen-open');
+        console.log('fullscreen normal');
+    } else if (modal.webkitRequestFullscreen) { /* Safari */
+        modal.webkitRequestFullscreen();
+        modal.classList.add('fullscreen-open');
+        console.log('fullscreen safari');
+    } else if (modal.mozRequestFullScreen) { /* Firefox */
+        modal.mozRequestFullScreen();
+        modal.classList.add('fullscreen-open');
+        console.log('fullscreen firefox');
+    } else if (modal.msRequestFullscreen) { /* IE11 */
+        modal.msRequestFullscreen();
+        modal.classList.add('fullscreen-open');
+        console.log('fullscreen ie11');
+    }
+    closeFullscreen();
+});
+
+function closeFullscreen () {
+    // if the modal is already fullscreen, exit fullscreen
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+            modal.classList.remove('fullscreen-open');
+        } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+            modal.classList.remove('fullscreen-open');
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+            document.mozCancelFullScreen();
+            modal.classList.remove('fullscreen-open'); 
+        } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+            modal.classList.remove('fullscreen-open');
+        }
+        return;
+    }
+}
 
 // get all figures on the page
 const figures = document.querySelectorAll('figure');
@@ -28,11 +71,6 @@ figures.forEach(figure => {
     // add an numerical id to each figure, start with 0 and increment by 1 for each figure
     figureNumber++;
     figure.id = figureNumber;
-
-    // insert a div with class fullscreen inside each figure
-    var fullscreen = document.createElement('div');
-    fullscreen.classList.add('fullscreen');
-    figure.appendChild(fullscreen);
 
     // listen for click on figure
     figure.addEventListener('click', () => {
@@ -132,10 +170,12 @@ modalClose.addEventListener('click', () => {
     closeModal();
 });
 
-// close modal when clicked on modal
-modal.addEventListener('click', () => {
-    closeModal();
-});
+// close modal when clicked in the background not the figure
+modal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+}); 
 
 // close modal when escape key is pressed
 document.addEventListener('keydown', (e) => {
@@ -155,15 +195,6 @@ function checkDirection() {
     } else if (touchendY > touchstartY) {
         // swiped up
         closeModal();
-    } else if (touchendX > touchstartX) {
-        // swiped right
-        // fire an ArrowLeft keydown event to show the previous image
-        var event = new KeyboardEvent('keydown', {'key': 'ArrowLeft'});
-        document.dispatchEvent(event);
-    } else if (touchendX < touchstartX) {
-        // swiped left
-        // fire an ArrowRight keydown event to show the next image
-        var event = new KeyboardEvent('keydown', {'key': 'ArrowRight'});
     }
 };
 
@@ -187,5 +218,6 @@ function closeModal() {
         figure.remove();
         // reset the body overflow to auto, so we can scroll again
         document.querySelector("body").style.overflow = "auto";
+        closeFullscreen();
     }
 };

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>fullscreen</title>
+    <g id="fullscreen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <path d="M3,10 L3,6 C3,4.34314575 4.34314575,3 6,3 L10,3 L10,3" id="Path-3" stroke="#FFFFFF" stroke-width="1.5"></path>
+        <path d="M3,21 L3,17 C3,15.3431458 4.34314575,14 6,14 L10,14 L10,14" id="Path-3-Copy-2" stroke="#FFFFFF" stroke-width="1.5" transform="translate(6.500000, 17.500000) rotate(-90.000000) translate(-6.500000, -17.500000) "></path>
+        <path d="M14,10 L14,6 C14,4.34314575 15.3431458,3 17,3 L21,3 L21,3" id="Path-3-Copy" stroke="#FFFFFF" stroke-width="1.5" transform="translate(17.500000, 6.500000) rotate(-270.000000) translate(-17.500000, -6.500000) "></path>
+        <path d="M14,21 L14,17 C14,15.3431458 15.3431458,14 17,14 L21,14 L21,14" id="Path-3-Copy-3" stroke="#FFFFFF" stroke-width="1.5" transform="translate(17.500000, 17.500000) rotate(-180.000000) translate(-17.500000, -17.500000) "></path>
+    </g>
+</svg>
