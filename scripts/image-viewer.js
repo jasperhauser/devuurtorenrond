@@ -150,13 +150,20 @@ let touchendY = 0
 
 function checkDirection() {
     if (touchendY < touchstartY) {
+        // swiped down
         closeModal();
-        console.log('swiped down!')
-        // alert('swiped down!')
     } else if (touchendY > touchstartY) {
+        // swiped up
         closeModal();
-        console.log('swiped up!')
-        // alert('swiped up!')
+    } else if (touchendX > touchstartX) {
+        // swiped right
+        // fire an ArrowLeft keydown event to show the previous image
+        var event = new KeyboardEvent('keydown', {'key': 'ArrowLeft'});
+        document.dispatchEvent(event);
+    } else if (touchendX < touchstartX) {
+        // swiped left
+        // fire an ArrowRight keydown event to show the next image
+        var event = new KeyboardEvent('keydown', {'key': 'ArrowRight'});
     }
 };
 
