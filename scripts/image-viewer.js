@@ -37,6 +37,7 @@ fullscreen.addEventListener('click', () => {
         modal.classList.add('fullscreen-open');
         console.log('fullscreen ie11');
     }
+    // close fullscreen if the modal is already fullscreen
     closeFullscreen();
 });
 
