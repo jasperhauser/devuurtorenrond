@@ -20,7 +20,6 @@ modal.appendChild(fullscreen);
 const previousButton = document.createElement('div');
 previousButton.classList.add('button','previous');
 modal.appendChild(previousButton);
-
 const nextButton = document.createElement('div');
 nextButton.classList.add('button','next');
 modal.appendChild(nextButton);
@@ -28,10 +27,10 @@ modal.appendChild(nextButton);
 // get all figures on the page
 const figures = document.querySelectorAll('figure');
 
-// to add an id to each figure
+// add an id to each figure
 var figureNumber = 0;
 
-// function to open the modal
+// open the modal when a figure is clicked
 figures.forEach(figure => {
     // add an numerical id to each figure, start with 0 and increment by 1 for each figure
     figureNumber++;
@@ -99,7 +98,7 @@ function closeFullscreen () {
     }
 }
 
-// allow people on laptops to use the arrow keys to navigate between images
+// use the arrow keys to navigate between images
 document.addEventListener('keydown', (e) => {
     var figure = document.querySelector('.modal figure');
     if (modal.classList.contains('modal-open')) {
@@ -170,14 +169,14 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// when clicked on div with class previous figure, trigger the next arrowleft keydown event
+// previous button
 previousButton.addEventListener('click', () => {
     var arrowRight = new KeyboardEvent('keydown', {
         key: 'ArrowLeft'
     });
     document.dispatchEvent(arrowRight);
 });
-// whem clicked on the next button, trigger the next arrowright keydown event
+// next button
 nextButton.addEventListener('click', () => {
     var arrowRight = new KeyboardEvent('keydown', {
         key: 'ArrowRight'
@@ -238,11 +237,11 @@ function checkDirection() {
     } 
 };
 
+// listen for touch events on the modal
 modal.addEventListener('touchstart', e => {
     touchstartY = e.changedTouches[0].screenY
     touchstartX = e.changedTouches[0].screenX
 });
-
 modal.addEventListener('touchend', e => {
     touchendY = e.changedTouches[0].screenY
     touchendX = e.changedTouches[0].screenX
