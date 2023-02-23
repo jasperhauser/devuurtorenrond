@@ -65,19 +65,15 @@ fullscreen.addEventListener('click', () => {
     if (modal.requestFullscreen) {
         modal.requestFullscreen();
         modal.classList.add('fullscreen-open');
-        console.log('fullscreen normal');
     } else if (modal.webkitRequestFullscreen) { /* Safari */
         modal.webkitRequestFullscreen();
         modal.classList.add('fullscreen-open');
-        console.log('fullscreen safari');
     } else if (modal.mozRequestFullScreen) { /* Firefox */
         modal.mozRequestFullScreen();
         modal.classList.add('fullscreen-open');
-        console.log('fullscreen firefox');
     } else if (modal.msRequestFullscreen) { /* IE11 */
         modal.msRequestFullscreen();
         modal.classList.add('fullscreen-open');
-        console.log('fullscreen ie11');
     }
     // close fullscreen if the modal is already fullscreen
     closeFullscreen();
@@ -156,7 +152,6 @@ document.addEventListener('keydown', (e) => {
 
                 // prepend the nextFigure.id to the nextFigure figcaption
                 var nextFigureCaption = firstFigureClone.querySelector('figcaption');
-                console.log(nextFigureCaption);
                 nextFigureCaption.textContent = firstFigure.id + '. ' + nextFigureCaption.textContent;
 
             } else {
@@ -258,13 +253,36 @@ modal.addEventListener('touchend', e => {
 // close modal function
 function closeModal() {
     if (modal.classList.contains('modal-open')) {
-        modal.classList.remove('modal-open');
-        modal.style.display = 'none';
-        // remove the figure from the modal
-        var figure = document.querySelector('.modal figure');
-        figure.remove();
+
         // reset the body overflow to auto, so we can scroll again
         document.querySelector("body").style.overflow = "auto";
+
+        // get the id of the last figure in the modal
+        var lastFigure = document.querySelector('.modal figure');
+        var lastFigureId = lastFigure.id;
+
+        // remove the figure from the modal
+        lastFigure.remove();
+
+        // scroll to the figure with the id of the last figure in the modal
+        var figureToScrollTo = document.getElementById(lastFigureId);
+        var navBarHeight = document.querySelector('nav').offsetHeight;
+        var figureFromTop = figureToScrollTo.getBoundingClientRect().top + window.scrollY - navBarHeight;
+        window.scrollTo({
+            top: figureFromTop,
+            behavior: 'auto'
+        });
+
+        // close the modal
+        modal.classList.remove('modal-open');
+        modal.style.display = 'none';
+        
+        // exit native fullscreen if it is enabled
         closeFullscreen();
+        
+        // remove the fullscreen-open class from the modal
+        if (modal.classList.contains('fullscreen-open')) {
+            modal.classList.remove('fullscreen-open');
+        }
     }
 };
