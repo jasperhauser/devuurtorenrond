@@ -213,23 +213,44 @@ document.addEventListener('keydown', (e) => {
 // close modal when swiped down
 let touchstartY = 0
 let touchendY = 0
+let touchstartX = 0
+let touchendX = 0
 
 function checkDirection() {
-    if (touchendY < touchstartY) {
+    // if touchendY is greater than touchstartY, and is more than 10, the user swiped down
+    var slop = 60
+    
+    if (touchendX > touchstartX  && touchendY - touchstartY < slop && touchendY - touchstartY > -slop) {
+        // swiped right
+        // fire the next arrow left keydown event
+        var arrowRight = new KeyboardEvent('keydown', {
+            key: 'ArrowLeft'
+        });
+        document.dispatchEvent(arrowRight);
+    } else if (touchendX < touchstartX && touchendY - touchstartY < slop && touchendY - touchstartY > -slop) {
+        // swiped left
+        // fire the next arrow right keydown event
+        var arrowRight = new KeyboardEvent('keydown', {
+            key: 'ArrowRight'
+        });
+        document.dispatchEvent(arrowRight);
+    } else if (touchendY > touchstartY) {
         // swiped down
         closeModal();
-    } else if (touchendY > touchstartY) {
+    } else if (touchendY < touchstartY) {
         // swiped up
         closeModal();
-    }
+    } 
 };
 
 modal.addEventListener('touchstart', e => {
     touchstartY = e.changedTouches[0].screenY
+    touchstartX = e.changedTouches[0].screenX
 });
 
 modal.addEventListener('touchend', e => {
     touchendY = e.changedTouches[0].screenY
+    touchendX = e.changedTouches[0].screenX
     checkDirection()
 });
 
