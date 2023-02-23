@@ -8,13 +8,55 @@ modal.classList.add('modal');
 
 // create a button to close the modal
 const modalClose = document.createElement('div');
-modalClose.classList.add('modal-close');
+modalClose.classList.add('button','modal-close');
 modal.appendChild(modalClose);
 
 // insert a div with class fullscreen
 const fullscreen = document.createElement('div');
-fullscreen.classList.add('fullscreen');
+fullscreen.classList.add('button','fullscreen');
 modal.appendChild(fullscreen);
+
+// insert two divs for a previous and next button
+const previousButton = document.createElement('div');
+previousButton.classList.add('button','previous');
+modal.appendChild(previousButton);
+
+const nextButton = document.createElement('div');
+nextButton.classList.add('button','next');
+modal.appendChild(nextButton);
+
+// get all figures on the page
+const figures = document.querySelectorAll('figure');
+
+// to add an id to each figure
+var figureNumber = 0;
+
+// function to open the modal
+figures.forEach(figure => {
+    // add an numerical id to each figure, start with 0 and increment by 1 for each figure
+    figureNumber++;
+    figure.id = figureNumber;
+
+    // listen for click on figure
+    figure.addEventListener('click', () => {
+        // clone the figure inside the modal
+        var figureClone = figure.cloneNode(true);
+        modal.appendChild(figureClone);
+        
+        // prepend the figure.id to the figure figcaption
+        var figureCaption = figureClone.querySelector('figcaption');
+        figureCaption.textContent = figure.id + '. ' + figureCaption.textContent;
+
+        // set style display to block to show modal
+        modal.style.display = 'block';
+        // prevent scrolling on body while modal is open
+        document.querySelector("body").style.overflow = "hidden";
+        // wait 0.2 seconds then add class modal-open to animate the modal
+        setTimeout(() => {
+            modal.classList.add('modal-open');
+        }, 50);
+    });
+});
 
 // when clicked on the fullscreen element, fullscreen the modal
 fullscreen.addEventListener('click', () => {
@@ -60,39 +102,6 @@ function closeFullscreen () {
         return;
     }
 }
-
-// get all figures on the page
-const figures = document.querySelectorAll('figure');
-
-// to add an id to each figure
-var figureNumber = 0;
-
-// function to open the modal
-figures.forEach(figure => {
-    // add an numerical id to each figure, start with 0 and increment by 1 for each figure
-    figureNumber++;
-    figure.id = figureNumber;
-
-    // listen for click on figure
-    figure.addEventListener('click', () => {
-        // clone the figure inside the modal
-        var figureClone = figure.cloneNode(true);
-        modal.appendChild(figureClone);
-        
-        // prepend the figure.id to the figure figcaption
-        var figureCaption = figureClone.querySelector('figcaption');
-        figureCaption.textContent = figure.id + '. ' + figureCaption.textContent;
-
-        // set style display to block to show modal
-        modal.style.display = 'block';
-        // prevent scrolling on body while modal is open
-        document.querySelector("body").style.overflow = "hidden";
-        // wait 0.2 seconds then add class modal-open to animate the modal
-        setTimeout(() => {
-            modal.classList.add('modal-open');
-        }, 50);
-    });
-});
 
 // allow people on laptops to use the arrow keys to navigate between images
 document.addEventListener('keydown', (e) => {
@@ -165,6 +174,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// when clicked on div with class previous figure, trigger the next arrowleft keydown event
+previousButton.addEventListener('click', () => {
+    var arrowRight = new KeyboardEvent('keydown', {
+        key: 'ArrowLeft'
+    });
+    document.dispatchEvent(arrowRight);
+});
+// whem clicked on the next button, trigger the next arrowright keydown event
+nextButton.addEventListener('click', () => {
+    var arrowRight = new KeyboardEvent('keydown', {
+        key: 'ArrowRight'
+    });
+    document.dispatchEvent(arrowRight);
+});
+
 
 // close modal when clicked
 modalClose.addEventListener('click', () => {
