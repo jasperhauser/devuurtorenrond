@@ -136,9 +136,9 @@ figure {cursor: zoom-in;}
 .modal .button:hover {background-color: rgba(100, 100, 100, 0.65);}
 .modal-close {position: absolute; top:20px; right:20px; background-image: url("/images/icon-close.svg"); background-size: 24px;}
 /* previous and next button that are placed on either side of the screen and vertically cenetered */
-.modal .previous, .modal .next {position: absolute; top:50%; transform: translateY(-50%); background-image: url("/images/icon-arrow.svg"); background-size: 14px 18px;}
-.modal .previous {left:20px; transform: rotate(180deg);}
-.modal .next {right:20px;}
+.modal .previous, .modal .next {position: absolute; top:50%; transform: translateY(-50%); background-size: 14px 18px;}
+.modal .previous {left:20px; background-image: url("/images/icon-previous.svg");}
+.modal .next {right:20px; background-image: url("/images/icon-arrow.svg");}
 /* fullscreen icon on image */
 .fullscreen {position: absolute; top: 20px; left: 20px; background-image: url("/images/icon-fullscreen.svg"); background-size: 24px;}
 .fullscreen-open .fullscreen {display: none;}
