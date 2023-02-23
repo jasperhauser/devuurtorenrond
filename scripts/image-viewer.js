@@ -266,8 +266,9 @@ function closeModal() {
 
         // scroll to the figure with the id of the last figure in the modal
         var figureToScrollTo = document.getElementById(lastFigureId);
-        var navBarHeight = document.querySelector('nav').offsetHeight;
-        var figureFromTop = figureToScrollTo.getBoundingClientRect().top + window.scrollY - navBarHeight;
+
+        // scroll to the figure such that it's centered in the viewport
+        var figureFromTop = figureToScrollTo.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (figureToScrollTo.offsetHeight / 2);
         window.scrollTo({
             top: figureFromTop,
             behavior: 'auto'

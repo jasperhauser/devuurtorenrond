@@ -236,7 +236,6 @@ footer:hover {opacity:1;}
     /* phablet */
     input, button {width:100%;}
     audio, #audio-player {width:100%;}
-    figure:hover figcaption {display: none;}
     figure:hover .fullscreen {display:none;}
 }
 @media screen and (max-width: 375px) {
