@@ -9,19 +9,24 @@ modal.classList.add('modal');
 // create a button to close the modal
 const modalClose = document.createElement('button');
 modalClose.classList.add('button','modal-close');
+// add a title to the button
+modalClose.setAttribute('title', 'Close Image Viewer');
 modal.appendChild(modalClose);
 
 // insert two divs for a previous and next button
 const nextButton = document.createElement('button');
 nextButton.classList.add('button','next');
+nextButton.setAttribute('title', 'Next Image');
 modal.appendChild(nextButton);
 const previousButton = document.createElement('button');
 previousButton.classList.add('button','previous');
+previousButton.setAttribute('title', 'Previous Image');
 modal.appendChild(previousButton);
 
 // insert a div with class fullscreen
 const fullscreen = document.createElement('button');
 fullscreen.classList.add('button','fullscreen');
+fullscreen.setAttribute('title', 'Show Image Fullscreen');
 modal.appendChild(fullscreen);
 
 // get all figures on the page
