@@ -11,18 +11,18 @@ const modalClose = document.createElement('button');
 modalClose.classList.add('button','modal-close');
 modal.appendChild(modalClose);
 
+// insert two divs for a previous and next button
+const nextButton = document.createElement('button');
+nextButton.classList.add('button','next');
+modal.appendChild(nextButton);
+const previousButton = document.createElement('button');
+previousButton.classList.add('button','previous');
+modal.appendChild(previousButton);
+
 // insert a div with class fullscreen
 const fullscreen = document.createElement('button');
 fullscreen.classList.add('button','fullscreen');
 modal.appendChild(fullscreen);
-
-// insert two divs for a previous and next button
-const previousButton = document.createElement('button');
-previousButton.classList.add('button','previous');
-modal.appendChild(previousButton);
-const nextButton = document.createElement('button');
-nextButton.classList.add('button','next');
-modal.appendChild(nextButton);
 
 // get all figures on the page
 const figures = document.querySelectorAll('figure');
