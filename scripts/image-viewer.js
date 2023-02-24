@@ -138,6 +138,7 @@ document.addEventListener('keydown', (e) => {
         } else if (e.key === 'ArrowRight') {
             // get the next figure
             var nextFigure = document.getElementById(parseInt(figure.id) + 1);
+
             if (nextFigure === null){
                 
                 // we have reached the end of the figures, let's loop around and show the first figure
@@ -147,6 +148,11 @@ document.addEventListener('keydown', (e) => {
                 // clone the first figure
                 var firstFigure = document.getElementById(1);
                 var firstFigureClone = firstFigure.cloneNode(true);
+                
+                // add the preload attribute to the firstFigure figure
+                var firstFigureImg = firstFigure.querySelector('img');
+                firstFigureImg.setAttribute('preload', 'eager');
+
                 // insert the first figure clone into the modal
                 modal.appendChild(firstFigureClone);
 
@@ -155,6 +161,11 @@ document.addEventListener('keydown', (e) => {
                 nextFigureCaption.textContent = firstFigure.id + '. ' + nextFigureCaption.textContent;
 
             } else {
+                // get the img element inside the next figure
+                var nextFigureImg = nextFigure.querySelector('img');
+                // add the preload attribute to the next figure img
+                nextFigureImg.setAttribute('preload', 'eager');
+
                 // remove the current figure present in the modal
                 figure.remove();
                 // clone the next figure
