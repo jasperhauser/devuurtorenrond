@@ -115,7 +115,7 @@ body.open .nav-line:last-child {transform: rotate(-45deg); top: 15px;} */
 .row {margin-top:20px; position: relative;}
 .row div:first-child {margin-right:10px;}
 .row div:last-child {margin-left:10px;}
-.photo-bottom picture {position: absolute; bottom:0px;}
+.photo-bottom figure {position: absolute; bottom:0px;}
 figcaption {position:absolute; left:10px; top:10px; font-size:0.85em; color:#fff; opacity:0; transition: all .2s ease-in-out;}
   figcaption.dark {color:rgba(0, 0, 0, 0.8); }
   .photo-bottom figcaption {bottom:20px; top:unset;}
@@ -216,7 +216,7 @@ footer:hover {opacity:1;}
     /* most tablets */ 
     .flex {flex-direction: column;}
     .w-50, .w-40, .w-60 {width:100%;}
-    .photo-bottom picture {position: relative;}
+    .photo-bottom figure {position: relative;}
       .photo-bottom figcaption {bottom:unset; top:10px;}
       .photo-bottom .fullscreen {top:10px; bottom:unset;}
     .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
