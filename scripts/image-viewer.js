@@ -38,6 +38,7 @@ figures.forEach(figure => {
 
     // listen for click on figure
     figure.addEventListener('click', () => {
+
         // clone the figure inside the modal
         var figureClone = figure.cloneNode(true);
         modal.appendChild(figureClone);
@@ -55,7 +56,7 @@ figures.forEach(figure => {
         setTimeout(() => {
             modal.classList.add('modal-open');
         }, 50);
-    });
+    }, {passive: true} );
 });
 
 // when clicked on the fullscreen element, fullscreen the modal
@@ -77,7 +78,7 @@ fullscreen.addEventListener('click', () => {
     }
     // close fullscreen if the modal is already fullscreen
     closeFullscreen();
-});
+}, {passive: true} );
 
 function closeFullscreen () {
     // if the modal is already fullscreen, exit fullscreen
@@ -179,22 +180,22 @@ document.addEventListener('keydown', (e) => {
             }
         }
     }
-});
+}, {passive: true} );
 
-// previous button
+// create a previous button click even listener, pass on the passive flag to the event listener options
 previousButton.addEventListener('click', () => {
     var arrowRight = new KeyboardEvent('keydown', {
         key: 'ArrowLeft'
     });
     document.dispatchEvent(arrowRight);
-});
+}, {passive: true} );
 // next button
-nextButton.addEventListener('click', () => {
+nextButton.addEventListener('click',  () => {
     var arrowRight = new KeyboardEvent('keydown', {
         key: 'ArrowRight'
     });
     document.dispatchEvent(arrowRight);
-});
+}, {passive: true} );
 
 
 // close modal when clicked
@@ -253,12 +254,12 @@ function checkDirection() {
 modal.addEventListener('touchstart', e => {
     touchstartY = e.changedTouches[0].screenY
     touchstartX = e.changedTouches[0].screenX
-});
+}, {passive: true} );
 modal.addEventListener('touchend', e => {
     touchendY = e.changedTouches[0].screenY
     touchendX = e.changedTouches[0].screenX
     checkDirection()
-});
+}, {passive: true} );
 
 // manage the closing of the modal
 // close modal function
