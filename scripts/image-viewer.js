@@ -2,25 +2,25 @@
 // Description: This script is used to open images in a modal when clicked on
 
 // insert a div with class modal at start of body
-var modal = document.createElement('div');
+var modal = document.createElement('dialog');
 document.body.insertBefore(modal, document.body.firstChild);
 modal.classList.add('modal');
 
 // create a button to close the modal
-const modalClose = document.createElement('div');
+const modalClose = document.createElement('button');
 modalClose.classList.add('button','modal-close');
 modal.appendChild(modalClose);
 
 // insert a div with class fullscreen
-const fullscreen = document.createElement('div');
+const fullscreen = document.createElement('button');
 fullscreen.classList.add('button','fullscreen');
 modal.appendChild(fullscreen);
 
 // insert two divs for a previous and next button
-const previousButton = document.createElement('div');
+const previousButton = document.createElement('button');
 previousButton.classList.add('button','previous');
 modal.appendChild(previousButton);
-const nextButton = document.createElement('div');
+const nextButton = document.createElement('button');
 nextButton.classList.add('button','next');
 modal.appendChild(nextButton);
 
@@ -47,7 +47,8 @@ figures.forEach(figure => {
         figureCaption.textContent = figure.id + '. ' + figureCaption.textContent;
 
         // set style display to block to show modal
-        modal.style.display = 'block';
+        modal.showModal();
+
         // prevent scrolling on body while modal is open
         document.querySelector("body").style.overflow = "hidden";
         // wait 0.2 seconds then add class modal-open to animate the modal
@@ -275,7 +276,7 @@ function closeModal() {
 
         // close the modal
         modal.classList.remove('modal-open');
-        modal.style.display = 'none';
+        modal.close();
         
         // exit native fullscreen if it is enabled
         closeFullscreen();
