@@ -153,7 +153,7 @@ audio {display:block; margin:0 auto 8px auto; width:320px;}
 
 /* media cards */
 .cards {display: flex; flex-wrap: wrap; margin:20px auto 70px auto; justify-content: center; padding:0 10px;}
-.card {display: block; border-bottom:none; box-sizing: border-box; margin:10px 10px;}
+.card {display: block; position:relative; border-bottom:none; box-sizing: border-box; margin:10px 10px;}
 .card:hover {border-bottom:none; transform: scale(1.02); transition: all .2s ease-in-out; }
 .card:hover {color:var(--red);}
 .card-image {display: block; width:100%;}
