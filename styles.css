@@ -141,9 +141,6 @@ dialog { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); width
 .modal .previous, .modal .next {position: absolute; top:50%; transform: translateY(-50%) inherit; background-size: 14px 18px; }
 .modal .previous {left:20px; background-image: url("/images/icon-previous.svg");}
 .modal .next {right:20px; background-image: url("/images/icon-arrow.svg");}
-/* fullscreen icon on image */
-.fullscreen {position: absolute; top: 20px; left: 20px; background-image: url("/images/icon-fullscreen.svg"); background-size: 24px;}
-.fullscreen-open .fullscreen {display: none;}
 
 /* image carousel */
 .carousel {position: relative; width: 100%; height: 100%; overflow-y: hidden; overflow-x: scroll; scroll-snap-type: x mandatory; display: flex; flex-direction: row; scroll-behavior: auto;}
@@ -224,7 +221,6 @@ footer:hover {opacity:1;}
     .w-50, .w-40, .w-60 {width:100%;}
     .photo-bottom figure {position: relative;}
       .photo-bottom figcaption {bottom:unset; top:10px;}
-      .photo-bottom .fullscreen {top:10px; bottom:unset;}
     .row div:first-child, .row div:last-child {margin-left:0; margin-right:0;}
     .row div:first-child {margin-bottom:20px;}
     #nav-menu-list {display: none;}
@@ -245,9 +241,7 @@ footer:hover {opacity:1;}
     audio, #audio-player {width:100%;}
     
     /* let's keep the modal clean, less christmass tree */
-    figure:hover .fullscreen {display:none;}
     .modal .previous, .modal .next {display:none;}
-    .modal .fullscreen {display:none;}
 }
 @media screen and (max-width: 375px) {
     /* phones */

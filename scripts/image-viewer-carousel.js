@@ -39,17 +39,6 @@ previousButton.appendChild(previousButtonSpan);
 var previousText = document.createTextNode("Previous");
 previousButtonSpan.appendChild(previousText);
 
-// insert a div with class fullscreen
-const fullscreen = document.createElement('button');
-fullscreen.classList.add('button','fullscreen');
-fullscreen.setAttribute('title', 'Show Image Fullscreen');
-modal.appendChild(fullscreen);
-// and text inside the button for accessibility
-var fullscreenSpan = document.createElement('span');
-fullscreen.appendChild(fullscreenSpan);
-var fullscreenText = document.createTextNode("Fullscreen");
-fullscreenSpan.appendChild(fullscreenText);
-
 // get all figures on the page
 const figures = document.querySelectorAll('article figure');
 
@@ -104,47 +93,6 @@ for (let i = 0; i < figures.length; i++) {
         const carouselItem = document.getElementById('carousel-' + figureId);
         carouselItem.scrollIntoView({block: "center", inline: "center"});
     });
-}
-
-// when clicked on the fullscreen element, fullscreen the modal
-fullscreen.addEventListener('click', () => {
-
-    // if the fullscreen element is clicked, open the modal in fullscreen
-    if (modal.requestFullscreen) {
-        modal.requestFullscreen();
-        modal.classList.add('fullscreen-open');
-    } else if (modal.webkitRequestFullscreen) { /* Safari */
-        modal.webkitRequestFullscreen();
-        modal.classList.add('fullscreen-open');
-    } else if (modal.mozRequestFullScreen) { /* Firefox */
-        modal.mozRequestFullScreen();
-        modal.classList.add('fullscreen-open');
-    } else if (modal.msRequestFullscreen) { /* IE11 */
-        modal.msRequestFullscreen();
-        modal.classList.add('fullscreen-open');
-    }
-    // close fullscreen if the modal is already fullscreen
-    closeFullscreen();
-}, {passive: true} );
-
-function closeFullscreen () {
-    // if the modal is already fullscreen, exit fullscreen
-    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-            modal.classList.remove('fullscreen-open');
-        } else if (document.webkitExitFullscreen) { /* Safari */
-            document.webkitExitFullscreen();
-            modal.classList.remove('fullscreen-open');
-        } else if (document.mozCancelFullScreen) { /* Firefox */
-            document.mozCancelFullScreen();
-            modal.classList.remove('fullscreen-open'); 
-        } else if (document.msExitFullscreen) { /* IE11 */
-            document.msExitFullscreen();
-            modal.classList.remove('fullscreen-open');
-        }
-        return;
-    }
 }
 
 // use the arrow keys to navigate between images
@@ -293,13 +241,6 @@ function closeModal() {
         // close the modal
         modal.classList.remove('modal-open');
         modal.close();
-    
-        // exit native fullscreen if it is enabled
-        closeFullscreen();
 
-        // remove the fullscreen-open class from the modal
-        if (modal.classList.contains('fullscreen-open')) {
-            modal.classList.remove('fullscreen-open');
-        }
     }
 };
