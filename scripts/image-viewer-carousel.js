@@ -176,6 +176,7 @@ document.addEventListener('keydown', (e) => {
             // scroll the carousel to the next figure
             const nextCarouselItem = document.getElementById('carousel-' + nextFigure);
             nextCarouselItem.scrollIntoView({block: "center", inline: "center"});
+            
             // set the active figure
             activeFigure = nextFigure;
         }
@@ -197,6 +198,33 @@ nextButton.addEventListener('click',  () => {
     document.dispatchEvent(arrowRight);
 }, {passive: true} );
 
+// listen to scroll events on the carousel
+carousel.addEventListener('scroll', (e) => {
+    updateActiveFigure()
+});
+
+function updateActiveFigure() {
+    // get the id of the figure that is in the center of the carousel
+    var visibleFigure = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).parentNode.parentNode.getAttribute('id');
+    activeFigure = visibleFigure;
+}
+
+// scroll to the figure in the article
+function scrollToArticleFigure() {
+    // get the id of the figure that is in the center of the carousel
+    updateActiveFigure();
+
+    // scroll to the figure in the article with the id of the active figure in the modal
+    var figureToScrollTo = document.querySelector('article figure[id="' + activeFigure + '"]');
+
+    // scroll to the figure such that it's centered in the viewport
+    var figureFromTop = figureToScrollTo.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (figureToScrollTo.offsetHeight / 2);
+    window.scrollTo({
+        top: figureFromTop,
+        behavior: 'auto'
+    });
+}
+
 // close modal when clicked
 modalClose.addEventListener('click', () => {
     closeModal();
@@ -214,13 +242,6 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeModal();
     }
-});
-
-// listen to scroll events on the carousel
-carousel.addEventListener('scroll', (e) => {
-    // get the id of the figure that is in the center of the carousel
-    var visibleFigure = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).parentNode.parentNode.getAttribute('id');
-    activeFigure = visibleFigure;
 });
 
 
@@ -266,15 +287,8 @@ function closeModal() {
         // reset the body overflow to auto, so we can scroll again
         document.querySelector("body").style.overflow = "auto";
 
-        // scroll to the figure in the article with the id of the active figure in the modal
-        var figureToScrollTo = document.querySelector('article figure[id="' + activeFigure + '"]');
-
-        // scroll to the figure such that it's centered in the viewport
-        var figureFromTop = figureToScrollTo.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (figureToScrollTo.offsetHeight / 2);
-        window.scrollTo({
-           top: figureFromTop,
-           behavior: 'auto'
-        });
+        // scroll to the figure in the article
+        scrollToArticleFigure();
 
         // close the modal
         modal.classList.remove('modal-open');
