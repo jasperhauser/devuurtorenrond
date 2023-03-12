@@ -1,4 +1,5 @@
-// Description: This script is used to open images in a dialog when clicked on, and to display a carousel of images when the dialog is open.
+// Description: This script is used to open images in a dialog when clicked on, 
+// and to display a carousel of images when the dialog is open.
 
 // insert a div with class dialog at start of body
 var dialog = document.createElement('dialog');
@@ -68,9 +69,7 @@ for (let i = 0; i < figures.length; i++) {
     carouselItem.classList.add('carousel-item');
     // add an id to each carousel item to match the figure id
     carouselItem.setAttribute('id', 'carousel-' + figureNumber);
-    // add the figure to the carousel
     carousel.appendChild(carouselItem);
-    // clone the figure so it can be added to the dialog
     carouselItem.appendChild(figure.cloneNode(true));
 
     // listen for click on each figure
@@ -172,7 +171,7 @@ function scrollToArticleFigure() {
     });
 }
 
-// close dialog when clicked
+// close dialog when close button is clicked
 dialogClose.addEventListener('click', () => {
     closeDialog();
 });
@@ -191,25 +190,18 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
 // close dialog when swiped down
 let touchstartY = 0
 let touchendY = 0
 let touchstartX = 0
 let touchendX = 0
+var slop = 60
 
 function checkDirection() {
-    // if touchendY is greater than touchstartY, and is more than 10, the user swiped down
-    var slop = 60
-    
-    if (touchendX > touchstartX  && touchendY - touchstartY < slop && touchendY - touchstartY > -slop) {
-        // swiped right
-    } else if (touchendX < touchstartX && touchendY - touchstartY < slop && touchendY - touchstartY > -slop) {
-        // swiped left
-    } else if (touchendY > touchstartY) {
+    if (touchendY > touchstartY && touchendX - touchstartX < slop && touchendX - touchstartX > -slop) {
         // swiped down
         closeDialog();
-    } else if (touchendY < touchstartY) {
+    } else if (touchendY < touchstartY && touchendX - touchstartX < slop && touchendX - touchstartX > -slop) {
         // swiped up
         closeDialog();
     } 
@@ -230,16 +222,14 @@ dialog.addEventListener('touchend', e => {
 // manage the closing of the dialog
 function closeDialog() {
     if (dialog.classList.contains('open')) {
-
         // reset the body overflow to auto, so we can scroll again
         document.querySelector("body").style.overflow = "auto";
 
-        // scroll to the figure in the article
+        // scroll to the currently visible figure in the article
         scrollToArticleFigure();
 
-        // close the dialog
+        // actually close the dialog
         dialog.classList.remove('open');
         dialog.close();
-
     }
 };
