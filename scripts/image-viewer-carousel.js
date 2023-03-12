@@ -228,10 +228,8 @@ function checkDirection() {
     
     if (touchendX > touchstartX  && touchendY - touchstartY < slop && touchendY - touchstartY > -slop) {
         // swiped right
-        // console.log('swiped right');
     } else if (touchendX < touchstartX && touchendY - touchstartY < slop && touchendY - touchstartY > -slop) {
         // swiped left
-        // console.log('swiped left');
     } else if (touchendY > touchstartY) {
         // swiped down
         closeModal();
