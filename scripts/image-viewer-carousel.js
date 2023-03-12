@@ -51,7 +51,7 @@ var fullscreenText = document.createTextNode("Fullscreen");
 fullscreenSpan.appendChild(fullscreenText);
 
 // get all figures on the page
-const figures = document.querySelectorAll('figure');
+const figures = document.querySelectorAll('article figure');
 
 // insert a div in the modal for the carousel
 const carousel = document.createElement('div');
