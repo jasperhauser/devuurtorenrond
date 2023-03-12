@@ -1,27 +1,26 @@
-// Description: This script is used to open images in a modal when clicked on, and to display a carousel of images when the modal is open.
+// Description: This script is used to open images in a dialog when clicked on, and to display a carousel of images when the dialog is open.
 
-// insert a div with class modal at start of body
-var modal = document.createElement('dialog');
-document.body.insertBefore(modal, document.body.firstChild);
-modal.classList.add('modal');
+// insert a div with class dialog at start of body
+var dialog = document.createElement('dialog');
+document.body.insertBefore(dialog, document.body.firstChild);
 
-// create a button to close the modal
-var modalClose = document.createElement('button');
-modalClose.classList.add('button','modal-close');
+// create a button to close the dialog
+var dialogClose = document.createElement('button');
+dialogClose.classList.add('button','close');
 // add a title to the button
-modalClose.setAttribute('title', 'Close Image Viewer');
-modal.appendChild(modalClose);
+dialogClose.setAttribute('title', 'Close Image Viewer');
+dialog.appendChild(dialogClose);
 // and text inside the button for accessibility
-var modalCloseSpan = document.createElement('span');
-modalClose.appendChild(modalCloseSpan);
+var dialogCloseSpan = document.createElement('span');
+dialogClose.appendChild(dialogCloseSpan);
 var closeText = document.createTextNode("Close");
-modalCloseSpan.appendChild(closeText);
+dialogCloseSpan.appendChild(closeText);
 
 // next button
 var nextButton = document.createElement('button');
 nextButton.classList.add('button','next');
 nextButton.setAttribute('title', 'Next Image');
-modal.appendChild(nextButton);
+dialog.appendChild(nextButton);
 // and text inside the button for accessibility
 var nextButtonSpan = document.createElement('span');
 nextButton.appendChild(nextButtonSpan);
@@ -32,7 +31,7 @@ nextButtonSpan.appendChild(nextText);
 const previousButton = document.createElement('button');
 previousButton.classList.add('button','previous');
 previousButton.setAttribute('title', 'Previous Image');
-modal.appendChild(previousButton);
+dialog.appendChild(previousButton);
 // and text inside the button for accessibility
 var previousButtonSpan = document.createElement('span');
 previousButton.appendChild(previousButtonSpan);
@@ -42,10 +41,10 @@ previousButtonSpan.appendChild(previousText);
 // get all figures on the page
 const figures = document.querySelectorAll('article figure');
 
-// insert a div in the modal for the carousel
+// insert a div in the dialog for the carousel
 const carousel = document.createElement('div');
 carousel.classList.add('carousel');
-modal.appendChild(carousel);
+dialog.appendChild(carousel);
 
 // add an id to each figure
 var figureNumber = 0;
@@ -71,18 +70,18 @@ for (let i = 0; i < figures.length; i++) {
     carouselItem.setAttribute('id', 'carousel-' + figureNumber);
     // add the figure to the carousel
     carousel.appendChild(carouselItem);
-    // clone the figure so it can be added to the modal
+    // clone the figure so it can be added to the dialog
     carouselItem.appendChild(figure.cloneNode(true));
 
     // listen for click on each figure
     figure.addEventListener('click', function() {
-        // open the modal
-        modal.showModal();
-        // prevent scrolling on body while modal is open
+        // open the dialog
+        dialog.showModal();
+        // prevent scrolling on body while dialog is open
         document.querySelector("body").style.overflow = "hidden";
-        // wait 0.2 seconds then add class modal-open to animate the modal
+        // wait 0.2 seconds then add class dialog-open to animate the dialog
         setTimeout(() => {
-            modal.classList.add('modal-open');
+            dialog.classList.add('open');
         }, 50);
 
         // get the id of the figure that was clicked
@@ -97,8 +96,8 @@ for (let i = 0; i < figures.length; i++) {
 
 // use the arrow keys to navigate between images
 document.addEventListener('keydown', (e) => {
-    var figure = document.querySelector('.modal figure');
-    if (modal.classList.contains('modal-open')) {
+    var figure = document.querySelector('dialog figure');
+    if (dialog.classList.contains('open')) {
         if (e.key === 'ArrowLeft') {;
             // get activeFigure id and subtract 1 from it
             var previousFigure = parseInt(activeFigure) - 1;
@@ -162,7 +161,7 @@ function scrollToArticleFigure() {
     // get the id of the figure that is in the center of the carousel
     updateActiveFigure();
 
-    // scroll to the figure in the article with the id of the active figure in the modal
+    // scroll to the figure in the article with the id of the active figure in the dialog
     var figureToScrollTo = document.querySelector('article figure[id="' + activeFigure + '"]');
 
     // scroll to the figure such that it's centered in the viewport
@@ -173,27 +172,27 @@ function scrollToArticleFigure() {
     });
 }
 
-// close modal when clicked
-modalClose.addEventListener('click', () => {
-    closeModal();
+// close dialog when clicked
+dialogClose.addEventListener('click', () => {
+    closeDialog();
 });
 
-// close modal when clicked in the background not the figure
-modal.addEventListener('click', (e) => {
+// close dialog when clicked in the background not the figure
+dialog.addEventListener('click', (e) => {
     if (e.target.classList.contains('carousel-item')) {
-        closeModal();
+        closeDialog();
     }
 }); 
 
-// close modal when escape key is pressed
+// close dialog when escape key is pressed
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeModal();
+        closeDialog();
     }
 });
 
 
-// close modal when swiped down
+// close dialog when swiped down
 let touchstartY = 0
 let touchendY = 0
 let touchstartX = 0
@@ -209,28 +208,28 @@ function checkDirection() {
         // swiped left
     } else if (touchendY > touchstartY) {
         // swiped down
-        closeModal();
+        closeDialog();
     } else if (touchendY < touchstartY) {
         // swiped up
-        closeModal();
+        closeDialog();
     } 
 };
 
-// listen for touch events on the modal
-modal.addEventListener('touchstart', e => {
+// listen for touch events on the dialog
+dialog.addEventListener('touchstart', e => {
     touchstartY = e.changedTouches[0].screenY
     touchstartX = e.changedTouches[0].screenX
 }, {passive: true} );
-modal.addEventListener('touchend', e => {
+dialog.addEventListener('touchend', e => {
     touchendY = e.changedTouches[0].screenY
     touchendX = e.changedTouches[0].screenX
     checkDirection()
 }, {passive: true} );
 
 
-// manage the closing of the modal
-function closeModal() {
-    if (modal.classList.contains('modal-open')) {
+// manage the closing of the dialog
+function closeDialog() {
+    if (dialog.classList.contains('open')) {
 
         // reset the body overflow to auto, so we can scroll again
         document.querySelector("body").style.overflow = "auto";
@@ -238,9 +237,9 @@ function closeModal() {
         // scroll to the figure in the article
         scrollToArticleFigure();
 
-        // close the modal
-        modal.classList.remove('modal-open');
-        modal.close();
+        // close the dialog
+        dialog.classList.remove('open');
+        dialog.close();
 
     }
 };
