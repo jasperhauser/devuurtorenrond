@@ -64,10 +64,18 @@ var activeFigure = 0;
 
 // loop through all figure and add each into a new div in the carousel
 for (let i = 0; i < figures.length; i++) {
-    // add an id to each figure
+    
+    // add an unique id to each figure
     const figure = figures[i];
     figureNumber++;
     figure.setAttribute('id', + figureNumber);
+
+    // prepend the figureNumber to the caption
+    const caption = figure.querySelector('figcaption');
+    const captionText = caption.innerHTML;
+    caption.innerHTML = figureNumber + '. ' + captionText;
+    
+    // setup the carousel items
     const carouselItem = document.createElement('div');
     carouselItem.classList.add('carousel-item');
     // add an id to each carousel item to match the figure id
@@ -264,8 +272,8 @@ function closeModal() {
         // scroll to the figure such that it's centered in the viewport
         var figureFromTop = figureToScrollTo.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (figureToScrollTo.offsetHeight / 2);
         window.scrollTo({
-            top: figureFromTop,
-            behavior: 'auto'
+           top: figureFromTop,
+           behavior: 'auto'
         });
 
         // close the modal
