@@ -130,14 +130,14 @@ dialog figure {cursor: default;}
 dialog picture img {width: unset; height: unset;  max-height: 100%; max-width: 100%; top:50%; left:50%; transform: translate(-50%, -50%); position: absolute;}
 dialog figcaption {opacity: 1; display:block; bottom: 20px; left: 20px; top: unset;}
 dialog figcaption.dark {color: #fff; }
-dialog figure:hover figcaption {display: blockx;}
+dialog figure:hover figcaption {display: block;}
 /* modal controls */
 dialog .button {width: 42px; height: 42px; z-index: 1; background-color: rgba(100, 100, 100, 0.25); border-radius: 8px; transition: all .2s ease-in-out; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);  background-repeat: no-repeat; background-position: center; transform-origin: center;}
 dialog .button:hover {background-color: rgba(100, 100, 100, 0.65); transform: scale(1.05);}
 dialog .button:focus-visible {outline: none; border: 1px solid #ffffff70;}
 dialog .button span {display: none;}
 dialog .close {position: absolute; top:20px; right:20px; background-image: url("/images/icon-close.svg"); background-size: 24px;}
-/* previous and next button that are placed on either side of the screen and vertically cenetered */
+/* previous and next button that are placed on either side of the screen and vertically centered */
 dialog .previous, dialog .next {position: absolute; top:50%; transform: translateY(-50%) inherit; background-size: 14px 18px; }
 dialog .previous {left:20px; background-image: url("/images/icon-previous.svg");}
 dialog .next {right:20px; background-image: url("/images/icon-arrow.svg");}
@@ -240,7 +240,7 @@ footer:hover {opacity:1;}
     input, button {width:100%;}
     audio, #audio-player {width:100%;}
     
-    /* let's keep the modal clean, less christmass tree */
+    /* let's keep the modal clean, less christmas tree */
     dialog .previous, dialog .next {display:none;}
 }
 @media screen and (max-width: 375px) {
