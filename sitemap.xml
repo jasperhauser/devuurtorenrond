@@ -9,22 +9,27 @@
 
 <url>
   <loc>https://www.devuurtorenrond.nl/</loc>
-  <lastmod>2023-06-21T18:10:53+00:00</lastmod>
+  <lastmod>2023-09-25T15:37:58+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://www.devuurtorenrond.nl/herfst/</loc>
+  <lastmod>2023-09-25T15:37:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://www.devuurtorenrond.nl/zomer/</loc>
-  <lastmod>2023-06-21T18:10:53+00:00</lastmod>
+  <lastmod>2023-09-25T15:37:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.devuurtorenrond.nl/winter/</loc>
-  <lastmod>2023-06-21T18:10:53+00:00</lastmod>
+  <lastmod>2023-09-25T15:37:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.devuurtorenrond.nl/lente/</loc>
-  <lastmod>2023-06-21T18:10:53+00:00</lastmod>
+  <lastmod>2023-09-25T15:37:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
