@@ -126,8 +126,9 @@ figcaption {position:absolute; left:10px; top:10px; font-size:0.85em; color:#fff
 article figure {cursor: zoom-in;}
 dialog { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); width: 100%; max-width: 100%; height: 100%; max-height: 100%; position: fixed; top:0; left:0; opacity: 0; transition: opacity 0.2s ease-in-out; background-color: rgba(0, 0, 0, 0.85); z-index: 10; border: none; margin: 0; padding: 0;}
 dialog.open {opacity: 1;}
-dialog figure {cursor: default;}
+dialog figure img {cursor: zoom-in;}
 dialog picture img {width: unset; height: unset;  max-height: 100%; max-width: 100%; top:50%; left:50%; transform: translate(-50%, -50%); position: absolute;}
+dialog picture img.large {scale: 1.5; transform: translate(-33.33%, -33.33%); cursor: zoom-out;}
 dialog figcaption {opacity: 1; display:block; bottom: 20px; left: 20px; top: unset;}
 dialog figcaption.dark {color: #fff; }
 dialog figure:hover figcaption {display: block;}
@@ -145,7 +146,7 @@ dialog .next {right:20px; background-image: url("/images/icon-arrow.svg");}
 /* image carousel */
 .carousel {position: relative; width: 100%; height: 100%; overflow-y: hidden; overflow-x: scroll; scroll-snap-type: x mandatory; display: flex; flex-direction: row; scroll-behavior: auto;}
 .carousel::-webkit-scrollbar {display: none;}
-.carousel-item {position: relative; min-width: 100%; min-height: 100%; scroll-snap-align: start;}
+.carousel-item {position: relative; min-width: 100%; min-height: 100%; scroll-snap-align: start; overflow: hidden;}
 
 /* media */
 audio {display:block; margin:0 auto 8px auto; width:320px;}

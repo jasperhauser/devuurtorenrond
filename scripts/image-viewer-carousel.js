@@ -72,7 +72,7 @@ for (let i = 0; i < figures.length; i++) {
     carousel.appendChild(carouselItem);
     carouselItem.appendChild(figure.cloneNode(true));
 
-    // listen for click on each figure
+    // listen for click on each figure top open the dialog
     figure.addEventListener('click', function() {
         // open the dialog
         dialog.showModal();
@@ -90,12 +90,30 @@ for (let i = 0; i < figures.length; i++) {
         // scroll the carousel to the figure that was clicked
         const carouselItem = document.getElementById('carousel-' + figureId);
         carouselItem.scrollIntoView({block: "center", inline: "center"});
+        
+    });
+}
+
+// listen for a click on each img within each carousel item
+const carouselItems = document.querySelectorAll('.carousel-item');
+for (let i = 0; i < carouselItems.length; i++) {
+    const carouselItem = carouselItems[i];
+    const img = carouselItem.querySelector('img');
+    img.addEventListener('click', function() {
+        // console.log('image clicked');
+        // increase the size of the image
+        if (img.classList.contains('large')) {
+            img.classList.remove('large');
+            // console.log('make image normal size');
+        } else {
+            img.classList.add('large');
+            // console.log('make image large size');
+        }
     });
 }
 
 // use the arrow keys to navigate between images
 document.addEventListener('keydown', (e) => {
-    var figure = document.querySelector('dialog figure');
     if (dialog.classList.contains('open')) {
         if (e.key === 'ArrowLeft') {;
             // get activeFigure id and subtract 1 from it
@@ -227,6 +245,13 @@ function closeDialog() {
 
         // scroll to the currently visible figure in the article
         scrollToArticleFigure();
+
+        // remove all "large" classes from images
+        const images = document.querySelectorAll('.carousel-item img');
+        for (let i = 0; i < images.length; i++) {
+            const image = images[i];
+            image.classList.remove('large');
+        }
 
         // actually close the dialog
         dialog.classList.remove('open');
