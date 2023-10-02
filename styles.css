@@ -128,10 +128,11 @@ dialog { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); width
 dialog.open {opacity: 1;}
 dialog figure img {cursor: zoom-in;}
 dialog picture img {width: unset; height: unset;  max-height: 100%; max-width: 100%; top:50%; left:50%; transform: translate(-50%, -50%); position: absolute;}
-dialog picture img.large {scale: 1.5; transform: translate(-33.33%, -33.33%); cursor: zoom-out;}
+dialog figure.large img {scale: 1.5; transform: translate(-33.33%, -33.33%); cursor: zoom-out;}
 dialog figcaption {opacity: 1; display:block; bottom: 20px; left: 20px; top: unset;}
+dialog figure.large figcaption {display:none;}
 dialog figcaption.dark {color: #fff; }
-dialog figure:hover figcaption {display: block;}
+dialog figure figcaption {display: block;}
 /* modal controls */
 dialog .button {width: 42px; height: 42px; z-index: 1; background-color: rgba(100, 100, 100, 0.25); border-radius: 8px; transition: all .2s ease-in-out; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);  background-repeat: no-repeat; background-position: center; transform-origin: center;}
 dialog .button:hover {background-color: rgba(100, 100, 100, 0.65); transform: scale(1.05);}

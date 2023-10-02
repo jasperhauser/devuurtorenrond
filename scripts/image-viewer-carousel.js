@@ -98,7 +98,7 @@ for (let i = 0; i < figures.length; i++) {
 const carouselItems = document.querySelectorAll('.carousel-item');
 for (let i = 0; i < carouselItems.length; i++) {
     const carouselItem = carouselItems[i];
-    const img = carouselItem.querySelector('img');
+    const img = carouselItem.querySelector('figure');
     img.addEventListener('click', function() {
         // console.log('image clicked');
         // increase the size of the image
@@ -247,7 +247,7 @@ function closeDialog() {
         scrollToArticleFigure();
 
         // remove all "large" classes from images
-        const images = document.querySelectorAll('.carousel-item img');
+        const images = document.querySelectorAll('.carousel-item figure');
         for (let i = 0; i < images.length; i++) {
             const image = images[i];
             image.classList.remove('large');
