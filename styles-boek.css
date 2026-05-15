@@ -3,15 +3,10 @@
 	--page-transparent: rgba(251, 255, 246, 0.85);
 	--ink: #15170f;
 	--green: #3b6e00;
-	--green-dark: #2c5300;
 	--olive: #84956f;
 	--olive-transparent: rgba(132, 149, 111, 0.85);
 	--olive-dark: #65684d;
 	--brown: #84694b;
-	--spring: #e8eed0;
-	--summer: #eee6f3;
-	--autumn: #f6e2cb;
-	--winter: #e0e7f1;
 	--specs: #e0eacf;
 	--block: #d8d8d8;
 	--max: 1102px;
@@ -99,9 +94,11 @@ ul {
 .media-block {
 	position: relative;
 	display: grid;
-	min-height: 220px;
 	place-items: center;
 	overflow: hidden;
+	aspect-ratio: 1;
+	min-height: 0;
+	border-radius: 6px;
 	background:
 		linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0)),
 		var(--block);
@@ -109,9 +106,6 @@ ul {
 	font-size: 13px;
 	letter-spacing: 0.02em;
 	text-align: center;
-	aspect-ratio: 1;
-	min-height: 0;
-	border-radius: 6px;
 }
 
 .media-block::before {
@@ -141,21 +135,11 @@ ul {
 	object-position: center;
 }
 
-.block-image-contain {
-	object-fit: contain;
-}
-
 .media-block span {
 	position: relative;
 	padding: 0.45rem 0.7rem;
 	background: rgba(255, 255, 255, 0.52);
 	border-radius: 999px;
-}
-
-.media-block-hero {
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
 }
 
 /* Buy bar */
@@ -195,7 +179,7 @@ ul {
 .buy-bar-wrap.is-over-project .buy-bar {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
-.buy-bar-wrap.is-over-project .button{
+.buy-bar-wrap.is-over-project .button {
 	background: #fff;
 	color: var(--green);
 }
@@ -207,10 +191,11 @@ ul {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	font-size: clamp(24px, 2.7vw, 34px);
 	font-weight: 400;
 	font-size: 32px;
 	line-height: 1.2;
+	text-decoration: none;
+	border-bottom: none;
 }
 
 .logo-mark {
@@ -237,12 +222,12 @@ ul {
 	justify-content: center;
 	min-height: 42px;
 	padding: 0 22px;
-	border-radius: 0;
+	border-radius: 999px;
 	background: #fff;
 	color: inherit;
 	font-weight: 600;
 	white-space: nowrap;
-	border-radius: 999px;
+	border: none;
 }
 
 .button-primary {
@@ -287,6 +272,7 @@ ul {
 	grid-template-columns: 271fr 270fr;
 	min-height: 300px;
 	color: #fff;
+	overflow: hidden;
 	border-radius: 6px;
 }
 
@@ -307,8 +293,8 @@ ul {
 }
 
 .edition-cover {
-	aspect-ratio: auto;
-	min-height: 300px;
+	aspect-ratio: 271 / 300;
+	min-height: 0;
 	background-color: rgba(0, 0, 0, 0.18);
 }
 
@@ -409,7 +395,6 @@ ul {
 	position: absolute;
 	left: 25%;
 	bottom: 15%;
-	font-weight: 400 !important;
 }
 
 .specs h2 {
@@ -472,26 +457,6 @@ ul {
 	object-fit: cover;
 }
 
-.season-spring {
-	--season-bg: var(--spring);
-	--season-color: #4b5e44;
-}
-
-.season-summer {
-	--season-bg: var(--summer);
-	--season-color: #ff2336;
-}
-
-.season-autumn {
-	--season-bg: var(--autumn);
-	--season-color: #5e4c44;
-}
-
-.season-winter {
-	--season-bg: var(--winter);
-	--season-color: #3a94d2;
-}
-
 .media-heading {
 	margin-top: 94px;
 }
@@ -514,7 +479,7 @@ ul {
 	line-height: 22px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1100px) {
 	.buy-bar,
 	.hero-label-wrap,
 	.section-grid,
@@ -526,10 +491,11 @@ ul {
 	}
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
 	:root {
 		--buy-bar-height: 160px;
 	}
+
 	.buy-bar {
 		grid-template-columns: minmax(0, 1fr) auto;
 		gap: 12px 16px;
@@ -550,21 +516,16 @@ ul {
 		top: 24px;
 	}
 
-	.section-grid,
-	.image-pair,
-	.editions,
-	.book-grid,
-	.season-grid,
 	.media-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.editions {
 		grid-template-columns: 1fr;
 	}
 
-	.intro {
-		padding-top: 42px;
-	}
-
-	.book-grid {
-		padding-bottom: 48px;
+	.edition-card {
+		min-height: 280px;
 	}
 
 	.project-inner {
@@ -572,7 +533,7 @@ ul {
 	}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 	:root {
 		--gap: 14px;
 		--buy-bar-height: 170px;
@@ -592,27 +553,27 @@ ul {
 		font-size: 26px;
 	}
 
-	.edition-card,
-	.nested-grid {
+	.section-grid {
 		grid-template-columns: 1fr;
 	}
 
-	.edition-copy {
-		min-height: 280px;
+	.intro {
+		padding-top: 42px;
 	}
 
-	.image-pair .media-block,
-	.media-large {
-		min-height: 320px;
+	.book-grid {
+		padding-bottom: 48px;
 	}
 
-	.specs {
-		min-height: 0;
+	.media-card p {
+		font-size: 13px;
+		line-height: 20px;
 	}
 }
 
 @media (max-width: 480px) {
 	:root {
+		--gap: 12px;
 		--buy-bar-height: 220px;
 		--hero-max-height: 480px;
 	}
@@ -634,5 +595,21 @@ ul {
 		top: 0;
 		right: 0;
 		width: 100%;
+	}
+
+	.edition-card {
+		grid-template-columns: 1fr;
+	}
+
+	.edition-copy {
+		min-height: 260px;
+	}
+
+	.media-heading {
+		margin-top: 60px;
+	}
+
+	.project-inner {
+		padding-top: 48px;
 	}
 }
