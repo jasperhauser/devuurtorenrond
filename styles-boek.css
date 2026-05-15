@@ -1,10 +1,11 @@
 :root {
 	--page: #fbfff6;
-	--page-transparent: rgba(251, 255, 246, 0.755);
+	--page-transparent: rgba(251, 255, 246, 0.85);
 	--ink: #15170f;
 	--green: #3b6e00;
 	--green-dark: #2c5300;
 	--olive: #84956f;
+	--olive-transparent: rgba(132, 149, 111, 0.85);
 	--olive-dark: #65684d;
 	--brown: #84694b;
 	--spring: #e8eed0;
@@ -158,10 +159,19 @@ ul {
 }
 
 /* Buy bar */
-.buy-bar {
+.buy-bar-wrap {
 	position: sticky;
 	top: 0;
 	z-index: 10;
+	background: var(--page-transparent);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	color: var(--green);
+	transition: all 0.2s ease-in-out;
+}
+
+.buy-bar {
+	position: relative;
 	display: grid;
 	grid-template-columns: minmax(260px, 1fr) auto auto;
 	gap: 25px;
@@ -169,12 +179,28 @@ ul {
 	max-width: var(--max);
 	min-height: 100px;
 	margin: 0 auto;
+	transition: all 0.2s ease-in-out;
 	border-bottom: 1px solid rgba(59, 110, 0, 0.28);
-	background: var(--page-transparent);
-	box-shadow: 0 0 0 100vmax var(--page);
-	clip-path: inset(0 -100vmax);
+}
+
+.buy-bar.is-sticky {
+	min-height: 70px;
+}
+
+/* Over project */
+.buy-bar-wrap.is-over-project {
+	background: var(--olive-transparent);
+	color: #fff;
+}
+.buy-bar-wrap.is-over-project .buy-bar {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+.buy-bar-wrap.is-over-project .button{
+	background: #fff;
 	color: var(--green);
-	backdrop-filter: blur(10px);
+}
+.buy-bar-wrap.is-over-project .logo-mark {
+	background-image: url("/images/logo-wit.svg");
 }
 
 .brand {
@@ -192,7 +218,7 @@ ul {
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
-	background: url("../images/logo-groen.svg") no-repeat center center;
+	background: url("/images/logo-groen.svg") no-repeat center center;
 	background-size: contain;
 }
 
@@ -209,8 +235,8 @@ ul {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 46px;
-	padding: 0 29px;
+	min-height: 42px;
+	padding: 0 22px;
 	border-radius: 0;
 	background: #fff;
 	color: inherit;

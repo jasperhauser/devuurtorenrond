@@ -9,6 +9,52 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 	<link href="/styles-boek.css" rel="stylesheet">
+	<script>
+		// Sticky buy bar
+		document.addEventListener('DOMContentLoaded', () => {
+			const buyBar = document.querySelector('.buy-bar');
+			if (!buyBar) return;
+			const buyBarWrap = buyBar.closest('.buy-bar-wrap') || buyBar;
+			const project = document.querySelector('.project');
+
+			const sentinel = document.createElement('div');
+			sentinel.setAttribute('aria-hidden', 'true');
+			buyBarWrap.before(sentinel);
+
+			let stickyStart = 0;
+			let projectStart = Infinity;
+
+			const measure = () => {
+				stickyStart = sentinel.getBoundingClientRect().top + window.scrollY;
+				projectStart = project ? project.getBoundingClientRect().top + window.scrollY : Infinity;
+			};
+
+			const update = () => {
+				buyBar.classList.toggle('is-sticky', window.scrollY >= stickyStart);
+				buyBarWrap.classList.toggle('is-sticky', window.scrollY >= stickyStart);
+				buyBarWrap.classList.toggle('is-over-project', window.scrollY + buyBarWrap.offsetHeight >= projectStart);
+			};
+
+			const refresh = () => {
+				measure();
+				update();
+			};
+
+			refresh();
+			window.addEventListener('scroll', update, { passive: true });
+			window.addEventListener('resize', refresh);
+			window.addEventListener('orientationchange', refresh);
+			window.addEventListener('load', refresh);
+
+			if (window.visualViewport) {
+				window.visualViewport.addEventListener('resize', refresh);
+			}
+
+			if ('ResizeObserver' in window) {
+				new ResizeObserver(refresh).observe(document.body);
+			}
+		});
+	</script>
 </head>
 <body>
 	<header class="hero">
@@ -19,14 +65,16 @@
 	</header>
 
 	<main>
-		<section class="buy-bar" aria-label="Boek bestellen">
-			<div class="brand">
-				<div class="logo-mark" aria-hidden="true"></div>
-				<strong>De Vuurtoren Rond</strong>
-			</div>
-			<p>Gelimiteerde editie van 750 <span aria-hidden="true">•</span> Later €65<span><br></span><a href="">English</a> &amp; Nederlands <span aria-hidden="true">•</span> Incl. verzending Nederland</p>
-			<a class="button button-primary" href="#edities">Bestel €55</a>
-		</section>
+		<div class="buy-bar-wrap">
+			<section class="buy-bar" aria-label="Boek bestellen">
+				<div class="brand">
+					<div class="logo-mark" aria-hidden="true"></div>
+					<strong>De Vuurtoren Rond</strong>
+				</div>
+				<p>Gelimiteerde editie van 750 <span aria-hidden="true">•</span> Later €65<span><br></span><a href="">English</a> &amp; Nederlands <span aria-hidden="true">•</span> Incl. verzending Nederland</p>
+				<a class="button button-primary" href="#edities">Bestel €55</a>
+			</section>
+		</div>
 
 		<section class="intro section-grid">
 			<p><strong>Een jaar rond de vuurtoren van het Friese Workum</strong> — Aan de rand van het IJsselmeer, waar land, wind en water elkaar voortdurend raken, leven Cornelie en Reid († 2020) al decennia in het ritme van deze plek. Hun wereld beweegt mee met de seizoenen: met dieren en tuin, oogst, stilte, storm. Zo ontvouwt zich een bestaan dat zeldzaam is geworden: eenvoudig, zelfvoorzienend en diep verbonden met de natuur.</p>
