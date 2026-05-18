@@ -1,7 +1,7 @@
 :root {
 	--page: #fbfff6;
 	--page-transparent: rgba(251, 255, 246, 0.85);
-	--ink: #15170f;
+	--ink: rgba(21, 23, 15, 0.933);
 	--green: #3b6e00;
 	--olive: #84956f;
 	--olive-transparent: rgba(132, 149, 111, 0.85);
@@ -11,7 +11,7 @@
 	--block: #d8d8d8;
 	--max: 1100px;
 	--gap: 20px;
-	--buy-bar-height: 109px;
+	--buy-bar-height: 100px;
 	--hero-max-height: 740px;
 }
 
@@ -49,7 +49,43 @@ ul {
 	padding: 0;
 	list-style: none;
 }
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 22px;
+	border-radius: 999px;
+	background: #fff;
+	color: inherit;
+	font-weight: 600;
+	white-space: nowrap;
+	border: none;
+}
 
+.button-primary {
+	background: #000;
+	color: #fff;
+}
+.button-primary:hover {
+	background: var(--green);
+}
+
+.buy-bar,
+.hero-label-wrap,
+.section-grid,
+.image-pair,
+.book-faq,
+.editions,
+.book-grid,
+.project-inner,
+.makers-inner,
+.newsletter-inner,
+.site-footer {
+	width: calc(100% - 60px);
+	max-width: var(--max);
+}
+
+/* Hero Header */
 .hero {
 	position: relative;
 	height: min(var(--hero-max-height), calc(100svh - var(--buy-bar-height)));
@@ -67,7 +103,17 @@ ul {
 	object-position: 56% 56%;
 }
 
-.hero-label-wrap {
+.hero-sticker {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 150px;
+	width: 93px;
+	height: 93px;
+	background: url("/images/boek/sticker-oplage.svg") no-repeat center center;
+	background-size: contain;
+}
+.hero-wrap {
 	position: absolute;
 	right: 0;
 	top: 20px;
@@ -77,7 +123,7 @@ ul {
 	text-align: right;
 }
 .hero-label {
-	display: inline-block;
+	display: none;
 	padding: 0.35rem 0.55rem;
 	background: rgba(0, 0, 0, 0.2);
 	color: rgba(255, 255, 255, 0.5);
@@ -90,6 +136,77 @@ ul {
 	background: rgba(0, 0, 0, 0.3);
 	color: rgba(255, 255, 255, 1);
 }
+
+/* Buy bar */
+.buy-bar-wrap {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: var(--page-transparent);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	transition: all 0.2s ease-in-out;
+}
+.buy-bar {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0px, 1fr) auto auto;
+	gap: 25px;
+	align-items: center;
+	max-width: var(--max);
+	height: var(--buy-bar-height);
+	margin: 0 auto;
+	transition: all 0.2s ease-in-out;
+	border-bottom: 1px solid rgba(59, 110, 0, 0.28);
+}
+.buy-bar.is-sticky {
+	height: 70px;
+}
+.buy-bar p {
+	max-width: 324px;
+	font-family: Merriweather, Georgia, serif;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 21px;
+	text-align: right;
+}
+.buy-bar-wrap.is-over-project {
+	background: var(--olive-transparent);
+	color: #fff;
+}
+.buy-bar-wrap.is-over-project .buy-bar {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+.buy-bar-wrap.is-over-project .button {
+	background: #fff;
+	color: var(--green);
+}
+.buy-bar-wrap.is-over-project .logo-mark {
+	background-image: url("/images/logo-wit.svg");
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 1.2;
+	text-decoration: none;
+	border-bottom: none;
+	color: var(--green);
+}
+
+.logo-mark {
+	flex: 0 0 auto;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: url("/images/logo-groen.svg") no-repeat center center;
+	background-size: contain;
+}
+
+/* Media blocks */
 
 .media-block {
 	position: relative;
@@ -142,103 +259,11 @@ ul {
 	border-radius: 999px;
 }
 
-/* Buy bar */
-.buy-bar-wrap {
-	position: sticky;
-	top: 0;
-	z-index: 10;
-	background: var(--page-transparent);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: var(--green);
-	transition: all 0.2s ease-in-out;
-}
-
-.buy-bar {
-	position: relative;
-	display: grid;
-	grid-template-columns: minmax(0px, 1fr) auto auto;
-	gap: 25px;
-	align-items: center;
-	max-width: var(--max);
-	min-height: 100px;
-	margin: 0 auto;
-	transition: all 0.2s ease-in-out;
-	border-bottom: 1px solid rgba(59, 110, 0, 0.28);
-}
-
-.buy-bar.is-sticky {
-	min-height: 70px;
-}
-
-/* Over project */
-.buy-bar-wrap.is-over-project {
-	background: var(--olive-transparent);
-	color: #fff;
-}
-.buy-bar-wrap.is-over-project .buy-bar {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.28);
-}
-.buy-bar-wrap.is-over-project .button {
-	background: #fff;
-	color: var(--green);
-}
-.buy-bar-wrap.is-over-project .logo-mark {
-	background-image: url("/images/logo-wit.svg");
-}
-
-.brand {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	font-weight: 400;
-	font-size: 32px;
-	line-height: 1.2;
-	text-decoration: none;
-	border-bottom: none;
-}
-
-.logo-mark {
-	flex: 0 0 auto;
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	background: url("/images/logo-groen.svg") no-repeat center center;
-	background-size: contain;
-}
-
-.buy-bar p {
-	max-width: 324px;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 21px;
-	text-align: right;
-}
-
-.button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 42px;
-	padding: 0 22px;
-	border-radius: 999px;
-	background: #fff;
-	color: inherit;
-	font-weight: 600;
-	white-space: nowrap;
-	border: none;
-}
-
-.button-primary {
-	background: var(--green);
-	color: #fff;
-}
-.button-primary:hover {
-	background: #000;
-}
-
 /* Sections */
+section {
+	padding-top: 60px;
+}
+
 .section-grid,
 .image-pair,
 .editions,
@@ -251,11 +276,13 @@ ul {
 }
 
 .intro {
-	padding: 60px 0;
 	font-family: Merriweather, Georgia, serif;
 	font-size: 15px;
 	line-height: 2em;
 	font-weight: 400;
+}
+.intro strong {
+	text-transform: uppercase;
 }
 
 .image-pair .media-block,
@@ -263,10 +290,7 @@ ul {
 	min-height: min(42.2vw, 540px);
 }
 
-.editions {
-	padding: 60px 0;
-}
-
+/* Editions */
 .edition-card {
 	display: grid;
 	grid-template-columns: 271fr 270fr;
@@ -349,6 +373,8 @@ ul {
 	align-self: flex-end;
 	margin-top: auto;
 }
+
+/* Book grid */
 
 .book-grid {
 	padding-bottom: 60px;
@@ -822,27 +848,15 @@ ul {
 }
 
 @media (max-width: 1100px) {
-	.buy-bar,
-	.hero-label-wrap,
-	.section-grid,
-	.image-pair,
-	.book-faq,
-	.editions,
-	.book-grid,
-	.project-inner,
-	.makers-inner,
-	.newsletter-inner,
-	.site-footer {
-		width: calc(100% - 40px);
-		max-width: var(--max);
-	}
+
 }
 
 @media (max-width: 960px) {
-	:root {
-		--buy-bar-height: 160px;
+	
+	.buy-bar {
+		height: 80px;
 	}
-
+	
 	.media-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
@@ -864,7 +878,13 @@ ul {
 @media (max-width: 768px) {
 	:root {
 		--gap: 14px;
-		--buy-bar-height: 170px;
+	}
+
+	.hero-sticker {
+		display: block;
+		top: 60px;
+		right: 20px;
+		transform: rotate(10deg);
 	}
 
 	.buy-bar,
@@ -878,7 +898,7 @@ ul {
 	.makers-inner,
 	.newsletter-inner,
 	.site-footer {
-		width: calc(100% - 30px);
+		/* width: calc(100% - 40px); */
 		max-width: var(--max);
 	}
 
@@ -969,40 +989,50 @@ ul {
 @media (max-width: 480px) {
 	:root {
 		--gap: 12px;
-		--buy-bar-height: 220px;
-		--hero-max-height: 440px;
+		--hero-max-height: 560px;
 	}
 
 	/* Buy bar */
 	.buy-bar {
-		min-height: 80px;
+		height: 80px;
 		padding:0;
 	}
 	.buy-bar.is-sticky {
-		min-height: 60px;
-	}
-	.buy-bar .logo-mark {
-		display: none;
+		height: 60px;
 	}
 	.buy-bar .brand {
-		font-size: 23px;
+		font-size: 20px;
+		gap: 6px;
 	}
-
+	.buy-bar .logo-mark {
+		width: 26px;
+		height: 26px;
+	}
 	.buy-bar p {
 		display: none;
 	}
-
 	.buy-bar .button {
 		font-size: 14px;
-		vertical-align: middle;
+		padding: 10px 16px;
 	}
 
 	.book-grid > :nth-child(1),
 	.book-grid > :nth-child(2),
-	.book-grid .nested-grid,
-	.book-grid .specs {
+	.book-grid > .nested-grid,
+	.book-grid .specs,
+	.book-grid > .book-quote-tile,
+	.book-grid > .book-winter-spread-tile {
 		grid-column: 1 / -1;
 		width: 100%;
+	}
+
+	.book-grid > .media-block.book-quote-tile,
+	.book-grid > .media-block.book-winter-spread-tile {
+		min-height: min(118vw, 620px);
+	}
+
+	.book-grid > .media-block.book-quote-tile .block-image {
+		object-fit: contain;
 	}
 
 	.season-grid {
@@ -1057,35 +1087,10 @@ ul {
 		grid-template-columns: 1fr;
 	}
 
-	
-	.media-heading {
-		margin-top: 60px;
-	}
-
-	.project-inner {
-		padding-top: 48px;
-	}
-
-	.makers {
-		padding-bottom: 48px;
-	}
-
-	.newsletter-boek {
-		padding-top: 48px;
-		padding-bottom: 56px;
-	}
-
-	.site-footer {
-		padding-top: 32px;
-		padding-bottom: 40px;
-	}
 }
 
 @media (max-width: 360px) {
-	.buy-bar .brand .logo-mark{
-		display: block;
-	}
-	.buy-bar .brand strong {
+	.buy-bar .button span {
 		display: none;
 	}
 }
