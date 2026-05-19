@@ -71,7 +71,7 @@ ul {
 }
 
 .buy-bar,
-.hero-label-wrap,
+.intro-pre-order,
 .section-grid,
 .image-pair,
 .book-faq,
@@ -95,46 +95,24 @@ ul {
 	transition: all 0.2s ease-in-out;
 }
 
+.hero picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 .hero-image {
 	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: 56% 56%;
+	object-position: center;
 }
 
-.hero-sticker {
-	display: none;
-	position: absolute;
-	right: 0;
-	top: 150px;
-	width: 93px;
-	height: 93px;
-	background: url("/images/boek/sticker-oplage.svg") no-repeat center center;
-	background-size: contain;
-}
-.hero-wrap {
-	position: absolute;
-	right: 0;
-	top: 20px;
-	left: 0;
-	max-width: var(--max);
-	margin: 0 auto;
-	text-align: right;
-}
-.hero-label {
-	display: none;
-	padding: 0.35rem 0.55rem;
-	background: rgba(0, 0, 0, 0.2);
-	color: rgba(255, 255, 255, 0.5);
-	font-size: 12px;
-	border-radius: 999px;
-	backdrop-filter: blur(10px);
-	transition: all 0.2s ease-in-out;
-}
-.hero-label:hover {
-	background: rgba(0, 0, 0, 0.3);
-	color: rgba(255, 255, 255, 1);
+@media (min-width: 769px) {
+	.hero-image {
+		object-position: 56% 56%;
+	}
 }
 
 /* Buy bar */
@@ -162,20 +140,6 @@ ul {
 .buy-bar.is-sticky {
 	height: 70px;
 }
-/* .buy-bar-wrap.is-over-project {
-	background: var(--olive-transparent);
-	color: #fff;
-}
-.buy-bar-wrap.is-over-project .buy-bar {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.28);
-}
-.buy-bar-wrap.is-over-project .button {
-	background: #fff;
-	color: var(--green);
-}
-.buy-bar-wrap.is-over-project .logo-mark {
-	background-image: url("/images/logo-wit.svg");
-} */
 .buy-bar p {
 	max-width: 324px;
 	font-family: Merriweather, Georgia, serif;
@@ -276,7 +240,17 @@ section {
 	max-width: var(--max);
 	margin: 0 auto;
 }
-
+.intro-pre-order {
+	text-align: center;
+	font-style: italic;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+	margin-bottom: -20px;
+	color: var(--green);
+	font-family: Merriweather, Georgia, serif;
+	line-height: 1.75;
+}
 .intro {
 	font-family: Merriweather, Georgia, serif;
 	font-size: 15px;
@@ -849,10 +823,6 @@ section {
 	border-bottom-color: rgba(21, 23, 15, 0.2);
 }
 
-@media (max-width: 1100px) {
-
-}
-
 @media (max-width: 960px) {
 	
 	.buy-bar {
@@ -882,15 +852,8 @@ section {
 		--gap: 14px;
 	}
 
-	.hero-sticker {
-		display: block;
-		top: 60px;
-		right: 20px;
-		transform: rotate(10deg);
-	}
-
 	.buy-bar,
-	.hero-label-wrap,
+	.intro-pre-order,
 	.section-grid,
 	.image-pair,
 	.book-faq,
@@ -927,7 +890,9 @@ section {
 	.section-grid {
 		grid-template-columns: 1fr;
 	}
-
+	.intro-pre-order {
+		text-align: left;
+	}
 	.intro {
 		padding-top: 42px;
 	}
