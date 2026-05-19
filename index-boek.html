@@ -87,7 +87,7 @@
 			<span>Bestel vóór de lancering op 6 juni voor €55. Daarna €65. Beperkte voorraad.</span>
 		</section>
 			
-		<section class="intro section-grid">
+		<section class="intro section-grid" id="over">
 			<p><strong>Een jaar rond de vuurtoren van het Friese Workum</strong> — Aan de rand van het IJsselmeer, waar land, wind en water elkaar voortdurend raken, leven Cornelie en Reid († 2020) al decennia in het ritme van deze plek. Hun wereld beweegt mee met de seizoenen: met dieren en tuin, oogst, stilte, storm. Zo ontvouwt zich een bestaan dat zeldzaam is geworden: eenvoudig, zelfvoorzienend en diep verbonden met de natuur.</p>
 			<p>Vier seizoenen lang keerden fotograaf <a href="https://loekbuter.com">Loek Buter</a> en <a href="https://jasperhauser.com">Jasper Hauser</a>, Reid’s kleinzoon, terug naar de vuurtoren. Loek — tweevoudig Zilveren Camera-winnaar — fotografeerde met zijn middenformaatcamera, langzaam en aandachtig. In zijn eerste fotoboek komen die beelden samen met persoonlijke teksten van Loek en Jasper, over herinnering, perspectief en de vraag wat een plek door de jaren heen in zich bewaart.</p>
 		</section>
@@ -242,7 +242,7 @@
 				<div class="season-grid" aria-label="Seizoensverhalen">
 					<a class="season-card season-spring" href="/lente" rel="noopener">
 						<div class="season-card-copy">
-							<img class="season-logo" src="/images/logo-wit.svg" alt="" width="34" height="34" aria-hidden="true">
+							<span class="season-logo" aria-hidden="true"></span>
 							<h3 class="season-title">Lente rond de Vuurtoren</h3>
 							<span class="season-cta">Lees verhaal →</span>
 						</div>
@@ -252,7 +252,7 @@
 					</a>
 					<a class="season-card season-summer" href="/zomer" rel="noopener">
 						<div class="season-card-copy">
-							<img class="season-logo" src="/images/logo-wit.svg" alt="" width="34" height="34" aria-hidden="true">
+							<span class="season-logo" aria-hidden="true"></span>
 							<h3 class="season-title">Zomer rond de Vuurtoren</h3>
 							<span class="season-cta">Lees verhaal →</span>
 						</div>
@@ -262,7 +262,7 @@
 					</a>
 					<a class="season-card season-autumn" href="/herfst" rel="noopener">
 						<div class="season-card-copy">
-							<img class="season-logo" src="/images/logo-wit.svg" alt="" width="34" height="34" aria-hidden="true">
+							<span class="season-logo" aria-hidden="true"></span>
 							<h3 class="season-title">Herfst rond de Vuurtoren</h3>
 							<span class="season-cta">Lees verhaal →</span>
 						</div>
@@ -272,7 +272,7 @@
 					</a>
 					<a class="season-card season-winter" href="/winter" rel="noopener">
 						<div class="season-card-copy">
-							<img class="season-logo" src="/images/logo-wit.svg" alt="" width="34" height="34" aria-hidden="true">
+							<span class="season-logo" aria-hidden="true"></span>
 							<h3 class="season-title">Winter rond de Vuurtoren</h3>
 							<span class="season-cta">Lees verhaal →</span>
 						</div>
@@ -283,7 +283,7 @@
 				</div>
 
 				<header class="section-heading media-heading">
-					<h2>Publicaties &amp; Media</h2>
+					<h2 id="publicaties">Publicaties &amp; Media</h2>
 				</header>
 
 				<div class="media-grid" aria-label="Publicaties en media">
@@ -327,7 +327,7 @@
 			</div>
 		</section>
 
-		<section class="makers" id="makers-over" aria-labelledby="makers-over-title">
+		<section class="makers" id="makers" aria-labelledby="makers-over-title">
 			<div class="makers-inner">
 				<div class="makers-layout">
 					<div class="makers-text">
@@ -340,17 +340,12 @@
 						</div>
 					</div>
 					<figure class="makers-photo media-block">
-						<img class="block-image" src="photos/home/portret-rc-500-9ba9c2.jpg" srcset="photos/home/portret-rc-500-9ba9c2.jpg 500w, photos/home/portret-rc-1000-9ba9c2.jpg 1000w" sizes="(max-width: 768px) min(440px, 100vw), 38vw" alt="Portret van Cornelie en † Reid samen." loading="lazy" width="580" height="580">
+						<img class="block-image" src="photos/lente/voorjaar-6-600.jpg" srcset="photos/lente/voorjaar-6-600.jpg 500w, photos/lente/voorjaar-6-1200.jpg 1000w" sizes="(max-width: 768px) min(440px, 100vw), 38vw" alt="Portret van Cornelie en † Reid samen." loading="lazy" width="580" height="580">
 					</figure>
 				</div>
 			</div>
 		</section>
 
-		<!--
-			Nieuwsbrief (Mailchimp): vervang de form action hieronder door de volledige “form action”-URL uit
-			Audience → Signup forms → Embedded forms (Classic). Voeg daar desgewenst het honeypot-veld toe
-			(name="b_…") zoals Mailchimp dat aanlevert, ter bescherming tegen bots.
-		-->
 		<section id="newsletter" class="newsletter-boek">
 			<div class="newsletter-inner">
 				<figure class="newsletter-photo media-block">
@@ -359,25 +354,51 @@
 				<div class="newsletter-copy">
 					<h2>Nieuwsbrief</h2>
 					<p class="newsletter-lead">Schrijf je in voor updates over het boek, de oplages en andere ontwikkelingen rond het project.</p>
-					<form
-						class="newsletter-form"
-						action="https://replace-with-your-server.list-manage.com/subscribe/post?u=PASTE_U&amp;id=PASTE_AUDIENCE_ID"
-						method="post"
-						target="_blank"
-						novalidate
-					>
-						<label class="newsletter-label" for="mce-EMAIL-boek">E-mailadres</label>
-						<input
-							class="newsletter-input"
-							type="email"
-							name="EMAIL"
-							id="mce-EMAIL-boek"
-							placeholder="je@adres.nl"
-							autocomplete="email"
-							required
-						>
-						<button type="submit" class="button button-primary newsletter-submit">Inschrijven</button>
-					</form>
+					<div id="mc_embed_shell">
+						<div id="mc_embed_signup">
+							<form
+								action="https://devuurtorenrond.us6.list-manage.com/subscribe/post?u=dbb7bd5b476cb6fcf1eb5cc98&amp;id=48f74172ef&amp;f_id=00be1ee2f0"
+								method="post"
+								id="mc-embedded-subscribe-form"
+								name="mc-embedded-subscribe-form"
+								class="validate newsletter-form"
+								target="_blank"
+								novalidate
+							>
+								<div id="mc_embed_signup_scroll" hidden>
+									<h2>Subscribe</h2>
+									<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+								</div>
+								<div class="mc-field-group">
+									<label class="newsletter-label" for="mce-EMAIL">E-mailadres <span class="asterisk" aria-hidden="true">*</span></label>
+									<input
+										type="email"
+										name="EMAIL"
+										class="required email newsletter-input"
+										id="mce-EMAIL"
+										placeholder="je@adres.nl"
+										autocomplete="email"
+										required
+										value=""
+									>
+								</div>
+								<div id="mce-responses" class="clear">
+									<div class="response" id="mce-error-response" style="display: none;"></div>
+									<div class="response" id="mce-success-response" style="display: none;"></div>
+								</div>
+								<div aria-hidden="true" style="position: absolute; left: -5000px;">
+									<input type="text" name="b_dbb7bd5b476cb6fcf1eb5cc98_48f74172ef" tabindex="-1" value="">
+								</div>
+								<input
+									type="submit"
+									name="subscribe"
+									id="mc-embedded-subscribe"
+									class="button button-primary newsletter-submit"
+									value="Inschrijven"
+								>
+							</form>
+						</div>
+					</div>
 					<p class="newsletter-note">Geen spam — je kunt je op elk moment weer uitschrijven.</p>
 				</div>
 			</div>
@@ -397,5 +418,15 @@
 		</script>
 	</footer>
 
+	<script src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+	<script>
+		(function ($) {
+			window.fnames = new Array();
+			window.ftypes = new Array();
+			fnames[0] = 'EMAIL';
+			ftypes[0] = 'email';
+		}(jQuery));
+		var $mcj = jQuery.noConflict(true);
+	</script>
 </body>
 </html>

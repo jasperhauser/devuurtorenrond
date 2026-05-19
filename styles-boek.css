@@ -64,6 +64,7 @@ ul {
 	border-radius: 999px;
 	background: #fff;
 	color: inherit;
+	font-size: 16px;
 	font-weight: 600;
 	white-space: nowrap;
 	border: none;
@@ -145,8 +146,11 @@ ul {
 	border: 1px solid rgba(255, 255, 255, 0.4);
 	border-radius: 6px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+	transition: transform 0.2s ease;
 }
-
+.hero-gallery-thumb:hover {
+	transform: scale(1.1);
+}
 .hero-gallery-thumb img {
 	display: block;
 	width: 100%;
@@ -174,7 +178,11 @@ ul {
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 
-#boekbeelden {
+#boekbeelden,
+#over,
+#publicaties,
+#makers,
+#newsletter {
 	scroll-margin-top: calc(var(--buy-bar-height) + 12px);
 }
 
@@ -538,15 +546,25 @@ section {
 	flex-shrink: 0;
 	width: 34px;
 	height: 34px;
+	background-color: var(--season-color);
+	mask-image: url("/images/logo-wit.svg");
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	-webkit-mask-image: url("/images/logo-wit.svg");
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
 }
 
-.season-title {
+h3 {
 	margin: 12px 0 0;
 	font-family: Inter, Helvetica, Arial, sans-serif;
 	font-size: clamp(19px, 2.4vw, 24px);
 	font-weight: 700;
+	font-size: 28px;
 	font-style: normal;
-	line-height: 1.2;
+	line-height: 1.4;
 	color: inherit;
 }
 
@@ -577,23 +595,23 @@ section {
 }
 
 .season-spring {
-	--season-bg: #517c41;
-	--season-color: #fff;
+	--season-bg: #E8EED0;
+	--season-color: #5D7A42;
 }
 
 .season-summer {
-	--season-bg: #c41e2a;
-	--season-color: #fff;
+	--season-bg: #EEE6F3;
+	--season-color: #FF2336;
 }
 
 .season-autumn {
-	--season-bg: #6b4331;
-	--season-color: #fff;
+	--season-bg: #F6E2CB;
+	--season-color: #A25129;
 }
 
 .season-winter {
-	--season-bg: #67aad9;
-	--season-color: #fff;
+	--season-bg: #E0E7F1;
+	--season-color: #3A94D2;
 }
 
 .media-heading {
@@ -603,7 +621,7 @@ section {
 .media-grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 50px 19px;
+	gap: 20px;
 }
 
 .media-card {
@@ -719,8 +737,7 @@ section {
 
 /* Over de makers (na project / media) */
 .makers {
-	padding: 72px 0 56px;
-	border-top: 1px solid rgba(59, 110, 0, 0.12);
+	padding-top: 60px;
 	background: var(--page);
 	color: var(--ink);
 }
@@ -741,8 +758,8 @@ section {
 .makers-layout {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 20px;
-	align-items: start;
+	gap: 30px;
+	align-items: center;
 }
 
 .makers-text {
@@ -751,8 +768,6 @@ section {
 
 .makers-bio + .makers-bio {
 	margin-top: 28px;
-	padding-top: 28px;
-	border-top: 1px solid rgba(59, 110, 0, 0.12);
 }
 
 .makers-bio p {
@@ -812,16 +827,14 @@ section {
 
 /* Nieuwsbrief (Mailchimp-stijl) */
 .newsletter-boek {
-	padding: 64px 0 72px;
-	background: rgba(251, 255, 246, 0.97);
-	border-top: 1px solid rgba(59, 110, 0, 0.12);
+	padding-top: 60px;
 	color: var(--ink);
 }
 
 .newsletter-inner {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 20px;
+	gap: 30px;
 	align-items: center;
 	max-width: var(--max);
 	margin: 0 auto;
@@ -886,8 +899,54 @@ section {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
-	gap: 12px;
+	gap: 8px;
 	max-width: 32rem;
+}
+
+.newsletter-boek #mc_embed_shell,
+.newsletter-boek #mc_embed_signup {
+	width: 100%;
+}
+
+.newsletter-boek #mc_embed_signup {
+	clear: none;
+	background: transparent;
+	font: inherit;
+}
+
+.newsletter-boek .mc-field-group {
+	flex: 1 1 12rem;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.newsletter-boek .mc-field-group .newsletter-input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.newsletter-boek #mce-responses {
+	flex: 1 1 100%;
+	margin: 0;
+}
+
+.newsletter-boek #mce-error-response,
+.newsletter-boek #mce-success-response,
+.newsletter-boek div.mce_inline_error {
+	font-family: Inter, Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.newsletter-boek #mce-error-response,
+.newsletter-boek div.mce_inline_error {
+	color: #9b2c2c;
+}
+
+.newsletter-boek #mce-success-response {
+	color: var(--green);
 }
 
 .newsletter-input {
@@ -971,6 +1030,9 @@ section {
 	.project-inner {
 		padding-bottom: 96px;
 	}
+	h3 {
+		font-size: 20px;
+	}
 }
 
 @media (max-width: 768px) {
@@ -1013,6 +1075,11 @@ section {
 		align-items: stretch;
 	}
 
+	.newsletter-boek .mc-field-group {
+		flex: 1 1 100%;
+		width: 100%;
+	}
+
 	.newsletter-submit {
 		width: 100%;
 	}
@@ -1045,6 +1112,9 @@ section {
 		max-width: 100%;
 		height: auto;
 	}
+	h3 {
+		font-size: 26px;
+	}
 	.specs-copy {
 		bottom: 8%;
 	}
@@ -1052,6 +1122,9 @@ section {
 		font-size: 11px;
 	}
 
+	.season-grid {
+		grid-template-columns: 1fr;
+	}
 	.media-card p {
 		font-size: 13px;
 		line-height: 20px;
@@ -1061,6 +1134,10 @@ section {
 	.makers-layout {
 		grid-template-columns: 1fr;
 		gap: 20px;
+	}
+
+	.makers-photo {
+		order: -1;
 	}
 	
 	.newsletter-inner {
@@ -1075,7 +1152,7 @@ section {
 
 	.makers-photo.media-block {
 		aspect-ratio: 1;
-		width: min(440px, 100%);
+		/* width: min(440px, 100%); */
 		height: auto;
 		margin-left: auto;
 		margin-right: auto;
@@ -1083,7 +1160,7 @@ section {
 
 	.newsletter-photo.media-block {
 		aspect-ratio: 1;
-		width: min(440px, 100%);
+		/* width: min(440px, 100%); */
 		height: auto;
 		margin-left: auto;
 		margin-right: auto;
@@ -1131,10 +1208,6 @@ section {
 	.book-grid > .book-winter-spread-tile {
 		grid-column: 1 / -1;
 		width: 100%;
-	}
-
-	.season-grid {
-		grid-template-columns: 1fr;
 	}
 
 	.season-card-copy {
