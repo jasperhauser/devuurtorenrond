@@ -8,6 +8,10 @@
 	--olive-dark: #65684d;
 	--brown: #84694b;
 	--specs: #e0eacf;
+	--spring: #e8eed0;
+	--summer: #eee6f3;
+	--autumn: #f6e2cb;
+	--winter: #e0e7f1;
 	--block: #d8d8d8;
 	--max: 1100px;
 	--gap: 20px;
@@ -91,7 +95,7 @@ ul {
 /* Hero Header */
 .hero {
 	position: relative;
-	height: calc(100svh - var(--buy-bar-height) - 120px);
+	height: calc(100svh - var(--buy-bar-height) - 160px);
 	min-height: 280px;
 	background: var(--block);
 	overflow: hidden;
@@ -241,32 +245,6 @@ ul {
 	aspect-ratio: 1;
 	min-height: 0;
 	border-radius: 6px;
-	background:
-		linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0)),
-		var(--block);
-	color: rgba(0, 0, 0, 0.42);
-	font-size: 13px;
-	letter-spacing: 0.02em;
-	text-align: center;
-}
-
-.media-block::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background-image:
-		linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
-	background-size: 24px 24px;
-	opacity: 0.45;
-}
-
-.media-block.has-image::before {
-	display: none;
-}
-
-.media-block.has-image {
-	background: #fff;
 }
 
 .block-image {
@@ -275,13 +253,6 @@ ul {
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
-}
-
-.media-block span {
-	position: relative;
-	padding: 0.45rem 0.7rem;
-	background: rgba(255, 255, 255, 0.52);
-	border-radius: 999px;
 }
 
 /* Sections */
@@ -320,9 +291,13 @@ section {
 	text-transform: uppercase;
 }
 
-.image-pair .media-block,
-.book-grid > .media-block.media-large {
+/* vw min-height on grid + aspect-ratio children often sticks on resize (WebKit); size from column width instead */
+.image-pair .media-block {
 	min-height: min(42.2vw, 540px);
+}
+
+.book-grid > .media-block.media-large {
+	min-height: 0;
 }
 
 /* Editions */
@@ -413,6 +388,7 @@ section {
 
 .book-grid {
 	padding-bottom: 60px;
+	grid-auto-rows: minmax(0, auto);
 }
 
 .nested-grid {
@@ -499,7 +475,7 @@ section {
 .project-inner {
 	max-width: var(--max);
 	margin: 0 auto;
-	padding: 60px 0;
+	padding-bottom: 60px;
 }
 
 .section-heading {
@@ -526,12 +502,70 @@ section {
 }
 
 .season-card {
-	display: block;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	aspect-ratio: 2 / 1;
 	overflow: hidden;
-	aspect-ratio: 540 / 272;
 	border-radius: 6px;
-	background: rgba(255, 255, 255, 0.14);
 	border-bottom: none;
+	background: #fff;
+	box-shadow: 0 3px 14px rgba(0, 0, 0, 0.1);
+	transition:
+		transform 0.22s ease,
+		box-shadow 0.22s ease;
+}
+
+.season-card:hover {
+	border-bottom: none;
+	transform: scale(1.015);
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.season-card-copy {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	min-width: 0;
+	min-height: 100%;
+	padding: 18px 20px;
+	background: var(--season-bg);
+	color: var(--season-color);
+}
+
+.season-logo {
+	display: block;
+	flex-shrink: 0;
+	width: 34px;
+	height: 34px;
+}
+
+.season-title {
+	margin: 12px 0 0;
+	font-family: Inter, Helvetica, Arial, sans-serif;
+	font-size: clamp(19px, 2.4vw, 24px);
+	font-weight: 700;
+	font-style: normal;
+	line-height: 1.2;
+	color: inherit;
+}
+
+.season-cta {
+	margin-top: auto;
+	padding-top: 16px;
+	font-family: Inter, Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: inherit;
+	opacity: 0.9;
+}
+
+.season-card-media {
+	min-width: 0;
+	min-height: 0;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.06);
 }
 
 .season-image {
@@ -539,6 +573,27 @@ section {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	object-position: right;
+}
+
+.season-spring {
+	--season-bg: #517c41;
+	--season-color: #fff;
+}
+
+.season-summer {
+	--season-bg: #c41e2a;
+	--season-color: #fff;
+}
+
+.season-autumn {
+	--season-bg: #6b4331;
+	--season-color: #fff;
+}
+
+.season-winter {
+	--season-bg: #67aad9;
+	--season-color: #fff;
 }
 
 .media-heading {
@@ -551,20 +606,32 @@ section {
 	gap: 50px 19px;
 }
 
-.media-card .media-block {
-	aspect-ratio: 354 / 221;
-	min-height: 0;
-	margin-bottom: 10px;
-}
-
 .media-card {
 	display: block;
 	border-bottom: none;
 }
 
+.media-card .media-block {
+	aspect-ratio: 354 / 221;
+	min-height: 0;
+	margin-bottom: 10px;
+	box-shadow: 0 3px 14px rgba(0, 0, 0, 0.1);
+	transition:
+		transform 0.22s ease,
+		box-shadow 0.22s ease;
+}
+
+.media-card:hover {
+	border-bottom: none;
+}
+
+.media-card:hover .media-block {
+	transform: scale(1.015);
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
 .media-card p {
 	font-size: 14px;
-	font-weight: 900;
 	line-height: 22px;
 }
 
@@ -967,7 +1034,17 @@ section {
 	.edition-card {
 		height: 260px;
 	}
-
+	.publication-block {
+		padding: 0;
+	}
+	.publication-block p {
+		display: none;
+	}
+	.publication-block img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
 	.specs-copy {
 		bottom: 8%;
 	}
@@ -980,11 +1057,12 @@ section {
 		line-height: 20px;
 	}
 
+	/* bottom of page */
 	.makers-layout {
 		grid-template-columns: 1fr;
 		gap: 20px;
 	}
-
+	
 	.newsletter-inner {
 		grid-template-columns: 1fr;
 		gap: 20px;
@@ -1045,8 +1123,8 @@ section {
 		padding: 10px 16px;
 	}
 
-	.book-grid > :nth-child(1),
 	.book-grid > :nth-child(2),
+	.book-grid > :nth-child(3),
 	.book-grid > .nested-grid,
 	.book-grid .specs,
 	.book-grid > .book-quote-tile,
@@ -1055,17 +1133,27 @@ section {
 		width: 100%;
 	}
 
-	.book-grid > .media-block.book-quote-tile,
-	.book-grid > .media-block.book-winter-spread-tile {
-		min-height: min(118vw, 620px);
-	}
-
-	.book-grid > .media-block.book-quote-tile .block-image {
-		object-fit: contain;
-	}
-
 	.season-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.season-card-copy {
+		padding: 16px 18px;
+		gap: 8px;
+	}
+
+	.season-logo {
+		width: 28px;
+		height: 28px;
+	}
+
+	.season-title {
+		font-size: 17px;
+		margin-top: 10px;
+	}
+
+	.season-cta {
+		font-size: 12px;
 	}
 
 	/* Edition cards */
