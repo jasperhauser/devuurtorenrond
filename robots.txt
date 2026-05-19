@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /index-boek.html
+
+Sitemap: https://www.devuurtorenrond.nl/sitemap.xml
