@@ -8,10 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 	
 	<!-- Search engines -->
-	<meta name="referrer" content="unsafe-url">
 	<meta name="description" content="Fotodocumentaire over Reid &amp; Cornelie en hun zelfvoorzienende leven rond de vuurtoren van Workum ('It Toarntsje). Door Jasper Hauser en Loek Buter. Vier seizoensverhalen.">
-	<meta name="keywords" content="jasper hauser, loek buter, workum, friesland, vuurtoren, toarntsje, fotografie, strontrace, visserij dagen, klompjes zeilen">
 	<link rel="canonical" href="https://www.devuurtorenrond.nl/">
+	<link rel="preload" as="image" href="/photos/home/zomer-vuurtoren-breed-1000-7895b7.webp" imagesrcset="/photos/home/zomer-vuurtoren-breed-720-7895b7.webp 720w, /photos/home/zomer-vuurtoren-breed-1000-7895b7.webp 1000w, /photos/home/zomer-vuurtoren-breed-1800-7895b7.webp 1800w" imagesizes="100vw">
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" sizes="16x16" href="/images/torentje16.png">
@@ -22,16 +21,22 @@
 	<meta property="og:title" content="De Vuurtoren Rond">
 	<meta property="og:description" content="Fotodocumentaire over Reid &amp; Cornelie en hun zelfvoorzienende leven rond de vuurtoren van Workum ('It Toarntsje). Door Jasper Hauser en Loek Buter. Vier seizoensverhalen.">
 	<meta property="og:image" content="https://www.devuurtorenrond.nl/images/social-card@2x.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="600">
 	<meta property="og:image:alt" content="De vuurtoren van het Friese Workum op de Hylperdyk uitkijkend over het IJsselmeer">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="De Vuurtoren Rond">
+	<meta property="og:locale" content="nl_NL">
 
 	<!-- Twitter Image Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="De Vuurtoren Rond">
 	<meta name="twitter:description" content="Fotodocumentaire over Reid &amp; Cornelie en hun zelfvoorzienende leven rond de vuurtoren van Workum ('It Toarntsje). Door Jasper Hauser en Loek Buter. Vier seizoensverhalen.">
+	<meta name="twitter:image" content="https://www.devuurtorenrond.nl/images/social-card@2x.jpg">
 	<meta name="twitter:image:src" content="https://www.devuurtorenrond.nl/images/social-card@2x.jpg">
 	<meta name="twitter:image:alt" content="De vuurtoren van het Friese Workum op de Hylperdyk uitkijkend over het IJsselmeer">
+	<meta name="twitter:site" content="@jasperhauser">
+	<meta name="twitter:creator" content="@jasperhauser">
 	<meta name="twitter:domain" content="devuurtorenrond.nl">
 
 	<script type="application/ld+json">
@@ -97,16 +102,8 @@
 	}
 	</script>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLQJJC8C7"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-9NLQJJC8C7');
-	</script>
-
-	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 	<link href="/styles.css" rel="stylesheet">
@@ -207,7 +204,7 @@
 			<div id="masthead-photo">
 				<picture>
 					<source type="image/webp" srcset="photos/home/zomer-vuurtoren-breed-720-7895b7.webp 720w, photos/home/zomer-vuurtoren-breed-1000-7895b7.webp 1000w, photos/home/zomer-vuurtoren-breed-1800-7895b7.webp 1800w">
-					<img src="photos/home/zomer-vuurtoren-breed-720-7895b7.jpg" srcset="photos/home/zomer-vuurtoren-breed-720-7895b7.jpg 720w, photos/home/zomer-vuurtoren-breed-1000-7895b7.jpg 1000w, photos/home/zomer-vuurtoren-breed-1800-7895b7.jpg 1800w" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" height="960">
+					<img src="photos/home/zomer-vuurtoren-breed-720-7895b7.jpg" srcset="photos/home/zomer-vuurtoren-breed-720-7895b7.jpg 720w, photos/home/zomer-vuurtoren-breed-1000-7895b7.jpg 1000w, photos/home/zomer-vuurtoren-breed-1800-7895b7.jpg 1800w" sizes="100vw" alt="Cornelie en Reid buiten op de Hylperdyk voor de Vuurtoren van Workum in de zomer" width="1800" height="960" fetchpriority="high">
 				</picture>
 			</div>
 
@@ -549,6 +546,14 @@
 			}
 		}
 
+	</script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLQJJC8C7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-9NLQJJC8C7');
 	</script>
 </body>
 </html>
