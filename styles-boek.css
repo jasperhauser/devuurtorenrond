@@ -298,6 +298,9 @@ section {
 .intro strong {
 	text-transform: uppercase;
 }
+.intro-heading {
+	display: none;
+}
 
 /* vw min-height on grid + aspect-ratio children often sticks on resize (WebKit); size from column width instead */
 .image-pair .media-block {
