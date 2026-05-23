@@ -435,7 +435,6 @@ section {
 /* Book grid */
 
 .book-grid {
-	padding-bottom: 60px;
 	grid-auto-rows: minmax(0, auto);
 }
 
@@ -609,7 +608,6 @@ a.publication-block:hover {
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
 }
-
 .season-cta {
 	margin-top: auto;
 	padding-top: 16px;
@@ -1064,10 +1062,6 @@ a.publication-block:hover {
 		aspect-ratio: auto;
 		height: 300px;
 	}
-
-	.project-inner {
-		padding-bottom: 96px;
-	}
 }
 
 @media (max-width: 768px) {
@@ -1115,7 +1109,9 @@ a.publication-block:hover {
 	.newsletter-submit {
 		width: 100%;
 	}
-
+	.season-title {
+		font-size: 1.6rem;
+	}
 	.section-grid {
 		grid-template-columns: 1fr;
 	}
@@ -1124,10 +1120,6 @@ a.publication-block:hover {
 	}
 	.intro {
 		padding-top: 42px;
-	}
-
-	.book-grid {
-		padding-bottom: 48px;
 	}
 
 	.book-faq-item summary {
@@ -1241,6 +1233,9 @@ a.publication-block:hover {
 		width: 100%;
 	}
 
+	.season-title {
+		font-size: 1.2rem;
+	}
 	.season-card-copy {
 		padding: 16px 18px;
 		gap: 8px;
