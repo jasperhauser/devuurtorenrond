@@ -336,10 +336,6 @@ section {
 	padding-top: 60px;
 }
 
-section.project {
-	padding-top: 0;
-}
-
 .section-grid,
 .image-pair,
 .editions,
@@ -554,8 +550,6 @@ a.publication-block:hover {
 .project-inner {
 	max-width: var(--max);
 	margin: 0 auto;
-	padding-top: 48px;
-	padding-bottom: 60px;
 }
 
 .section-heading {
@@ -671,10 +665,6 @@ a.publication-block:hover {
 
 /* Media */
 
-.media-heading {
-	margin-top: 94px;
-}
-
 .media-grid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -713,7 +703,7 @@ a.publication-block:hover {
 /* FAQ (onder boekfoto’s) */
 .book-faq {
 	max-width: 840px;
-	margin: 0 auto 60px auto;
+	margin: 0 auto 0 auto;
 }
 
 .book-faq-lead,
