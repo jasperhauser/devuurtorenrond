@@ -269,12 +269,18 @@ ul {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-	font-weight: 400;
-	font-size: var(--heading-brand);
-	line-height: var(--leading-tight);
 	text-decoration: none;
 	border-bottom: none;
 	color: var(--green);
+}
+
+.brand h1 {
+	margin: 0;
+	font-family: inherit;
+	font-size: var(--heading-brand);
+	font-weight: 700;
+	line-height: var(--leading-tight);
+	color: inherit;
 }
 
 .logo-mark {
@@ -339,9 +345,6 @@ section.project {
 }
 .intro strong {
 	text-transform: uppercase;
-}
-.intro-heading {
-	display: none;
 }
 
 /* vw min-height on grid + aspect-ratio children often sticks on resize (WebKit); size from column width instead */
