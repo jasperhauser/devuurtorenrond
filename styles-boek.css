@@ -5,15 +5,9 @@
 	--ink-muted: rgba(21, 23, 15, 0.78);
 	--ink-soft: rgba(21, 23, 15, 0.55);
 	--green: #3b6e00;
-	--olive: #84956f;
-	--olive-transparent: rgba(132, 149, 111, 0.85);
 	--olive-dark: #65684d;
 	--brown: #84694b;
 	--specs: #e0eacf;
-	--spring: #e8eed0;
-	--summer: #eee6f3;
-	--autumn: #f6e2cb;
-	--winter: #e0e7f1;
 	--block: #d8d8d8;
 	--max: 1100px;
 	--gap: 20px;
@@ -374,7 +368,6 @@ section.project {
 .edition-card {
 	display: grid;
 	grid-template-columns: 271fr 270fr;
-	/* aspect-ratio: 541 / 300; */
 	min-height: 0;
 	color: #fff;
 	overflow: hidden;
@@ -723,17 +716,18 @@ a.publication-block:hover {
 	margin: 0 auto 60px auto;
 }
 
-.book-faq h2 {
-	color: var(--ink);
+.book-faq-lead,
+.loek-prints-lead,
+.newsletter-lead {
+	font-family: var(--font-serif);
+	font-size: var(--text-sm);
+	line-height: var(--leading-relaxed);
+	color: var(--ink-muted);
 }
 
 .book-faq-lead {
 	margin: 0 0 28px;
 	max-width: 42em;
-	font-family: var(--font-serif);
-	font-size: var(--text-sm);
-	line-height: var(--leading-relaxed);
-	color: var(--ink-muted);
 }
 
 .book-faq-list {
@@ -816,19 +810,28 @@ a.publication-block:hover {
 	margin: 0 auto;
 }
 
-.makers-inner h2 {
-	margin: 0 0 28px;
-	color: var(--ink);
-}
-
-.makers-layout {
+.makers-layout,
+.loek-prints-inner,
+.newsletter-inner {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 30px;
 	align-items: center;
 }
 
-.makers-text {
+.loek-prints-inner,
+.newsletter-inner {
+	max-width: var(--max);
+	margin: 0 auto;
+}
+
+.makers-inner h2 {
+	margin: 0 0 28px;
+}
+
+.makers-text,
+.loek-prints-copy,
+.newsletter-copy {
 	min-width: 0;
 }
 
@@ -836,7 +839,8 @@ a.publication-block:hover {
 	margin-top: 28px;
 }
 
-.makers-bio p {
+.makers-bio p,
+.loek-prints-copy p {
 	margin: 0 0 0.85em;
 	font-family: var(--font-serif);
 	font-size: var(--text-base);
@@ -855,159 +859,14 @@ a.publication-block:hover {
 	color: var(--ink);
 }
 
-.makers-site {
-	margin: 10px 0 0 !important;
-	font-size: var(--text-sm);
-	font-weight: 600;
-	line-height: var(--leading-normal);
-}
-
-.makers-site a {
-	border-bottom-color: rgba(59, 110, 0, 0.25);
-	color: var(--green);
-}
-
-.makers-site a:hover {
-	border-bottom-color: var(--green);
-}
-
-.makers-photo {
-	margin: 0;
-}
-
-.makers-photo.media-block {
-	display: block;
-	aspect-ratio: 1;
-	width: 100%;
-	height: auto;
-	overflow: hidden;
-}
-
-.makers-photo.media-block .block-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center 32%;
-}
-
-/* Loek fine art prints */
-
-.loek-prints {
-	padding-top: 60px;
-	color: var(--ink);
-}
-
-.loek-prints-inner {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 30px;
-	align-items: center;
-	max-width: var(--max);
-	margin: 0 auto;
-}
-
-.loek-prints-copy {
-	min-width: 0;
-}
-
-.loek-prints-photo {
-	margin: 0;
-}
-
-.loek-prints-photo.media-block {
-	display: block;
-	aspect-ratio: 1;
-	width: 100%;
-	height: auto;
-	overflow: hidden;
-}
-
-.loek-prints-photo.media-block .block-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-
-.loek-prints-copy h2 {
-	margin: 0 0 10px;
-}
-
-.loek-prints-lead {
-	margin: 0 0 18px;
-	max-width: 36em;
-	font-family: var(--font-serif);
-	font-size: var(--text-sm);
-	line-height: var(--leading-relaxed);
-	color: var(--ink-muted);
-}
-
-.loek-prints-copy p {
-	margin: 0 0 0.85em;
-	font-family: var(--font-serif);
-	font-size: var(--text-base);
-	line-height: var(--leading-relaxed);
-	color: rgba(21, 23, 15, 0.88);
-}
-
-.loek-prints-copy p:last-of-type {
-	margin-bottom: 0;
-}
-
-.loek-prints-tagline {
-	margin-top: 18px !important;
-	font-family: var(--font-sans) !important;
-	font-size: var(--text-sm) !important;
-	font-weight: 600;
-	line-height: var(--leading-normal) !important;
-	color: var(--ink-muted) !important;
-}
-
-.loek-prints-contact {
-	margin-top: 14px !important;
-	font-family: var(--font-sans) !important;
-	font-size: var(--text-sm) !important;
-	font-weight: 600;
-	line-height: var(--leading-normal) !important;
-}
-
-.loek-prints-contact a {
-	border-bottom-color: rgba(59, 110, 0, 0.25);
-	color: var(--green);
-}
-
-.loek-prints-contact a:hover {
-	border-bottom-color: var(--green);
-}
-
-.loek-prints-cta {
-	margin-top: 22px;
-}
-
-/* Nieuwsbrief (Mailchimp-stijl) */
-
-.newsletter-boek {
-	padding-top: 60px;
-	color: var(--ink);
-}
-
-.newsletter-inner {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 30px;
-	align-items: center;
-	max-width: var(--max);
-	margin: 0 auto;
-}
-
-.newsletter-copy {
-	min-width: 0;
-}
-
+.makers-photo,
+.loek-prints-photo,
 .newsletter-photo {
 	margin: 0;
 }
 
+.makers-photo.media-block,
+.loek-prints-photo.media-block,
 .newsletter-photo.media-block {
 	display: block;
 	aspect-ratio: 1;
@@ -1016,24 +875,55 @@ a.publication-block:hover {
 	overflow: hidden;
 }
 
+.makers-photo.media-block .block-image,
+.loek-prints-photo.media-block .block-image,
 .newsletter-photo.media-block .block-image {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+.makers-photo.media-block .block-image {
+	object-position: center 32%;
+}
+
+.loek-prints-photo.media-block .block-image {
+	object-position: center;
+}
+
+.newsletter-photo.media-block .block-image {
 	object-position: center 28%;
 }
 
+/* Loek fine art prints */
+
+.loek-prints {
+	padding-top: 60px;
+}
+
+.loek-prints-copy h2,
 .newsletter-copy h2 {
 	margin: 0 0 10px;
+}
+
+.loek-prints-lead {
+	margin: 0 0 18px;
+	max-width: 36em;
+}
+
+.loek-prints-copy p:last-of-type {
+	margin-bottom: 0;
+}
+
+/* Nieuwsbrief (Mailchimp-stijl) */
+
+.newsletter-boek {
+	padding-top: 60px;
 }
 
 .newsletter-lead {
 	margin: 0 0 22px;
 	max-width: 36em;
-	font-family: var(--font-serif);
-	font-size: var(--text-sm);
-	line-height: var(--leading-relaxed);
-	color: var(--ink-muted);
 }
 
 .newsletter-copy .newsletter-note {
@@ -1142,7 +1032,6 @@ a.publication-block:hover {
 /* Footer */
 
 .site-footer {
-	max-width: var(--max);
 	margin: 0 auto;
 	padding: 40px 0 52px;
 	text-align: center;
@@ -1262,14 +1151,6 @@ dialog figcaption {
 
 dialog figure.large figcaption {
 	display: none;
-}
-
-dialog figcaption.dark {
-	color: #fff;
-}
-
-dialog figure figcaption {
-	display: block;
 }
 
 dialog .button {
@@ -1424,7 +1305,6 @@ dialog .next {
 	}
 
 	.buy-bar,
-	.intro-pre-order,
 	.section-grid,
 	.image-pair,
 	.book-faq,
@@ -1438,7 +1318,7 @@ dialog .next {
 		max-width: var(--max);
 	}
 
-	.hero-gallery-link {
+	.hero-gallery {
 		display: flex;
 	}
 
@@ -1469,9 +1349,6 @@ dialog .next {
 	.section-grid {
 		grid-template-columns: 1fr;
 	}
-	.intro-pre-order {
-		text-align: left;
-	}
 	.intro {
 		padding-top: 42px;
 	}
@@ -1501,53 +1378,27 @@ dialog .next {
 	}
 
 	/* bottom of page */
-	.makers-layout {
-		grid-template-columns: 1fr;
-		gap: 20px;
-	}
-
-	.makers-photo {
-		order: -1;
-	}
-	
+	.makers-layout,
+	.loek-prints-inner,
 	.newsletter-inner {
 		grid-template-columns: 1fr;
 		gap: 20px;
 		align-items: start;
 	}
 
+	.makers-photo,
 	.newsletter-photo {
 		order: -1;
-	}
-
-	.loek-prints-inner {
-		grid-template-columns: 1fr;
-		gap: 20px;
-		align-items: start;
-	}
-
-	.loek-prints-photo.media-block {
-		aspect-ratio: 1;
-		height: auto;
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	.makers-text {
 		max-width: none;
 	}
 
-	.makers-photo.media-block {
-		aspect-ratio: 1;
-		/* width: min(440px, 100%); */
-		height: auto;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
+	.makers-photo.media-block,
+	.loek-prints-photo.media-block,
 	.newsletter-photo.media-block {
 		aspect-ratio: 1;
-		/* width: min(440px, 100%); */
 		height: auto;
 		margin-left: auto;
 		margin-right: auto;
@@ -1609,7 +1460,9 @@ dialog .next {
 
 	.season-title {
 		font-size: 1.2rem;
+		margin-top: 10px;
 	}
+
 	.season-card-copy {
 		padding: 16px 18px;
 		gap: 8px;
@@ -1618,10 +1471,6 @@ dialog .next {
 	.season-logo {
 		width: 28px;
 		height: 28px;
-	}
-
-	.season-title {
-		margin-top: 10px;
 	}
 
 	/* Content */
