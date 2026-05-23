@@ -314,6 +314,10 @@ section {
 	padding-top: 60px;
 }
 
+section.project {
+	padding-top: 0;
+}
+
 .section-grid,
 .image-pair,
 .editions,
@@ -529,14 +533,10 @@ a.publication-block:hover {
 	line-height: var(--leading-snug);
 }
 
-.project {
-	background: var(--olive);
-	color: #fff;
-}
-
 .project-inner {
 	max-width: var(--max);
 	margin: 0 auto;
+	padding-top: 48px;
 	padding-bottom: 60px;
 }
 
@@ -549,10 +549,6 @@ a.publication-block:hover {
 	font-size: var(--text-sm);
 	line-height: var(--leading-normal);
 	color: var(--ink-muted);
-}
-
-.project .section-heading p {
-	color: rgba(255, 255, 255, 0.85);
 }
 
 .season-grid {
