@@ -1145,6 +1145,7 @@ dialog .carousel-item figure img.block-image {
 	object-position: center;
 	transform: translate(-50%, -50%);
 	cursor: zoom-in;
+	border-radius: 6px;
 }
 
 dialog figure.large img,
