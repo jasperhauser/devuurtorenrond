@@ -64,10 +64,17 @@ ul {
 	border-radius: 999px;
 	background: #fff;
 	color: inherit;
+	font-family: inherit;
 	font-size: 16px;
 	font-weight: 600;
 	white-space: nowrap;
 	border: none;
+	cursor: pointer;
+}
+
+.button:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
 }
 
 .button-primary {
@@ -78,8 +85,11 @@ ul {
 	background: var(--green);
 }
 
+.button-primary:disabled:hover {
+	background: #4086b1;
+}
+
 .buy-bar,
-.intro-pre-order,
 .section-grid,
 .image-pair,
 .book-faq,
@@ -183,6 +193,8 @@ ul {
 #faq,
 #publicaties,
 #makers,
+#loek,
+#jasper,
 #newsletter {
 	scroll-margin-top: calc(var(--buy-bar-height) + 12px);
 }
@@ -278,17 +290,6 @@ section {
 	gap: var(--gap);
 	max-width: var(--max);
 	margin: 0 auto;
-}
-.intro-pre-order {
-	text-align: center;
-	font-style: italic;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 40px;
-	margin-bottom: -20px;
-	color: var(--green);
-	font-family: Merriweather, Georgia, serif;
-	line-height: 1.75;
 }
 .intro {
 	font-family: Merriweather, Georgia, serif;
@@ -428,6 +429,20 @@ section {
 	border-radius: 12px;
 	background: #fff;
 	text-align: center;
+}
+
+a.publication-block {
+	color: inherit;
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.22s ease,
+		transform 0.22s ease;
+}
+
+a.publication-block:hover {
+	border-color: rgba(59, 110, 0, 0.45);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+	transform: scale(1.015);
 }
 
 .publication-block p {
