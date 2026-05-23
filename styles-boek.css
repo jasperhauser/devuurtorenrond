@@ -759,7 +759,7 @@ a.publication-block:hover {
 
 .book-faq-item > p {
 	margin: 0;
-	padding: 4px 40px 22px 0;
+	padding: 20px 40px 20px 0;
 	font-family: var(--font-serif);
 	font-size: var(--text-base);
 	line-height: var(--leading-relaxed);
@@ -1147,11 +1147,6 @@ a.publication-block:hover {
 
 	.book-faq-item summary {
 		padding: 16px 0;
-	}
-
-	.book-faq-item > p {
-		padding-right: 0;
-		padding-bottom: 18px;
 	}
 
 	.publication-block {
