@@ -96,7 +96,7 @@ ul {
 /* Hero Header */
 .hero {
 	position: relative;
-	height: calc(100svh - var(--buy-bar-height) - 200px);
+	height: calc(100svh - var(--buy-bar-height) - 140px);
 	min-height: 280px;
 	background: var(--block);
 	overflow: hidden;
