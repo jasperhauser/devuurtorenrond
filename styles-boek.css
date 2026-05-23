@@ -134,7 +134,7 @@ ul {
 .makers-inner,
 .newsletter-inner,
 .site-footer {
-	width: calc(100% - 60px);
+	width: calc(100% - 40px);
 	max-width: var(--max);
 }
 
@@ -339,10 +339,6 @@ section.project {
 	font-size: var(--text-base);
 	line-height: var(--leading-relaxed);
 }
-
-.intro p + p {
-	margin-top: 1.25em;
-}
 .intro strong {
 	text-transform: uppercase;
 }
@@ -360,7 +356,7 @@ section.project {
 .edition-card {
 	display: grid;
 	grid-template-columns: 271fr 270fr;
-	aspect-ratio: 541 / 300;
+	/* aspect-ratio: 541 / 300; */
 	min-height: 0;
 	color: #fff;
 	overflow: hidden;
@@ -427,6 +423,7 @@ section.project {
 .edition-copy ul {
 	font-family: var(--font-serif);
 	opacity: 0.9;
+	margin-bottom: 10px;
 }
 
 .edition-copy li {
@@ -1053,13 +1050,40 @@ a.publication-block:hover {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
-	.editions {
+	.edition-card {
 		grid-template-columns: 1fr;
+		aspect-ratio: auto;
+		height: auto;
 	}
 
-	.edition-card {
-		aspect-ratio: auto;
-		height: 300px;
+	.edition-cover.media-block {
+		aspect-ratio: 3 / 2;
+		height: auto;
+		min-height: 0;
+		width: 100%;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.edition-copy {
+		padding: 14px;
+	}
+
+	.edition-copy ul {
+		font-size: 0;
+		line-height: var(--leading-relaxed);
+	}
+
+	.edition-copy li {
+		display: inline;
+		font-size: var(--text-sm);
+	}
+
+	.edition-copy li:not(:last-child)::after {
+		content: ",\00a0";
+		font-size: var(--text-sm);
 	}
 }
 
@@ -1130,9 +1154,6 @@ a.publication-block:hover {
 		padding-bottom: 18px;
 	}
 
-	.edition-card {
-		height: 260px;
-	}
 	.publication-block {
 		padding: 0;
 	}
@@ -1199,6 +1220,17 @@ a.publication-block:hover {
 		--gap: 12px;
 	}
 
+	.editions {
+		grid-template-columns: 1fr;
+	}
+
+	.edition-copy .button {
+		align-self: stretch;
+		justify-content: center;
+		width: 100%;
+		margin-top: 14px;
+	}
+
 	/* Buy bar */
 	.buy-bar {
 		height: 80px;
@@ -1247,43 +1279,6 @@ a.publication-block:hover {
 
 	.season-title {
 		margin-top: 10px;
-	}
-
-	/* Edition cards */
-	.edition-card {
-		grid-template-columns: 1fr;
-		grid-auto-rows: auto;
-		aspect-ratio: auto;
-		height: auto;
-		min-height: 0;
-	}
-
-	.edition-cover.media-block {
-		height: clamp(148px, 44vw, 220px);
-		min-height: clamp(148px, 44vw, 220px);
-		align-self: stretch;
-		width: 100%;
-		border-top-left-radius: 6px;
-		border-top-right-radius: 6px;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	.edition-copy {
-		padding: 14px;
-		flex: 1 1 auto;
-		min-height: 0;
-		width: 100%;
-		box-sizing: border-box;
-	}
-
-	.edition-copy h2 {
-		line-height: var(--leading-tight);
-	}
-
-	.edition-copy .button {
-		min-height: 36px;
-		padding: 0 16px;
 	}
 
 	/* Content */
