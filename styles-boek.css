@@ -172,14 +172,14 @@ ul {
 	align-items: center;
 	gap: 6px;
 	padding: 0;
-	border: none;
-	text-decoration: none;
 	transform: translateX(-50%);
-	transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.hero-gallery-link:hover {
+.hero-gallery-thumb,
+.hero-gallery-more {
 	border-bottom: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .hero-gallery-thumb {
@@ -194,6 +194,7 @@ ul {
 	transition: transform 0.2s ease;
 }
 .hero-gallery-thumb:hover {
+	border-bottom: none;
 	transform: scale(1.1);
 }
 .hero-gallery-thumb img {
@@ -220,9 +221,19 @@ ul {
 	font-weight: 600;
 	line-height: 1;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+	transition: transform 0.2s ease;
+}
+
+.hero-gallery-more:hover {
+	border-bottom: none;
+	transform: scale(1.1);
 }
 
 #boekbeelden,
+#boekbeeld-schoot,
+#boekbeeld-reid,
+#boekbeeld-winter,
+#boekbeeld-detail,
 #over,
 #faq,
 #publicaties,

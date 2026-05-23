@@ -237,13 +237,21 @@
 			<source media="(max-width: 768px)" srcset="images/boek/hero-cover.jpg">
 			<img class="hero-image" src="images/boek/hero-spread.jpg" alt="De Vuurtoren Rond — spread en omslag van het fotoboek." width="2500" height="2165" fetchpriority="high">
 		</picture>
-		<a class="hero-gallery-link" href="#boekbeelden" aria-label="Bekijk boekbeelden">
-			<span class="hero-gallery-thumb"><img src="images/boek/01-schoot.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true"></span>
-			<span class="hero-gallery-thumb"><img src="images/boek/04-reid.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true"></span>
-			<span class="hero-gallery-thumb"><img src="images/boek/11-detail.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true"></span>
-			<span class="hero-gallery-thumb"><img src="images/boek/10-winter.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true"></span>
-			<span class="hero-gallery-more" aria-hidden="true">+5</span>
-		</a>
+		<div class="hero-gallery-link" aria-label="Boekbeelden">
+			<a class="hero-gallery-thumb" href="#boekbeeld-schoot" aria-label="Boek op schoot">
+				<img src="images/boek/01-schoot.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true">
+			</a>
+			<a class="hero-gallery-thumb" href="#boekbeeld-reid" aria-label="Reid slapend bij het raam">
+				<img src="images/boek/04-reid.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true">
+			</a>
+			<a class="hero-gallery-thumb" href="#boekbeeld-detail" aria-label="Detailfoto">
+				<img src="images/boek/11-detail.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true">
+			</a>
+			<a class="hero-gallery-thumb" href="#boekbeeld-winter" aria-label="Winterse pagina's">
+				<img src="images/boek/10-winter.jpg" alt="" width="104" height="104" loading="lazy" aria-hidden="true">
+			</a>
+			<a class="hero-gallery-more" href="#boekbeelden" aria-label="Meer boekbeelden">+5</a>
+		</div>
 	</header>
 
 	<main>
@@ -264,10 +272,10 @@
 		</section>
 
 		<section class="image-pair" id="boekbeelden" aria-label="Boekbeelden">
-			<div class="media-block">
+			<div class="media-block" id="boekbeeld-schoot">
 				<img class="block-image" src="images/boek/01-schoot.jpg" alt="Open fotoboek op schoot met foto's van De Vuurtoren Rond.">
 			</div>
-			<div class="media-block">
+			<div class="media-block" id="boekbeeld-reid">
 				<img class="block-image" src="images/boek/04-reid.jpg" alt="Open boek met een foto van Reid slapend bij het raam.">
 			</div>
 		</section>
@@ -337,7 +345,7 @@
 				</div>
 			</div>
 			
-			<div class="media-block media-large">
+			<div class="media-block media-large" id="boekbeeld-winter">
 				<img class="block-image" src="images/boek/10-winter.jpg" alt="Open boek met winterse pagina's uit De Vuurtoren Rond.">
 			</div>
 			<div class="media-block media-large">
@@ -359,7 +367,7 @@
 				<div class="media-block">
 					<img class="block-image" src="images/boek/03-bloemen.jpg" alt="Open boek met de pagina Summer abundance en een foto van bloemen.">
 				</div>
-				<div class="media-block">
+				<div class="media-block" id="boekbeeld-detail">
 					<img class="block-image" src="images/boek/11-detail.jpg" alt="Detailfoto van De Vuurtoren Rond.">
 				</div>
 			</div>
