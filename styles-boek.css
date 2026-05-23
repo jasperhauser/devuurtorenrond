@@ -309,7 +309,7 @@ ul {
 	padding-left: 6px;
 }
 
-/* Media blocks */
+/* Layout */
 
 .media-block {
 	position: relative;
@@ -321,6 +321,15 @@ ul {
 	border-radius: 6px;
 }
 
+/* vw min-height on grid + aspect-ratio children often sticks on resize (WebKit); size from column width instead */
+.image-pair .media-block {
+	min-height: min(42.2vw, 540px);
+}
+
+.book-grid > .media-block.media-large {
+	min-height: 0;
+}
+
 .block-image {
 	display: block;
 	width: 100%;
@@ -329,7 +338,6 @@ ul {
 	object-position: center;
 }
 
-/* Sections */
 section {
 	padding-top: 60px;
 }
@@ -348,6 +356,9 @@ section.project {
 	max-width: var(--max);
 	margin: 0 auto;
 }
+
+/* Intro */
+
 .intro {
 	font-family: var(--font-serif);
 	font-size: var(--text-base);
@@ -357,16 +368,9 @@ section.project {
 	text-transform: uppercase;
 }
 
-/* vw min-height on grid + aspect-ratio children often sticks on resize (WebKit); size from column width instead */
-.image-pair .media-block {
-	min-height: min(42.2vw, 540px);
-}
-
-.book-grid > .media-block.media-large {
-	min-height: 0;
-}
 
 /* Editions */
+
 .edition-card {
 	display: grid;
 	grid-template-columns: 271fr 270fr;
@@ -468,6 +472,48 @@ section.project {
 	min-height: 0;
 }
 
+
+/* Specs */
+
+.specs {
+	position: relative;
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	aspect-ratio: 1;
+	min-height: 0;
+	border-radius: 6px;
+	background: var(--specs);
+	color: #394600;
+}
+
+.specs-image {
+	display: block;
+	max-width: 80%;
+	max-height: 80%;
+	object-fit: contain;
+	object-position: center;
+}
+
+.specs-copy {
+	position: absolute;
+	left: 23%;
+	bottom: 13%;
+}
+
+.specs h2 {
+	margin: 0 0 4px;
+	font-size: var(--text-sm);
+	font-weight: 600;
+}
+
+.specs li {
+	font-size: var(--text-sm);
+	line-height: var(--leading-snug);
+}
+
+/* Publications */
+
 .publication-block {
 	display: flex;
 	flex-direction: column;
@@ -510,42 +556,7 @@ a.publication-block:hover {
 	object-fit: contain;
 }
 
-.specs {
-	position: relative;
-	display: grid;
-	place-items: center;
-	overflow: hidden;
-	aspect-ratio: 1;
-	min-height: 0;
-	border-radius: 6px;
-	background: var(--specs);
-	color: #394600;
-}
-
-.specs-image {
-	display: block;
-	max-width: 80%;
-	max-height: 80%;
-	object-fit: contain;
-	object-position: center;
-}
-
-.specs-copy {
-	position: absolute;
-	left: 23%;
-	bottom: 13%;
-}
-
-.specs h2 {
-	margin: 0 0 4px;
-	font-size: var(--text-sm);
-	font-weight: 600;
-}
-
-.specs li {
-	font-size: var(--text-sm);
-	line-height: var(--leading-snug);
-}
+/* Project */
 
 .project-inner {
 	max-width: var(--max);
@@ -564,6 +575,8 @@ a.publication-block:hover {
 	line-height: var(--leading-normal);
 	color: var(--ink-muted);
 }
+
+/* Season Stories */
 
 .season-grid {
 	display: grid;
@@ -662,6 +675,8 @@ a.publication-block:hover {
 	--season-bg: #E0E7F1;
 	--season-color: #3A94D2;
 }
+
+/* Media */
 
 .media-heading {
 	margin-top: 94px;
@@ -876,6 +891,7 @@ a.publication-block:hover {
 }
 
 /* Loek fine art prints */
+
 .loek-prints {
 	padding-top: 60px;
 	color: var(--ink);
@@ -969,6 +985,7 @@ a.publication-block:hover {
 }
 
 /* Nieuwsbrief (Mailchimp-stijl) */
+
 .newsletter-boek {
 	padding-top: 60px;
 	color: var(--ink);
@@ -1123,6 +1140,7 @@ a.publication-block:hover {
 }
 
 /* Footer */
+
 .site-footer {
 	max-width: var(--max);
 	margin: 0 auto;
