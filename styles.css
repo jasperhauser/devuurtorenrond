@@ -171,9 +171,76 @@ audio {display:block; margin:0 auto 8px auto; width:320px;}
 #newsletter {margin-top:75px;}
 #form {padding-left:50px;}
 
-/* mailchimp email form style override */
-/* div#mc_embed_signup {background-color:transparent;}
-div#mc_embed_signup form {padding-left:unset;} */
+.newsletter-form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+#form .mc-field-group {
+	flex: 1 1 12rem;
+	min-width: 0;
+	margin: 0;
+}
+
+#form .mc-field-group label {
+	display: none;
+}
+
+#form .newsletter-input {
+	display: block;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#form .newsletter-form .button {
+	margin-top: 0;
+	cursor: pointer;
+}
+
+#form #mce-responses {
+	flex: 1 1 100%;
+}
+
+#form #mce-error-response,
+#form #mce-success-response,
+#form div.mce_inline_error {
+	font-size: 0.875rem;
+}
+
+#form #mce-error-response,
+#form div.mce_inline_error {
+	color: #9b2c2c;
+}
+
+#form #mce-success-response {
+	color: var(--darkBlue);
+}
+
+.newsletter-label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	border: 0;
+	white-space: nowrap;
+}
+
+.newsletter-note {
+	margin-top: 12px;
+	font-size: 0.85em;
+	opacity: 0.65;
+}
+
+#mc_embed_signup {
+	background: transparent;
+}
 
 /* hide that hideous google translate bar */
 .goog-te-banner-frame, #gt-nvframe, iframe#gt-nvframe, body iframe #gt-nvframe {
@@ -229,6 +296,12 @@ footer:hover {opacity:1;}
     #nav-menu-list {display: none;}
     #nav-more {display: block;}
     #form {padding-left:unset;}
+    .newsletter-form {
+        flex-direction: column;
+    }
+    #form .newsletter-form .button {
+        width: 100%;
+    }
     audio, #audio-player {margin-left: unset; margin-right: unset;}
 }
 @media screen and (max-width: 640px){
