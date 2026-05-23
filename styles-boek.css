@@ -2,6 +2,8 @@
 	--page: #fbfff6;
 	--page-transparent: rgba(251, 255, 246, 0.85);
 	--ink: rgba(21, 23, 15, 0.933);
+	--ink-muted: rgba(21, 23, 15, 0.78);
+	--ink-soft: rgba(21, 23, 15, 0.55);
 	--green: #3b6e00;
 	--olive: #84956f;
 	--olive-transparent: rgba(132, 149, 111, 0.85);
@@ -16,6 +18,21 @@
 	--max: 1100px;
 	--gap: 20px;
 	--buy-bar-height: 100px;
+
+	/* Typography */
+	--font-sans: Inter, Helvetica, Arial, sans-serif;
+	--font-serif: Merriweather, Georgia, serif;
+	--text-xs: 0.75rem;
+	--text-sm: 0.8125rem;
+	--text-base: 0.9375rem;
+	--text-md: 1rem;
+	--heading-2: clamp(1.375rem, 2.5vw, 1.625rem);
+	--heading-3: clamp(1.0625rem, 2vw, 1.25rem);
+	--heading-brand: clamp(1.25rem, 4vw, 2rem);
+	--leading-tight: 1.25;
+	--leading-snug: 1.4;
+	--leading-normal: 1.6;
+	--leading-relaxed: 1.75;
 }
 
 * {
@@ -30,10 +47,27 @@ body {
 	margin: 0;
 	background: var(--page);
 	color: var(--ink);
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-family: var(--font-sans);
+	font-size: var(--text-md);
 	font-weight: 400;
+	line-height: var(--leading-normal);
 	overflow-x: hidden;
+}
+
+h2 {
+	margin: 0 0 8px;
+	font-size: var(--heading-2);
+	font-weight: 800;
+	line-height: var(--leading-tight);
+}
+
+h3 {
+	margin: 12px 0 0;
+	font-family: var(--font-sans);
+	font-size: var(--heading-3);
+	font-weight: 700;
+	line-height: var(--leading-snug);
+	color: inherit;
 }
 
 main {
@@ -65,8 +99,9 @@ ul {
 	background: #fff;
 	color: inherit;
 	font-family: inherit;
-	font-size: 16px;
+	font-size: var(--text-md);
 	font-weight: 600;
+	line-height: var(--leading-tight);
 	white-space: nowrap;
 	border: none;
 	cursor: pointer;
@@ -181,8 +216,7 @@ ul {
 	backdrop-filter: blur(6px);
 	-webkit-backdrop-filter: blur(6px);
 	color: rgba(255, 255, 255, 0.4);
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 15px;
+	font-size: var(--text-base);
 	font-weight: 600;
 	line-height: 1;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
@@ -226,10 +260,9 @@ ul {
 }
 .buy-bar p {
 	max-width: 324px;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 21px;
+	font-family: var(--font-serif);
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
 	text-align: right;
 }
 .brand {
@@ -237,8 +270,8 @@ ul {
 	align-items: center;
 	gap: 10px;
 	font-weight: 400;
-	font-size: 32px;
-	line-height: 1.2;
+	font-size: var(--heading-brand);
+	line-height: var(--leading-tight);
 	text-decoration: none;
 	border-bottom: none;
 	color: var(--green);
@@ -292,10 +325,13 @@ section {
 	margin: 0 auto;
 }
 .intro {
-	font-family: Merriweather, Georgia, serif;
-	font-size: 15px;
-	line-height: 2em;
-	font-weight: 400;
+	font-family: var(--font-serif);
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+}
+
+.intro p + p {
+	margin-top: 1.25em;
 }
 .intro strong {
 	text-transform: uppercase;
@@ -376,20 +412,19 @@ section {
 
 .edition-copy h2 {
 	margin: 0 0 4px;
-	font-size: 16px;
+	font-size: var(--text-md);
 	font-weight: 600;
-	line-height: 32px;
+	line-height: var(--leading-tight);
 }
 
 .edition-copy ul {
-	font-family: Merriweather, Georgia, serif;
+	font-family: var(--font-serif);
 	opacity: 0.9;
 }
 
 .edition-copy li {
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 24px;
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
 }
 
 .edition-copy .button {
@@ -447,8 +482,8 @@ a.publication-block:hover {
 
 .publication-block p {
 	color: rgba(0, 0, 0, 0.45);
-	font-size: 14px;
-	line-height: 1.2;
+	font-size: var(--text-sm);
+	line-height: var(--leading-tight);
 }
 
 .publication-block img {
@@ -486,12 +521,13 @@ a.publication-block:hover {
 
 .specs h2 {
 	margin: 0 0 4px;
-	font-size: 14px;
+	font-size: var(--text-sm);
+	font-weight: 600;
 }
 
 .specs li {
-	line-height: 22px;
-	font-size: 13px;
+	font-size: var(--text-sm);
+	line-height: var(--leading-snug);
 }
 
 .project {
@@ -509,17 +545,15 @@ a.publication-block:hover {
 	margin-bottom: 25px;
 }
 
-.section-heading h2 {
-	margin: 0 0 8px;
-	font-size: clamp(24px, 3vw, 30px);
-	font-weight: 800;
-	line-height: 1.2;
+.section-heading p {
+	font-family: var(--font-serif);
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
+	color: var(--ink-muted);
 }
 
-.section-heading p {
-	font-family: Merriweather, Georgia, serif;
-	font-size: 13px;
-	font-weight: 400;
+.project .section-heading p {
+	color: rgba(255, 255, 255, 0.85);
 }
 
 .season-grid {
@@ -576,24 +610,12 @@ a.publication-block:hover {
 	-webkit-mask-position: center;
 }
 
-h3 {
-	margin: 12px 0 0;
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: clamp(19px, 2.4vw, 24px);
-	font-weight: 700;
-	font-size: 28px;
-	font-style: normal;
-	line-height: 1.4;
-	color: inherit;
-}
-
 .season-cta {
 	margin-top: auto;
 	padding-top: 16px;
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 13px;
+	font-size: var(--text-sm);
 	font-weight: 600;
-	line-height: 1.3;
+	line-height: var(--leading-snug);
 	color: inherit;
 	opacity: 0.9;
 }
@@ -668,8 +690,8 @@ h3 {
 }
 
 .media-card p {
-	font-size: 14px;
-	line-height: 22px;
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
 }
 
 /* FAQ (onder boekfoto’s) */
@@ -679,21 +701,16 @@ h3 {
 }
 
 .book-faq h2 {
-	margin: 0 0 8px;
-	font-size: clamp(22px, 2.6vw, 28px);
-	font-weight: 800;
-	line-height: 1.2;
 	color: var(--ink);
 }
 
 .book-faq-lead {
 	margin: 0 0 28px;
 	max-width: 42em;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.75;
-	color: rgba(21, 23, 15, 0.78);
+	font-family: var(--font-serif);
+	font-size: var(--text-sm);
+	line-height: var(--leading-relaxed);
+	color: var(--ink-muted);
 }
 
 .book-faq-list {
@@ -709,10 +726,9 @@ h3 {
 	padding: 18px 0;
 	list-style: none;
 	cursor: pointer;
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: var(--text-md);
 	font-weight: 600;
-	line-height: 1.35;
+	line-height: var(--leading-snug);
 	text-align: left;
 	color: var(--ink);
 	border-bottom: 1px solid rgba(59, 110, 0, 0.15);
@@ -728,31 +744,32 @@ h3 {
 }
 
 .book-faq-item summary::after {
-	content: "+";
+	content: "";
 	flex-shrink: 0;
-	width: 1.5rem;
-	height: 1.5rem;
-	display: grid;
-	place-items: center;
-	border-radius: 4px;
-	background: rgba(59, 110, 0, 0.08);
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 1;
-	color: var(--green);
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: rgba(59, 110, 0, 0.08);
+	background-image:
+		linear-gradient(var(--green), var(--green)),
+		linear-gradient(var(--green), var(--green));
+	background-size: 0.75rem 2px, 2px 0.75rem;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .book-faq-item[open] summary::after {
-	content: "\2212"; /* minus */
+	background-image: linear-gradient(var(--green), var(--green));
+	background-size: 0.75rem 2px;
 }
 
 .book-faq-item > p {
 	margin: 0;
-	padding: 22px 40px 22px 0;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 15px;
-	line-height: 1.75;
-	color: rgba(21, 23, 15, 0.82);
+	padding: 4px 40px 22px 0;
+	font-family: var(--font-serif);
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+	color: var(--ink-muted);
 }
 
 .book-faq-item > p a {
@@ -778,9 +795,6 @@ h3 {
 
 .makers-inner h2 {
 	margin: 0 0 28px;
-	font-size: clamp(22px, 2.6vw, 28px);
-	font-weight: 800;
-	line-height: 1.2;
 	color: var(--ink);
 }
 
@@ -801,9 +815,9 @@ h3 {
 
 .makers-bio p {
 	margin: 0 0 0.85em;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 14px;
-	line-height: 1.75;
+	font-family: var(--font-serif);
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
 	color: rgba(21, 23, 15, 0.88);
 }
 
@@ -812,18 +826,17 @@ h3 {
 }
 
 .makers-bio strong {
-	font-family: Inter, Helvetica, Arial, sans-serif;
+	font-family: var(--font-sans);
 	font-weight: 700;
-	font-size: 15px;
+	font-size: var(--text-base);
 	color: var(--ink);
 }
 
 .makers-site {
 	margin: 10px 0 0 !important;
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 13px;
+	font-size: var(--text-sm);
 	font-weight: 600;
-	line-height: 1.5;
+	line-height: var(--leading-normal);
 }
 
 .makers-site a {
@@ -894,18 +907,15 @@ h3 {
 
 .newsletter-copy h2 {
 	margin: 0 0 10px;
-	font-size: clamp(22px, 2.6vw, 28px);
-	font-weight: 800;
-	line-height: 1.2;
 }
 
 .newsletter-lead {
 	margin: 0 0 22px;
 	max-width: 36em;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 14px;
-	line-height: 1.7;
-	color: rgba(21, 23, 15, 0.78);
+	font-family: var(--font-serif);
+	font-size: var(--text-sm);
+	line-height: var(--leading-relaxed);
+	color: var(--ink-muted);
 }
 
 .newsletter-copy .newsletter-note {
@@ -964,9 +974,8 @@ h3 {
 .newsletter-boek #mce-error-response,
 .newsletter-boek #mce-success-response,
 .newsletter-boek div.mce_inline_error {
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	line-height: 1.4;
+	font-size: var(--text-sm);
+	line-height: var(--leading-snug);
 }
 
 .newsletter-boek #mce-error-response,
@@ -985,8 +994,8 @@ h3 {
 	border: 1px solid rgba(59, 110, 0, 0.35);
 	border-radius: 6px;
 	background: #fff;
-	font-family: Inter, Helvetica, Arial, sans-serif;
-	font-size: 15px;
+	font-family: inherit;
+	font-size: var(--text-base);
 	color: var(--ink);
 	transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -1006,10 +1015,10 @@ h3 {
 
 .newsletter-note {
 	margin: 0;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 12px;
-	line-height: 1.5;
-	color: rgba(21, 23, 15, 0.45);
+	font-family: var(--font-serif);
+	font-size: var(--text-xs);
+	line-height: var(--leading-normal);
+	color: var(--ink-soft);
 }
 
 /* Footer */
@@ -1018,10 +1027,10 @@ h3 {
 	margin: 0 auto;
 	padding: 40px 0 52px;
 	text-align: center;
-	font-family: Merriweather, Georgia, serif;
-	font-size: 13px;
-	line-height: 1.6;
-	color: rgba(21, 23, 15, 0.55);
+	font-family: var(--font-serif);
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
+	color: var(--ink-soft);
 	transition: opacity 0.15s ease;
 }
 
@@ -1059,9 +1068,6 @@ h3 {
 	.project-inner {
 		padding-bottom: 96px;
 	}
-	h3 {
-		font-size: 20px;
-	}
 }
 
 @media (max-width: 768px) {
@@ -1095,9 +1101,6 @@ h3 {
 	.buy-bar p {
 		display: none;
 	}
-	.brand {
-		font-size: 28px;
-	}
 
 	.newsletter-form {
 		flex-direction: column;
@@ -1129,13 +1132,11 @@ h3 {
 
 	.book-faq-item summary {
 		padding: 16px 0;
-		font-size: 15px;
 	}
 
 	.book-faq-item > p {
 		padding-right: 0;
 		padding-bottom: 18px;
-		font-size: 14px;
 	}
 
 	.edition-card {
@@ -1152,22 +1153,13 @@ h3 {
 		max-width: 100%;
 		height: auto;
 	}
-	h3 {
-		font-size: 26px;
-	}
+
 	.specs-copy {
 		bottom: 8%;
-	}
-	.specs-copy li {
-		font-size: 11px;
 	}
 
 	.season-grid {
 		grid-template-columns: 1fr;
-	}
-	.media-card p {
-		font-size: 13px;
-		line-height: 20px;
 	}
 
 	/* bottom of page */
@@ -1225,7 +1217,6 @@ h3 {
 		height: 60px;
 	}
 	.buy-bar .brand {
-		font-size: 20px;
 		gap: 6px;
 	}
 	.buy-bar .logo-mark {
@@ -1236,7 +1227,7 @@ h3 {
 		display: none;
 	}
 	.buy-bar .button {
-		font-size: 14px;
+		font-size: var(--text-sm);
 		padding: 10px 16px;
 	}
 
@@ -1261,12 +1252,7 @@ h3 {
 	}
 
 	.season-title {
-		font-size: 17px;
 		margin-top: 10px;
-	}
-
-	.season-cta {
-		font-size: 12px;
 	}
 
 	/* Edition cards */
@@ -1298,12 +1284,7 @@ h3 {
 	}
 
 	.edition-copy h2 {
-		line-height: 24px;
-	}
-
-	.edition-copy li {
-		font-size: 12px;
-		line-height: 20px;
+		line-height: var(--leading-tight);
 	}
 
 	.edition-copy .button {
