@@ -236,8 +236,32 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 	<link href="/styles-boek.css" rel="stylesheet">
+	<script>
+		(function () {
+			var STORAGE_KEY = 'devuurtorenrond-lang';
+			try {
+				if (localStorage.getItem(STORAGE_KEY) !== 'en') return;
+				var path = window.location.pathname;
+				if (/^\/en(\/|$)/.test(path)) return;
+				var enPath = '/en' + (path === '/' || path === '/index.html' ? '/' : path);
+				window.location.replace(enPath + window.location.search + window.location.hash);
+			} catch (error) {
+				/* ignore */
+			}
+		}());
+	</script>
 </head>
 <body>
+	<aside class="lang-banner" id="lang-banner" hidden aria-label="Language notice">
+		<div class="lang-banner-inner">
+			<p class="lang-banner-text">
+				We also offer this page and book <a class="lang-banner-link" href="/en/" lang="en">fully in English.</a>
+			</p>
+			<button type="button" class="lang-banner-close" aria-label="Stay on Dutch version">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</aside>
 	<header class="hero">
 		<picture>
 			<source media="(max-width: 768px)" srcset="images/boek/hero-cover.jpg">
@@ -713,6 +737,7 @@
 			}
 		});
 	</script>
+	<script src="scripts/language-banner.js" defer></script>
 	<script async src="scripts/image-viewer-book.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLQJJC8C7"></script>
 	<script>

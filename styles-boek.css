@@ -277,6 +277,67 @@ ul {
 	transform: scale(1.1);
 }
 
+/* Language banner */
+
+.lang-banner {
+	background: var(--page);
+	color: var(--ink-muted);
+	border-bottom: 1px solid var(--accent-border);
+}
+
+.lang-banner-inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: calc(100% - 40px);
+	max-width: var(--max);
+	margin: 0 auto;
+	padding: 10px 36px 10px 0;
+}
+
+.lang-banner-text {
+	margin: 0;
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
+	text-align: center;
+}
+
+.lang-banner-link {
+	font-weight: 600;
+	border-bottom-color: var(--accent-link);
+}
+
+.lang-banner-link:hover {
+	border-bottom-color: var(--accent-link-hover);
+}
+
+.lang-banner-close {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: var(--ink-soft);
+	font-size: 1.5rem;
+	line-height: 1;
+	cursor: pointer;
+	opacity: 0.45;
+	transform: translateY(-50%);
+	transition: opacity 0.15s ease;
+}
+
+.lang-banner-close:hover {
+	opacity: 1;
+}
+
 /* Buy bar */
 
 .buy-bar-wrap {
