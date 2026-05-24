@@ -1,5 +1,6 @@
 (function () {
 	var STORAGE_KEY = 'devuurtorenrond-lang';
+	var isEnglishPage = /^\/en(\/|$)/.test(window.location.pathname);
 
 	function prefersDutch() {
 		var langs = navigator.languages && navigator.languages.length
@@ -32,11 +33,22 @@
 	}
 
 	document.addEventListener('DOMContentLoaded', function () {
+		document.querySelectorAll('.lang-switch[data-lang-pref]').forEach(function (link) {
+			link.addEventListener('click', function () {
+				writePref(link.getAttribute('data-lang-pref'));
+			});
+		});
+
 		var banner = document.getElementById('lang-banner');
 		if (!banner) return;
 
 		var pref = readPref();
-		if (pref === 'en' || pref === 'nl' || prefersDutch()) {
+		if (isEnglishPage) {
+			if (pref === 'nl' || pref === 'en' || !prefersDutch()) {
+				hideBanner(banner);
+				return;
+			}
+		} else if (pref === 'en' || pref === 'nl' || prefersDutch()) {
 			hideBanner(banner);
 			return;
 		}
@@ -49,13 +61,13 @@
 
 		if (link) {
 			link.addEventListener('click', function () {
-				writePref('en');
+				writePref(isEnglishPage ? 'nl' : 'en');
 			});
 		}
 
 		if (close) {
 			close.addEventListener('click', function () {
-				writePref('nl');
+				writePref(isEnglishPage ? 'en' : 'nl');
 				hideBanner(banner);
 			});
 		}
