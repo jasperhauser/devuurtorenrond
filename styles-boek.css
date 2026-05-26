@@ -531,7 +531,14 @@ section {
 	font-size: var(--text-sm);
 	line-height: var(--leading-normal);
 }
+.edition-copy a {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+	text-decoration: none;
+}
 
+.edition-copy a:hover {
+	border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
+}
 .edition-copy .button {
 	align-self: flex-end;
 	margin-top: auto;
