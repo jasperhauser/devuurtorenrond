@@ -8,7 +8,7 @@
 	<meta name="theme-color" content="#141810" media="(prefers-color-scheme: dark)">
 	<title>De Vuurtoren Rond — Fotoboek | Workum, Friesland</title>
 	<meta name="description" content="Fotoboek over een jaar rond de vuurtoren van Workum ('It Toarntsje). 172 pagina's, Nederlands en Engels, door Loek Buter en Jasper Hauser. ISBN 9789465264868. Voorverkoop €55.">
-	<link rel="canonical" href="https://www.devuurtorenrond.nl/index-boek.html">
+	<link rel="canonical" href="https://www.devuurtorenrond.nl/">
 	<link rel="alternate" hreflang="nl" href="https://www.devuurtorenrond.nl/">
 	<link rel="alternate" hreflang="en" href="https://www.devuurtorenrond.nl/en/">
 	<link rel="alternate" hreflang="x-default" href="https://www.devuurtorenrond.nl/">
@@ -22,7 +22,7 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 	<meta property="og:type" content="book">
-	<meta property="og:url" content="https://www.devuurtorenrond.nl/index-boek.html">
+	<meta property="og:url" content="https://www.devuurtorenrond.nl/">
 	<meta property="og:title" content="De Vuurtoren Rond — Het fotoboek">
 	<meta property="og:description" content="Fotoboek over een jaar rond de vuurtoren van Workum. 172 pagina's, NL &amp; EN, door Loek Buter en Jasper Hauser. ISBN 9789465264868.">
 	<meta property="og:image" content="https://www.devuurtorenrond.nl/images/social-card@2x.jpg">
@@ -47,7 +47,7 @@
 		"@graph": [
 			{
 				"@type": "Book",
-				"@id": "https://www.devuurtorenrond.nl/index-boek.html#book",
+				"@id": "https://www.devuurtorenrond.nl/#book",
 				"name": "De Vuurtoren Rond",
 				"alternateName": "Around The Lighthouse",
 				"isbn": "9789465264868",
@@ -56,7 +56,7 @@
 				"bookFormat": "Hardcover",
 				"description": "Fotoboek over Reid en Cornelie en hun zelfvoorzienende leven rond de vuurtoren van Workum ('It Toarntsje), met foto's van Loek Buter en teksten van Loek Buter en Jasper Hauser.",
 				"image": "https://www.devuurtorenrond.nl/images/social-card@2x.jpg",
-				"url": "https://www.devuurtorenrond.nl/index-boek.html",
+				"url": "https://www.devuurtorenrond.nl/",
 				"author": [
 					{ "@type": "Person", "name": "Loek Buter", "url": "https://www.loekbuter.com" },
 					{ "@type": "Person", "name": "Jasper Hauser", "url": "https://jasperhauser.nl" }
@@ -80,20 +80,24 @@
 			},
 			{
 				"@type": "Product",
-				"@id": "https://www.devuurtorenrond.nl/index-boek.html#standard-edition",
+				"@id": "https://www.devuurtorenrond.nl/#standard-edition",
 				"name": "De Vuurtoren Rond — Standaard Editie",
 				"description": "Hardcover fotoboek, 172 pagina's, 20 × 25 cm, Nederlands en Engels.",
-				"sku": "9789465264868",
+				"sku": "DVR-STANDARD",
+				"gtin13": "9789465264868",
 				"isbn": "9789465264868",
 				"image": "https://www.devuurtorenrond.nl/images/boek/editie-standaard.jpg",
 				"brand": { "@type": "Brand", "name": "De Vuurtoren Rond" },
+				"isVariantOf": { "@id": "https://www.devuurtorenrond.nl/#book" },
+				"sameAs": "https://de-vuurtoren-rond.myshopify.com/products/de-vuurtoren-rond",
 				"offers": {
 					"@type": "Offer",
 					"price": "55.00",
 					"priceCurrency": "EUR",
 					"availability": "https://schema.org/InStock",
 					"itemCondition": "https://schema.org/NewCondition",
-					"url": "https://de-vuurtoren-rond.myshopify.com/checkouts/cn/hWNC4SnZTWJcREl6RD1maTw3/en-nl?skip_shop_pay=true",
+					"url": "https://de-vuurtoren-rond.myshopify.com/products/de-vuurtoren-rond",
+					"sku": "DVR-STANDARD",
 					"seller": { "@id": "https://www.devuurtorenrond.nl/#organization" },
 					"shippingDetails": { "@id": "https://www.devuurtorenrond.nl/#shipping-nl" },
 					"hasMerchantReturnPolicy": { "@id": "https://www.devuurtorenrond.nl/#return-policy" }
@@ -101,18 +105,22 @@
 			},
 			{
 				"@type": "Product",
-				"@id": "https://www.devuurtorenrond.nl/index-boek.html#special-edition",
+				"@id": "https://www.devuurtorenrond.nl/#special-edition",
 				"name": "De Vuurtoren Rond — Speciale Editie",
 				"description": "Gelimiteerde editie van 25 exemplaren met gesigneerd boek en twee prints.",
+				"sku": "DVR-SPECIAL",
 				"image": "https://www.devuurtorenrond.nl/images/boek/editie-special.jpg",
 				"brand": { "@type": "Brand", "name": "De Vuurtoren Rond" },
+				"isVariantOf": { "@id": "https://www.devuurtorenrond.nl/#book" },
+				"sameAs": "https://de-vuurtoren-rond.myshopify.com/products/speciale-editie",
 				"offers": {
 					"@type": "Offer",
 					"price": "125.00",
 					"priceCurrency": "EUR",
 					"availability": "https://schema.org/LimitedAvailability",
 					"itemCondition": "https://schema.org/NewCondition",
-					"url": "https://de-vuurtoren-rond.myshopify.com/cart/56532647674182:1",
+					"url": "https://de-vuurtoren-rond.myshopify.com/products/speciale-editie",
+					"sku": "DVR-SPECIAL",
 					"seller": { "@id": "https://www.devuurtorenrond.nl/#organization" },
 					"shippingDetails": { "@id": "https://www.devuurtorenrond.nl/#shipping-nl" },
 					"hasMerchantReturnPolicy": { "@id": "https://www.devuurtorenrond.nl/#return-policy" }
@@ -131,13 +139,13 @@
 						"@type": "ListItem",
 						"position": 2,
 						"name": "Het fotoboek",
-						"item": "https://www.devuurtorenrond.nl/index-boek.html"
+						"item": "https://www.devuurtorenrond.nl/"
 					}
 				]
 			},
 			{
 				"@type": "FAQPage",
-				"@id": "https://www.devuurtorenrond.nl/index-boek.html#faq",
+				"@id": "https://www.devuurtorenrond.nl/#faq",
 				"mainEntity": [
 					{
 						"@type": "Question",
