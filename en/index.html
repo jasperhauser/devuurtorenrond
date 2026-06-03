@@ -92,8 +92,11 @@
 					"price": "55.00",
 					"priceCurrency": "EUR",
 					"availability": "https://schema.org/InStock",
+					"itemCondition": "https://schema.org/NewCondition",
 					"url": "https://de-vuurtoren-rond.myshopify.com/checkouts/cn/hWNC4SnZTWJcREl6RD1maTw3/en-nl?skip_shop_pay=true",
-					"seller": { "@id": "https://www.devuurtorenrond.nl/#organization" }
+					"seller": { "@id": "https://www.devuurtorenrond.nl/#organization" },
+					"shippingDetails": { "@id": "https://www.devuurtorenrond.nl/#shipping-nl" },
+					"hasMerchantReturnPolicy": { "@id": "https://www.devuurtorenrond.nl/#return-policy" }
 				}
 			},
 			{
@@ -108,8 +111,11 @@
 					"price": "125.00",
 					"priceCurrency": "EUR",
 					"availability": "https://schema.org/LimitedAvailability",
+					"itemCondition": "https://schema.org/NewCondition",
 					"url": "https://de-vuurtoren-rond.myshopify.com/cart/56532647674182:1",
-					"seller": { "@id": "https://www.devuurtorenrond.nl/#organization" }
+					"seller": { "@id": "https://www.devuurtorenrond.nl/#organization" },
+					"shippingDetails": { "@id": "https://www.devuurtorenrond.nl/#shipping-nl" },
+					"hasMerchantReturnPolicy": { "@id": "https://www.devuurtorenrond.nl/#return-policy" }
 				}
 			},
 			{
@@ -230,6 +236,53 @@
 						}
 					}
 				]
+			},
+			{
+				"@type": "Organization",
+				"@id": "https://www.devuurtorenrond.nl/#organization",
+				"name": "De Vuurtoren Rond",
+				"alternateName": "Around the Lighthouse",
+				"url": "https://www.devuurtorenrond.nl/",
+				"email": "info@devuurtorenrond.nl",
+				"hasMerchantReturnPolicy": { "@id": "https://www.devuurtorenrond.nl/#return-policy" }
+			},
+			{
+				"@type": "MerchantReturnPolicy",
+				"@id": "https://www.devuurtorenrond.nl/#return-policy",
+				"applicableCountry": "NL",
+				"returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+				"merchantReturnDays": 14,
+				"returnMethod": "https://schema.org/ReturnByMail",
+				"returnFees": "https://schema.org/ReturnShippingFees",
+				"merchantReturnLink": "https://de-vuurtoren-rond.myshopify.com/policies/refund-policy"
+			},
+			{
+				"@type": "OfferShippingDetails",
+				"@id": "https://www.devuurtorenrond.nl/#shipping-nl",
+				"shippingDestination": {
+					"@type": "DefinedRegion",
+					"addressCountry": "NL"
+				},
+				"shippingRate": {
+					"@type": "MonetaryAmount",
+					"value": "0",
+					"currency": "EUR"
+				},
+				"deliveryTime": {
+					"@type": "ShippingDeliveryTime",
+					"handlingTime": {
+						"@type": "QuantitativeValue",
+						"minValue": 0,
+						"maxValue": 14,
+						"unitCode": "DAY"
+					},
+					"transitTime": {
+						"@type": "QuantitativeValue",
+						"minValue": 3,
+						"maxValue": 5,
+						"unitCode": "DAY"
+					}
+				}
 			}
 		]
 	}
