@@ -1145,6 +1145,10 @@ a.publication-block:hover {
 	margin: 0;
 }
 
+.site-footer-legal {
+	margin-top: 0.65em;
+}
+
 .site-footer a {
 	border-bottom-color: var(--footer-link);
 }
