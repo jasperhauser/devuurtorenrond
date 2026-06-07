@@ -32,8 +32,6 @@
 	--button-primary-bg: #4086b1;
 	--button-primary-text: #ffffff;
 	--publication-logo-back: #ffffff;
-	--edition-special-button: #414425;
-	--edition-standard-button: #2b2212;
 	--error: #9b2c2c;
 	--success: #3b6e00;
 	--max: 1100px;
@@ -479,12 +477,9 @@ section {
 	background: var(--brown);
 }
 
-.edition-card-special .button {
-	color: var(--edition-special-button);
-}
-
-.edition-card-standard .button {
-	color: var(--edition-standard-button);
+.edition-card .button {
+	background-color: #fff;
+	color: var(--ink);
 }
 
 .edition-cover {
@@ -538,13 +533,10 @@ section {
 	font-size: var(--text-sm);
 	line-height: var(--leading-normal);
 }
-.edition-copy a {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
-	text-decoration: none;
-}
 
 .edition-copy a:hover {
-	border-bottom: 1px solid rgba(255, 255, 255, 1) !important;
+	background-color: var(--ink);
+	color: #fff;
 }
 .edition-copy .button {
 	align-self: flex-end;
@@ -1641,8 +1633,6 @@ dialog .next {
 		--button-neutral-text: rgba(240, 245, 232, 0.92);
 		--button-primary-bg: #5d97c2;
 		--button-primary-text: #101820;
-		--edition-special-button: #e8eadc;
-		--edition-standard-button: #f0e6d8;
 		--error: #f0a0a0;
 		--success: #a8c978;
 		--publication-logo-back: #e8eed0;
@@ -1656,6 +1646,14 @@ dialog .next {
 	.button-primary:disabled:hover {
 		background: var(--button-primary-bg);
 		color: var(--button-primary-text);
+	}
+
+	.edition-card .button {
+		color: #000;
+	}
+	.edition-card .button:hover {
+		background-color: var(--green);
+		color: #fff;
 	}
 
 	.season-spring {
