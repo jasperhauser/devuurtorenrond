@@ -21,7 +21,7 @@
 		gtag('event', eventName, params);
 	}
 
-	function trackBeginCheckout(edition, location, shopUrl) {
+	function trackBeginCheckout(edition, location) {
 		var product = PRODUCTS[edition];
 		if (!product) {
 			return;
@@ -37,43 +37,21 @@
 				quantity: 1
 			}],
 			location: location,
-			page_language: pageLanguage()
+			page_language: pageLanguage(),
+			transport_type: 'beacon'
 		});
-
-		if (shopUrl) {
-			window.location.href = shopUrl;
-		}
 	}
 
 	function bindBuyButtons() {
-		var buyBarButton = document.querySelector('.buy-bar .button');
-		if (buyBarButton) {
-			buyBarButton.addEventListener('click', function () {
-				if (buyBarButton.disabled) {
-					return;
-				}
-				trackBeginCheckout(
-					buyBarButton.getAttribute('data-edition') || 'standard',
-					buyBarButton.getAttribute('data-location') || 'sticky_bar',
-					buyBarButton.getAttribute('data-shop-url')
-				);
-			});
-		}
-
-		document.querySelectorAll('.edition-card .button').forEach(function (button) {
-			button.addEventListener('click', function () {
-				if (button.disabled) {
-					return;
-				}
-
-				var card = button.closest('.edition-card');
-				var edition = button.getAttribute('data-edition')
+		document.querySelectorAll('a[data-edition].button, a.button[data-edition]').forEach(function (link) {
+			link.addEventListener('click', function () {
+				var card = link.closest('.edition-card');
+				var edition = link.getAttribute('data-edition')
 					|| (card && card.classList.contains('edition-card-special') ? 'special' : 'standard');
 
 				trackBeginCheckout(
 					edition,
-					button.getAttribute('data-location') || 'edition_card',
-					button.getAttribute('data-shop-url')
+					link.getAttribute('data-location') || 'buy_button'
 				);
 			});
 		});
