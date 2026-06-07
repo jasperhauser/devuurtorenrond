@@ -34,6 +34,8 @@ input, textarea, button, .button {display: block; font-size: 16px; border-radius
 input {padding:8px 8px; box-sizing: border-box; margin-top:10px; margin-bottom:10px; border: none;}
   input:focus {outline: 1px solid var(--darkBlue);}
 button, .button {background-color: var(--darkBlue); color: #fff; padding:10px 15px; border: none; display: inline-block;}
+a.button {border-bottom: none; text-decoration: none; color: #fff;}
+a.button:hover {border: none; border-bottom: none;}
 .button:hover {border: none;}
 
 /* detailed styles */

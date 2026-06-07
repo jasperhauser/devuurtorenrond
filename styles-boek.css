@@ -139,6 +139,13 @@ ul {
 	border: none;
 	cursor: pointer;
 }
+a.button {
+	border-bottom: none;
+	text-decoration: none;
+}
+a.button:hover {
+	border-bottom: none;
+}
 .button:disabled {
 	opacity: 0.45;
 	cursor: not-allowed;
