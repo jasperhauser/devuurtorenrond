@@ -1008,6 +1008,9 @@ a.publication-block:hover {
 	margin: 0 0 18px;
 	max-width: 36em;
 }
+.loek-prints .button {
+	margin-top: 18px;
+}
 
 .loek-prints-copy p:last-of-type {
 	margin-bottom: 0;
