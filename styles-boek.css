@@ -523,6 +523,25 @@ section {
 	line-height: var(--leading-tight);
 }
 
+.edition-stock {
+	font-weight: 400;
+	opacity: 0.7;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+.edition-stock::before {
+	content: ' - ';
+}
+/* .edition-stock::after {
+	content: ' over';
+} */
+*:lang(en) .edition-stock::after {
+	content: ' left';
+}
+*:lang(nl) .edition-stock::after {
+	content: ' over';
+}
 .edition-copy ul {
 	font-family: var(--font-serif);
 	opacity: 0.9;
