@@ -330,6 +330,25 @@
 			}
 		}());
 	</script>
+	<script>
+		(function () {
+			try {
+				if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+				var root = document.documentElement;
+				root.classList.add('js-reveal');
+				// Safety net: if the reveal script never runs, reveal all content.
+				window.addEventListener('load', function () {
+					setTimeout(function () {
+						if (!root.classList.contains('reveal-ready')) {
+							root.classList.remove('js-reveal');
+						}
+					}, 2500);
+				});
+			} catch (error) {
+				/* ignore */
+			}
+		}());
+	</script>
 </head>
 <body>
 	<aside class="lang-banner" id="lang-banner" hidden aria-label="Language notice">
@@ -850,6 +869,7 @@
 			}
 		});
 	</script>
+	<script src="/scripts/scroll-reveal.js" defer></script>
 	<script src="/scripts/language-banner.js" defer></script>
 	<script src="/scripts/edition-stock.js" defer></script>
 	<script async src="/scripts/image-viewer-book.js"></script>
