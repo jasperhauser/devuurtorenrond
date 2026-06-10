@@ -1732,6 +1732,14 @@ dialog .next {
 		will-change: auto;
 	}
 
+	/* The fullscreen viewer clones preview figures; those clones must never
+	   inherit the hidden reveal state (they never get .is-visible). */
+	.js-reveal .carousel-item .reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
 	/* Slow, subtle settle of the hero image on first load */
 	.js-reveal .hero-image {
 		animation: hero-settle 2s cubic-bezier(0.16, 1, 0.3, 1) both;
