@@ -181,8 +181,8 @@ a.button:hover {
 #boekbeelden,
 #boekbeeld-schoot,
 #boekbeeld-reid,
-#boekbeeld-winter,
 #boekbeeld-detail,
+#boekbeeld-dijk,
 #over,
 #faq,
 #publicaties,
@@ -1551,7 +1551,9 @@ dialog .next {
 	.book-grid > :nth-child(3),
 	.book-grid > .nested-grid,
 	.book-grid .specs,
-	.book-grid > .book-quote-tile,
+	.book-grid > .book-quote-tile:first-child,
+	.book-grid > #boekbeeld-vk-quote,
+	.book-grid > #boekbeeld-vk-quote + .book-preview-photo,
 	.book-grid > .book-winter-spread-tile {
 		grid-column: 1 / -1;
 		width: 100%;
