@@ -218,6 +218,42 @@ a.button:hover {
 	object-position: center;
 }
 
+/* Hero press badge */
+
+.hero-press-badge {
+	position: absolute;
+	top: 16px;
+	left: 50%;
+	z-index: 3;
+	transform: translateX(-50%);
+	/* display: inline-flex; */
+	align-items: center;
+	/* max-width: calc(100% - 32px); */
+	padding: 8px 16px;
+	/* border: 1px solid rgba(255, 255, 255, 0.45); */
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(10px) saturate(1.1);
+	-webkit-backdrop-filter: blur(10px) saturate(1.1);
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	color: #fff;
+	font-family: var(--font-sans);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-press-badge:hover {
+	transform: translateX(-50%) translateY(-1px);
+}
+.hero-press-badge a {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
 /* Hero Gallery */
 
 .hero-gallery {
@@ -249,7 +285,6 @@ a.button:hover {
 	transition: transform 0.2s ease;
 }
 .hero-gallery-thumb:hover {
-	border-bottom: none;
 	transform: scale(1.1);
 }
 .hero-gallery-thumb img {
@@ -278,7 +313,6 @@ a.button:hover {
 	transition: transform 0.2s ease;
 }
 .hero-gallery-more:hover {
-	border-bottom: none;
 	transform: scale(1.1);
 }
 
@@ -298,7 +332,7 @@ a.button:hover {
 	width: calc(100% - 40px);
 	max-width: var(--max);
 	margin: 0 auto;
-	padding: 10px 36px 10px 0;
+	padding: 10px 0;
 }
 
 .lang-banner-text {
