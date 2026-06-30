@@ -159,6 +159,76 @@ a.button:hover {
 	background: var(--button-primary-bg);
 }
 
+/* Quantity stepper + buy control */
+
+.buy-control {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.button [data-buy-price] {
+	padding-left: 6px;
+}
+
+.qty-stepper {
+	display: inline-flex;
+	align-items: stretch;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	overflow: hidden;
+}
+
+.qty-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	/* min-width: 38px; */
+	padding: 10px 10px;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.qty-btn:hover:not(:disabled) {
+	background: rgba(0, 0, 0, 0.06);
+}
+
+.qty-btn:disabled {
+	opacity: 0.35;
+	cursor: not-allowed;
+}
+
+.qty-input {
+	width: 2ch;
+	padding: 0 2px;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-size: var(--text-md);
+	font-weight: 600;
+	text-align: center;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+.qty-input:focus {
+	outline: none;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
 /* Responsive layout */
 
 .buy-bar,
@@ -594,6 +664,19 @@ section {
 .edition-copy .button {
 	align-self: flex-end;
 	margin-top: auto;
+	flex: 1 1 auto;
+	width: auto;
+}
+
+.edition-copy .buy-control {
+	align-self: stretch;
+	justify-content: flex-end;
+	margin-top: auto;
+}
+
+.edition-copy .buy-control .button {
+	align-self: auto;
+	margin-top: 0;
 }
 
 /* Book grid */
@@ -1576,6 +1659,10 @@ dialog .next {
 	.edition-copy .button {
 		align-self: stretch;
 		justify-content: center;
+		margin-top: 14px;
+	}
+
+	.edition-copy .buy-control {
 		width: 100%;
 		margin-top: 14px;
 	}

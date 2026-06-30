@@ -433,12 +433,20 @@
 						<li>Book signed by both creators</li>
 						<li>Text in English and <a href="/" class="lang-switch" data-lang-pref="nl" lang="nl" hreflang="nl">Dutch</a></li>
 					</ul>
-					<a
-						href="https://de-vuurtoren-rond.myshopify.com/cart/56532647674182:1?checkout"
-						class="button"
-						data-edition="special"
-						data-location="edition_card"
-					>Buy €125</a>
+					<div class="buy-control" data-qty-control data-unit-price="125">
+						<div class="qty-stepper">
+							<button type="button" class="qty-btn" data-qty-step="-1" aria-label="One less">&#8722;</button>
+							<input class="qty-input" type="number" min="1" max="25" step="1" value="1" inputmode="numeric" aria-label="Quantity" data-qty-input>
+							<button type="button" class="qty-btn" data-qty-step="1" aria-label="One more">+</button>
+						</div>
+						<a
+							href="https://de-vuurtoren-rond.myshopify.com/cart/56532647674182:1?checkout"
+							class="button"
+							data-edition="special"
+							data-location="edition_card"
+							data-buy-link
+						>Buy <span data-buy-price>€125</span></a>
+					</div>
 				</div>
 			</article>
 
@@ -456,12 +464,20 @@
 						<li>Text in English and <a href="/" class="lang-switch" data-lang-pref="nl" lang="nl" hreflang="nl">Dutch</a></li>
 						<li>Ship to EU, UK &amp; US</li>
 					</ul>
-					<a
-						href="https://de-vuurtoren-rond.myshopify.com/cart/56532615954758:1?checkout"
-						class="button"
-						data-edition="standard"
-						data-location="edition_card"
-					>Buy €55</a>
+					<div class="buy-control" data-qty-control data-unit-price="55">
+						<div class="qty-stepper">
+							<button type="button" class="qty-btn" data-qty-step="-1" aria-label="One less">&#8722;</button>
+							<input class="qty-input" type="number" min="1" max="99" step="1" value="1" inputmode="numeric" aria-label="Quantity" data-qty-input>
+							<button type="button" class="qty-btn" data-qty-step="1" aria-label="One more">+</button>
+						</div>
+						<a
+							href="https://de-vuurtoren-rond.myshopify.com/cart/56532615954758:1?checkout"
+							class="button"
+							data-edition="standard"
+							data-location="edition_card"
+							data-buy-link
+						>Buy <span data-buy-price>€55</span></a>
+					</div>
 				</div>
 			</article>
 		</section>
@@ -879,6 +895,7 @@
 	<script src="/scripts/scroll-reveal.js" defer></script>
 	<script src="/scripts/language-banner.js" defer></script>
 	<script src="/scripts/edition-stock.js" defer></script>
+	<script src="/scripts/quantity.js" defer></script>
 	<script async src="/scripts/image-viewer-book.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NLQJJC8C7"></script>
 	<script>

@@ -21,20 +21,28 @@
 		gtag('event', eventName, params);
 	}
 
-	function trackBeginCheckout(edition, location) {
+	function quantityFromLink(link) {
+		var match = link.getAttribute('href').match(/\/cart\/\d+:(\d+)/);
+		var qty = match ? parseInt(match[1], 10) : 1;
+		return qty > 0 ? qty : 1;
+	}
+
+	function trackBeginCheckout(edition, location, quantity) {
 		var product = PRODUCTS[edition];
 		if (!product) {
 			return;
 		}
 
+		var qty = quantity > 0 ? quantity : 1;
+
 		track('begin_checkout', {
 			currency: 'EUR',
-			value: product.price,
+			value: product.price * qty,
 			items: [{
 				item_id: edition,
 				item_name: product.name,
 				price: product.price,
-				quantity: 1
+				quantity: qty
 			}],
 			location: location,
 			page_language: pageLanguage(),
@@ -51,7 +59,8 @@
 
 				trackBeginCheckout(
 					edition,
-					link.getAttribute('data-location') || 'buy_button'
+					link.getAttribute('data-location') || 'buy_button',
+					quantityFromLink(link)
 				);
 			});
 		});
