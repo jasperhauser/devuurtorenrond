@@ -835,8 +835,8 @@ a.publication-block:hover {
 
 .season-card:hover {
 	border-bottom: none;
-	transform: scale(1.015);
-	box-shadow: var(--shadow-card-hover);
+	transform: scale(1.015) !important;
+	box-shadow: var(--shadow-card-hover) !important;
 }
 
 .season-card-copy {
