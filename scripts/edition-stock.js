@@ -1,5 +1,5 @@
 /**
- * Shows the remaining stock for the special edition in its title (e.g. "Speciale Editie – ×17").
+ * Shows the remaining stock for editions in their titles (e.g. "Speciale Editie - 17 over").
  *
  * Uses the Shopify Storefront API, which can return live inventory counts. This needs a
  * PUBLIC Storefront API access token (safe to ship in client-side code) created from a
@@ -15,26 +15,38 @@
 		shopDomain: 'de-vuurtoren-rond.myshopify.com',
 		storefrontToken: 'ef56e44835d83581dc9c350e6c518d64', // public Storefront API access token
 		apiVersion: '2025-01',
-		productHandle: 'speciale-editie',
-		// Only show the counter at/below this many copies. Set to null to always show.
-		showAtOrBelow: null,
+		editions: {
+			special: {
+				productHandle: 'speciale-editie',
+				// Only show the counter at/below this many copies. Set to null to always show.
+				showAtOrBelow: null,
+			},
+			standard: {
+				productHandle: 'de-vuurtoren-rond',
+				showAtOrBelow: null,
+			},
+		},
 	};
 
-	function render(quantity) {
-		var el = document.querySelector('[data-edition-stock="special"]');
-		if (!el || typeof quantity !== 'number' || quantity <= 0) return;
-		if (CONFIG.showAtOrBelow !== null && quantity > CONFIG.showAtOrBelow) return;
+	function render(edition, quantity) {
+		var config = CONFIG.editions[edition];
+		var els = document.querySelectorAll('[data-edition-stock="' + edition + '"]');
+		if (!els.length || !config || typeof quantity !== 'number' || quantity <= 0) return;
+		if (config.showAtOrBelow !== null && quantity > config.showAtOrBelow) return;
 
-		el.textContent = quantity;
-		el.hidden = false;
+		els.forEach(function (el) {
+			el.textContent = quantity;
+			el.hidden = false;
+		});
 	}
 
 	function fetchRemaining() {
 		if (!CONFIG.storefrontToken) return;
 
-		var query =
-			'{ product(handle: "' + CONFIG.productHandle + '") { ' +
-			'totalInventory variants(first: 1) { nodes { quantityAvailable } } } }';
+		var selections = Object.keys(CONFIG.editions).map(function (edition) {
+			return edition + ': product(handle: "' + CONFIG.editions[edition].productHandle + '") { ' +
+				'totalInventory variants(first: 1) { nodes { quantityAvailable } } }';
+		}).join(' ');
 
 		fetch('https://' + CONFIG.shopDomain + '/api/' + CONFIG.apiVersion + '/graphql.json', {
 			method: 'POST',
@@ -42,21 +54,25 @@
 				'Content-Type': 'application/json',
 				'X-Shopify-Storefront-Access-Token': CONFIG.storefrontToken,
 			},
-			body: JSON.stringify({ query: query }),
+			body: JSON.stringify({ query: '{ ' + selections + ' }' }),
 		})
 			.then(function (response) {
 				return response.ok ? response.json() : null;
 			})
 			.then(function (data) {
-				var product = data && data.data && data.data.product;
-				if (!product) return;
+				if (!data || !data.data) return;
 
-				var variant = product.variants && product.variants.nodes && product.variants.nodes[0];
-				var quantity = variant && typeof variant.quantityAvailable === 'number'
-					? variant.quantityAvailable
-					: product.totalInventory;
+				Object.keys(CONFIG.editions).forEach(function (edition) {
+					var product = data.data[edition];
+					if (!product) return;
 
-				render(quantity);
+					var variant = product.variants && product.variants.nodes && product.variants.nodes[0];
+					var quantity = variant && typeof variant.quantityAvailable === 'number'
+						? variant.quantityAvailable
+						: product.totalInventory;
+
+					render(edition, quantity);
+				});
 			})
 			.catch(function () {
 				/* network/parse error — leave the title untouched */
