@@ -178,6 +178,11 @@ a.button:hover {
 	background: rgba(255, 255, 255, 0.1);
 	color: #fff;
 	overflow: hidden;
+	transition: all 0.2s ease;
+}
+.qty-stepper:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: scale(1.05);
 }
 
 .qty-stepper button:first-child {
@@ -204,10 +209,11 @@ a.button:hover {
 	font-weight: 600;
 	line-height: 1;
 	cursor: pointer;
+	transition: all 0.2s ease;
 }
 
 .qty-btn:hover:not(:disabled) {
-	background: rgba(0, 0, 0, 0.06);
+	background: rgba(255, 255, 255, 0.25);
 }
 
 .qty-btn:disabled {
@@ -1815,7 +1821,7 @@ dialog .next {
 	}
 	.edition-card .button:hover {
 		background-color: var(--green);
-		color: #fff;
+		color: #000;
 	}
 
 	.season-spring {
