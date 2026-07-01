@@ -498,6 +498,7 @@ a.button:hover {
 .brand {
 	display: flex;
 	align-items: center;
+	justify-self: start;
 	gap: 10px;
 	text-decoration: none;
 	border-bottom: none;
@@ -516,6 +517,10 @@ a.button:hover {
 	-webkit-mask-size: contain;
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
+	transition: all 0.2s ease;
+}
+.brand:hover .logo-mark {
+	transform: scale(1.1);
 }
 .buy-bar .button span {
 	padding-left: 6px;
