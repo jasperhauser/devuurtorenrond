@@ -174,25 +174,11 @@ a.button:hover {
 .qty-stepper {
 	display: inline-flex;
 	align-items: stretch;
-	border-radius: 999px;
-	background: rgba(255, 255, 255, 0.1);
 	color: #fff;
-	overflow: hidden;
 	transition: all 0.2s ease;
 }
 .qty-stepper:hover {
-	background: rgba(255, 255, 255, 0.2);
 	transform: scale(1.05);
-}
-
-.qty-stepper button:first-child {
-	padding-left: 10px;
-	padding-right: 4px;
-}
-
-.qty-stepper button:last-child {
-	padding-right: 10px;
-	padding-left: 4px;
 }
 
 .qty-btn {
@@ -209,15 +195,24 @@ a.button:hover {
 	font-weight: 600;
 	line-height: 1;
 	cursor: pointer;
+	background: rgba(255, 255, 255, 0.1);
 	transition: all 0.2s ease;
 }
-
 .qty-btn:hover:not(:disabled) {
 	background: rgba(255, 255, 255, 0.25);
 }
+.qty-stepper .qty-btn:first-child {
+	padding-left: 10px;
+	padding-right: 4px;
+	border-radius: 999px 0 0 999px;
+}
+.qty-stepper .qty-btn:last-child {
+	padding-right: 10px;
+	padding-left: 4px;
+	border-radius: 0 999px 999px 0;
+}
 
 .qty-btn:disabled {
-	opacity: 0.35;
 	cursor: not-allowed;
 }
 
@@ -231,11 +226,8 @@ a.button:hover {
 	font-weight: 600;
 	text-align: center;
 	-moz-appearance: textfield;
+	background: rgba(255, 255, 255, 0.1);
 	appearance: textfield;
-}
-
-.qty-input:focus {
-	outline: none;
 }
 
 .qty-input::-webkit-outer-spin-button,
