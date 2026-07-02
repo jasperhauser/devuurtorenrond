@@ -159,83 +159,6 @@ a.button:hover {
 	background: var(--button-primary-bg);
 }
 
-/* Quantity stepper + buy control */
-
-.buy-control {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.button [data-buy-price] {
-	padding-left: 6px;
-}
-
-.qty-stepper {
-	display: inline-flex;
-	align-items: stretch;
-	color: #fff;
-	transition: all 0.2s ease;
-}
-.qty-stepper:hover {
-	transform: scale(1.05);
-}
-
-.qty-btn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border: none;
-	background: transparent;
-	color: inherit;
-	font-family: inherit;
-	font-size: 1.25rem;
-	font-weight: 600;
-	line-height: 1;
-	cursor: pointer;
-	background: rgba(255, 255, 255, 0.1);
-	transition: all 0.2s ease;
-}
-.qty-btn:hover:not(:disabled) {
-	background: rgba(255, 255, 255, 0.25);
-}
-.qty-stepper .qty-btn:first-child {
-	padding-left: 10px;
-	padding-right: 4px;
-	border-radius: 999px 0 0 999px;
-}
-.qty-stepper .qty-btn:last-child {
-	padding-right: 10px;
-	padding-left: 4px;
-	border-radius: 0 999px 999px 0;
-}
-
-.qty-btn:disabled {
-	cursor: not-allowed;
-}
-
-.qty-input {
-	width: 2ch;
-	border: none;
-	background: transparent;
-	color: inherit;
-	font-family: inherit;
-	font-size: var(--text-md);
-	font-weight: 600;
-	text-align: center;
-	-moz-appearance: textfield;
-	background: rgba(255, 255, 255, 0.1);
-	appearance: textfield;
-}
-
-.qty-input::-webkit-outer-spin-button,
-.qty-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-
 /* Responsive layout */
 
 .buy-bar,
@@ -303,11 +226,8 @@ a.button:hover {
 	left: 50%;
 	z-index: 3;
 	transform: translateX(-50%);
-	/* display: inline-flex; */
 	align-items: center;
-	/* max-width: calc(100% - 32px); */
 	padding: 8px 16px;
-	/* border: 1px solid rgba(255, 255, 255, 0.45); */
 	border-radius: 8px;
 	background: rgba(255, 255, 255, 0.3);
 	backdrop-filter: blur(10px) saturate(1.1);
@@ -691,6 +611,83 @@ section.intro, section.editions {
 .edition-copy .buy-control .button {
 	align-self: auto;
 	margin-top: 0;
+}
+
+/* Quantity stepper + buy control */
+
+.buy-control {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.button [data-buy-price] {
+	padding-left: 6px;
+}
+
+.qty-stepper {
+	display: inline-flex;
+	align-items: stretch;
+	color: #fff;
+	transition: all 0.2s ease;
+}
+.qty-stepper:hover {
+	transform: scale(1.05);
+}
+
+.qty-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.1);
+	transition: all 0.2s ease;
+}
+.qty-btn:hover:not(:disabled) {
+	background: rgba(255, 255, 255, 0.25);
+}
+.qty-stepper .qty-btn:first-child {
+	padding-left: 10px;
+	padding-right: 4px;
+	border-radius: 999px 0 0 999px;
+}
+.qty-stepper .qty-btn:last-child {
+	padding-right: 10px;
+	padding-left: 4px;
+	border-radius: 0 999px 999px 0;
+}
+
+.qty-btn:disabled {
+	cursor: not-allowed;
+}
+
+.qty-input {
+	width: 2ch;
+	border: none;
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-size: var(--text-md);
+	font-weight: 600;
+	text-align: center;
+	-moz-appearance: textfield;
+	background: rgba(255, 255, 255, 0.1);
+	appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Book grid */
