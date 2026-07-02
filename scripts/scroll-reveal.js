@@ -1,7 +1,7 @@
 (function () {
 	var root = document.documentElement;
 
-	// The inline head guard only adds `js-reveal` when motion is allowed.
+	// The inline head guard adds `js-reveal` before this file loads.
 	if (!root.classList.contains('js-reveal')) return;
 
 	// Signal to the safety fallback that reveal logic is running.
@@ -49,6 +49,7 @@
 
 	var STAGGER_STEP = 0.08; // seconds between cascading siblings
 	var STAGGER_CAP = 6; // never delay more than ~0.48s
+	var REVEAL_DURATION = 0.9; // seconds; keep in sync with styles-boek.css
 
 	var observer = new IntersectionObserver(function (entries) {
 		// Reveal everything that entered together with a small cascade so
@@ -70,6 +71,11 @@
 			el.style.setProperty('--reveal-delay', delay + 's');
 			el.classList.add('is-visible');
 			observer.unobserve(el);
+
+			window.setTimeout(function () {
+				el.classList.remove('reveal', 'is-visible');
+				el.style.removeProperty('--reveal-delay');
+			}, (delay + REVEAL_DURATION) * 1000);
 		});
 	}, {
 		// Trigger the moment an element's edge crosses into the viewport, so
