@@ -1850,42 +1850,40 @@ dialog .next {
 
 /* Scroll reveal animations */
 
-@media (prefers-reduced-motion: no-preference) {
-	.js-reveal .reveal {
-		opacity: 0;
-		transform: translateY(22px);
-		transition:
-			opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-			transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-		transition-delay: var(--reveal-delay, 0s);
-		will-change: opacity, transform;
-	}
+.js-reveal .reveal {
+	opacity: 0;
+	transform: translateY(22px);
+	transition:
+		opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+	transition-delay: var(--reveal-delay, 0s);
+	will-change: opacity, transform;
+}
 
-	.js-reveal .reveal.is-visible {
-		opacity: 1;
-		transform: none;
-		will-change: auto;
-	}
+.js-reveal .reveal.is-visible {
+	opacity: 1;
+	transform: none;
+	will-change: auto;
+}
 
-	/* The fullscreen viewer clones preview figures; those clones must never
-	   inherit the hidden reveal state (they never get .is-visible). */
-	.js-reveal .carousel-item .reveal {
-		opacity: 1;
-		transform: none;
-		transition: none;
-	}
+/* The fullscreen viewer clones preview figures; those clones must never
+   inherit the hidden reveal state (they never get .is-visible). */
+.js-reveal .carousel-item .reveal {
+	opacity: 1;
+	transform: none;
+	transition: none;
+}
 
-	/* Slow, subtle settle of the hero image on first load */
-	.js-reveal .hero-image {
-		animation: hero-settle 2s cubic-bezier(0.16, 1, 0.3, 1) both;
-	}
+/* Slow, subtle settle of the hero image on first load */
+.js-reveal .hero-image {
+	animation: hero-settle 2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
-	@keyframes hero-settle {
-		from {
-			transform: scale(1.06);
-		}
-		to {
-			transform: scale(1);
-		}
+@keyframes hero-settle {
+	from {
+		transform: scale(1.06);
+	}
+	to {
+		transform: scale(1);
 	}
 }
