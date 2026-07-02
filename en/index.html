@@ -12,8 +12,8 @@
 	<link rel="alternate" hreflang="nl" href="https://www.devuurtorenrond.nl/">
 	<link rel="alternate" hreflang="en" href="https://www.devuurtorenrond.nl/en/">
 	<link rel="alternate" hreflang="x-default" href="https://www.devuurtorenrond.nl/">
-	<link rel="preload" as="image" href="/images/boek/hero-spread-1250.jpg" imagesrcset="/images/boek/hero-spread-1250.jpg 1250w, /images/boek/hero-spread-2000.jpg 2000w, /images/boek/hero-spread.jpg 2500w" imagesizes="100vw" media="(min-width: 769px)">
-	<link rel="preload" as="image" href="/images/boek/hero-cover-1250.jpg" imagesrcset="/images/boek/hero-cover-1250.jpg 1250w, /images/boek/hero-cover.jpg 2500w" imagesizes="100vw" media="(max-width: 768px)">
+	<link rel="preload" as="image" href="/images/boek/hero-spread-1250.jpg" imagesrcset="/images/boek/hero-spread-1250.jpg 1250w, /images/boek/hero-spread-2000.jpg 2000w, /images/boek/hero-spread.jpg 2500w" imagesizes="100vw" media="(min-width: 769px)" fetchpriority="high">
+	<link rel="preload" as="image" href="/images/boek/hero-cover-1250.jpg" imagesrcset="/images/boek/hero-cover-1250.jpg 1250w, /images/boek/hero-cover.jpg 2500w" imagesizes="100vw" media="(max-width: 768px)" fetchpriority="high">
 
 	<link rel="icon" href="/favicon.ico" sizes="48x48">
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -314,7 +314,8 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Merriweather:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet"></noscript>
 	<link href="/styles-boek.css" rel="stylesheet">
 	<script>
 		(function () {
@@ -835,16 +836,19 @@
 		</script>
 	</footer>
 
-	<script src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
 	<script>
-		(function ($) {
-			window.fnames = new Array();
-			window.ftypes = new Array();
-			fnames[0] = 'EMAIL';
-			ftypes[0] = 'email';
-		}(jQuery));
-		var $mcj = jQuery.noConflict(true);
+		window.initMailchimpValidation = function () {
+			if (!window.jQuery) return;
+			(function ($) {
+				window.fnames = new Array();
+				window.ftypes = new Array();
+				fnames[0] = 'EMAIL';
+				ftypes[0] = 'email';
+			}(window.jQuery));
+			window.$mcj = window.jQuery.noConflict(true);
+		};
 	</script>
+	<script async src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" onload="window.initMailchimpValidation && window.initMailchimpValidation()"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 			const buyBar = document.querySelector('.buy-bar');

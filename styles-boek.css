@@ -25,11 +25,11 @@
 	--input-border: rgba(59, 110, 0, 0.35);
 	--input-focus-ring: rgba(59, 110, 0, 0.15);
 	--faq-icon-bg: rgba(59, 110, 0, 0.08);
-	--footer-link: rgba(21, 23, 15, 0.2);
-	--footer-hover: rgba(21, 23, 15, 0.75);
+	--footer-link: rgba(21, 23, 15, 0.45);
+	--footer-hover: rgba(21, 23, 15, 0.9);
 	--button-neutral-bg: #ffffff;
 	--button-neutral-text: inherit;
-	--button-primary-bg: #4086b1;
+	--button-primary-bg: #2f6f96;
 	--button-primary-text: #ffffff;
 	--publication-logo-back: #ffffff;
 	--error: #9b2c2c;
@@ -1282,7 +1282,7 @@ a.publication-block:hover {
 	font-family: var(--font-serif);
 	font-size: var(--text-sm);
 	line-height: var(--leading-normal);
-	color: var(--ink-soft);
+	color: var(--ink-muted);
 	transition: opacity 0.15s ease;
 }
 
@@ -1786,8 +1786,8 @@ dialog .next {
 		--input-border: rgba(168, 201, 120, 0.32);
 		--input-focus-ring: rgba(168, 201, 120, 0.2);
 		--faq-icon-bg: rgba(168, 201, 120, 0.12);
-		--footer-link: rgba(255, 255, 255, 0.22);
-		--footer-hover: rgba(240, 245, 232, 0.78);
+		--footer-link: rgba(255, 255, 255, 0.42);
+		--footer-hover: rgba(240, 245, 232, 0.92);
 		--button-neutral-bg: #252b1f;
 		--button-neutral-text: rgba(240, 245, 232, 0.92);
 		--button-primary-bg: #5d97c2;
