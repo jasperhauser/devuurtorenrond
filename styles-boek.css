@@ -668,6 +668,7 @@ section.intro, section.editions {
 
 .qty-btn:disabled {
 	cursor: not-allowed;
+	color: rgba(255, 255, 255, 0.2);
 }
 
 .qty-input {
