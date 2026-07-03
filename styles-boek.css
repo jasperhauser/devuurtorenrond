@@ -224,7 +224,7 @@ a.button:hover {
 /* Hero press badge */
 
 .hero-press-badge-wrap {
-	--hero-press-badge-bottom-margin: 100px;
+	--hero-press-badge-bottom-margin: 16px;
 	position: absolute;
 	inset: 0 0 var(--hero-press-badge-bottom-margin);
 	z-index: 3;
@@ -1562,6 +1562,10 @@ dialog .next {
 
 	.hero-gallery {
 		display: flex;
+	}
+
+	.hero-press-badge-wrap {
+		--hero-press-badge-bottom-margin: 110px;
 	}
 
 	/* Buy bar */
