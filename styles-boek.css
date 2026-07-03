@@ -1324,10 +1324,6 @@ figure.media-block {
 	cursor: zoom-in;
 }
 
-.book-preview-photo figcaption {
-	display: none;
-}
-
 dialog {
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
@@ -1398,24 +1394,6 @@ dialog figure.large img.block-image {
 	scale: none;
 	transform: translate(-50%, -50%);
 	cursor: zoom-out;
-}
-
-dialog figcaption {
-	opacity: 1;
-	display: block;
-	bottom: 20px;
-	left: 20px;
-	top: unset;
-	right: 20px;
-	position: absolute;
-	font-size: 0.85em;
-	color: #fff;
-	z-index: 1;
-	pointer-events: none;
-}
-
-dialog figure.large figcaption {
-	display: none;
 }
 
 dialog .button {
