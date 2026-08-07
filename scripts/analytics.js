@@ -6,7 +6,7 @@
 		},
 		special: {
 			name: 'Speciale Editie',
-			price: 125
+			price: 165
 		}
 	};
 
