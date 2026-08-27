@@ -12,7 +12,18 @@
 	<link rel="alternate" hreflang="nl" href="https://www.devuurtorenrond.nl/">
 	<link rel="alternate" hreflang="en" href="https://www.devuurtorenrond.nl/en/">
 	<link rel="alternate" hreflang="x-default" href="https://www.devuurtorenrond.nl/">
-	<link rel="preload" as="image" href="/images/boek/hero-spread-1250.jpg" imagesrcset="/images/boek/hero-spread-1250.jpg 1250w, /images/boek/hero-spread-2000.jpg 2000w, /images/boek/hero-spread.jpg 2500w" imagesizes="100vw" media="(min-width: 769px)" fetchpriority="high">
+	<script>
+		(function () {
+			var table = Math.random() < 0.5;
+			var base = table ? '/images/boek/hero-spread-table' : '/images/boek/hero-spread';
+			var src = base + '-1250.jpg';
+			var srcset = src + ' 1250w, ' + base + '-2000.jpg 2000w, ' + (table ? base + '-2500.jpg' : base + '.jpg') + ' 2500w';
+			window.__heroSpread = { src: src, srcset: srcset, height: table ? 1007 : 1082 };
+			document.currentScript.insertAdjacentHTML('afterend',
+				'<link rel="preload" as="image" href="' + src + '" imagesrcset="' + srcset + '" imagesizes="100vw" media="(min-width: 769px)" fetchpriority="high">'
+			);
+		}());
+	</script>
 	<link rel="preload" as="image" href="/images/boek/hero-cover-1250.jpg" imagesrcset="/images/boek/hero-cover-1250.jpg 1250w, /images/boek/hero-cover.jpg 2500w" imagesizes="100vw" media="(max-width: 768px)" fetchpriority="high">
 
 	<link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -365,7 +376,18 @@
 	<header class="hero">
 		<picture>
 			<source media="(max-width: 768px)" srcset="/images/boek/hero-cover-1250.jpg 1250w, /images/boek/hero-cover.jpg 2500w" sizes="100vw">
-			<img class="hero-image" src="/images/boek/hero-spread-1250.jpg" srcset="/images/boek/hero-spread-1250.jpg 1250w, /images/boek/hero-spread-2000.jpg 2000w, /images/boek/hero-spread.jpg 2500w" sizes="100vw" alt="Around the Lighthouse — spread and cover of the photo book." width="1250" height="1082" fetchpriority="high">
+			<script>
+				(function () {
+					var v = window.__heroSpread || {
+						src: '/images/boek/hero-spread-1250.jpg',
+						srcset: '/images/boek/hero-spread-1250.jpg 1250w, /images/boek/hero-spread-2000.jpg 2000w, /images/boek/hero-spread.jpg 2500w',
+						height: 1082
+					};
+					document.currentScript.insertAdjacentHTML('afterend',
+						'<img class="hero-image" src="' + v.src + '" srcset="' + v.srcset + '" sizes="100vw" alt="Around the Lighthouse — spread and cover of the photo book." width="1250" height="' + v.height + '" fetchpriority="high">'
+					);
+				}());
+			</script>
 		</picture>
 		<div class="hero-press-badge-wrap">
 			<span class="hero-press-badge">
