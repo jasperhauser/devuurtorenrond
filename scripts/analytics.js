@@ -2,11 +2,11 @@
 	var PRODUCTS = {
 		standard: {
 			name: 'Standaard Editie',
-			price: 65
+			price: 49
 		},
 		special: {
 			name: 'Speciale Editie',
-			price: 165
+			price: 150
 		}
 	};
 

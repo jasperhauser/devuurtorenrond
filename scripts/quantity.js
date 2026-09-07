@@ -17,9 +17,9 @@
 	}
 
 	function formatPrice(amount) {
-		// Prices are whole euros; keep decimals only when they actually occur.
 		var rounded = Math.round(amount * 100) / 100;
-		return '\u20AC' + (rounded % 1 === 0 ? rounded : rounded.toFixed(2).replace('.', ','));
+		var separator = document.documentElement.lang === 'en' ? '.' : ',';
+		return '\u20AC' + (rounded % 1 === 0 ? rounded : rounded.toFixed(2).replace('.', separator));
 	}
 
 	function setupControl(control) {
