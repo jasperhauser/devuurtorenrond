@@ -1705,6 +1705,7 @@ dialog .next {
 	.book-grid > .book-quote-tile:first-child,
 	.book-grid > #boekbeeld-vk-quote,
 	.book-grid > #boekbeeld-vk-quote + .book-preview-photo,
+	.book-grid > #boekbeeld-pf-quote,
 	.book-grid > .book-winter-spread-tile {
 		grid-column: 1 / -1;
 		width: 100%;
